@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-u$kptmbry7*t3p_7l+66zf@*ky@m-7$9fm=#ef$$yjpim_4$=e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-trxdave-photographyblog-unzw4yzsw7l.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['photography-blog-5d35eeace3db.herokuapp.com']
 
 
 # Application definition
