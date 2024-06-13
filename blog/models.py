@@ -11,9 +11,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+"""Model for Blog posts"""
+
 class Photo(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    slug = models.SlugField(max_length=200, unique=True)
     title = models.CharField(max_length=50,null=True,blank=False,)
     description = models.CharField(max_length=500,null=True,blank=False)
     featured_image = CloudinaryField('image', default='placeholder')
@@ -27,9 +29,14 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
 
+    def likes_count(self):
+        return self.likes.count()
+
+
+"""Model for user comments"""
+
 class Comments(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    #post = models.ForeignKey(Photo,on_delete=models.SET_NULL,null=True)
     post = models.CharField(max_length=100,null=True,blank=False)
     message = models.TextField(max_length=200,null=True,blank=False)
     created = models.DateTimeField(auto_now_add=True,auto_created=True)
