@@ -1,15 +1,16 @@
 from django.urls import path
-from allauth.account.views import login
+from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
-from.views import PhotoListView, PhotoDetailView, signup_view, homepage_view, about
+from .views import PhotoListView, PhotoDetailView, signup_view, homepage_view, about
+from . import views
 
 urlpatterns = [
-    path('', homepage_view, name='homepage'),
-    path('photos/', PhotoListView.as_view(), name='photo_list'),
-    path('photo/<int:pk>/', PhotoDetailView.as_view(), name='photo_detail'),
-    path('signout/', LogoutView.as_view(), name='signout'),
-    path('signin/', login, name='signin'),
-    path('signup/', signup_view, name='signup'),
-    path('blog/', PhotoListView.as_view(), name='blog'),
-    path('about/', about, name='about'),
+    path('photo/', views.PhotoListView.as_view(), name='photo_list'),
+    path('photo/<pk>/', views.PhotoDetailView.as_view(), name='photo_detail'),
+    path('signin/', views.SigninView.as_view(), name='signin'),
+    path('signout/', views.SignoutView.as_view(), name='signout'),
+    path('signup/', views.signup_view, name='signup'),
+    path('homepage/', views.homepage_view, name='homepage'),
+    path('blog/', views.blog_view, name='blog'),
+    path('about/', views.about, name='about'),
 ]

@@ -3,14 +3,17 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
-from.models import Photo
+from .models import Photo
 from django.contrib.auth.views import LoginView, LogoutView
 
 class PhotoListView(ListView):
     model = Photo
+    template_name = 'blog.html'
+    context_object_name = 'post_list'
 
 class PhotoDetailView(DetailView):
     model = Photo
+    template_name = 'blog/photo_detail.html'
 
 class SignoutView(LogoutView):
     template_name = 'account/logout.html'
@@ -32,16 +35,10 @@ def signup_view(request):
 
 @login_required
 def homepage_view(request):
-    return redirect('photo_list')
-
-class PhotoDetailView(DetailView):
-    model = Photo
-    template_name = 'blog/photo_detail.html'
-
-class PhotoListView(ListView):
-    model = Photo
-    template_name = 'blog.html'
-    context_object_name = 'post_list'
+    return render(request, 'blog/homepage.html')
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def blog_view(request):
+    return render(request, 'blog/blog.html')
