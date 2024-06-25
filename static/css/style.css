@@ -221,7 +221,7 @@ input[type="submit"]:hover {
   margin-bottom: 10px;
 }
 
-/* signup.css */
+/* signup */
 
 .row {
   justify-content: center;
@@ -276,4 +276,11 @@ label {
 
 .btn-primary:hover {
   background-color: #23527c;
+}
+
+.messages li.success {
+  color: #0f0; /* Green color */
+  background-color: #dfd;
+  padding: 10px;
+  border-radius: 5px;
 }

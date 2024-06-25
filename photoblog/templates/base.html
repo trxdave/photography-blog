@@ -10,13 +10,11 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     
     <title>Photography Blog</title>
-    
 </head>
 
 <body>
 
     <!-- Navigation bar -->
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'homepage' %}">Photography Blog</a>
@@ -54,17 +52,13 @@
         </div>
     </nav>
 
-        <!-- Header Content -->
-
-        <header class="header-image">
-
-        </header>
-        
+    <!-- Header Content -->
+    <header class="header-image"></header>
 
     {% block content %}
-
     {% endblock content %}
-    <!-- Bootstrap Clean Blog Theme -->
+
+    <!-- Footer -->
     <footer class="border-top">
         <div class="container px-4">
             <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -108,5 +102,4 @@
         </div>
     </footer>
 </body>
-
 </html>
