@@ -8,9 +8,10 @@ from . import views
 urlpatterns = [
     path('', views.homepage_view, name='homepage'),
     path('signin/', views.SigninView.as_view(), name='signin'),
-    path('signup/', views.signup_view, name='signup'),
+    path('signup/', auth_views.LoginView.as_view(), name='signup'),
     path('signout/', views.SignoutView.as_view(), name='signout'),
     path('about/', views.about, name='about'),
     path('blog/', views.blog_view, name='blog'),
-    path('photo/<pk>/', views.PhotoDetailView.as_view(), name='photo_detail'),
+    path('photo/', views.PhotoDetailView.as_view(), name='photo_detail'),
+    path('accounts/signup/', auth_views.LoginView.as_view(), name='signup'),
 ]
