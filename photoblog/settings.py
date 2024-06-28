@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-u$kptmbry7*t3p_7l+66zf@*ky@m-7$9fm=#ef$$yjpim_4$=e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-trxdave-photographyblog-4ihq23bmj9u.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-trxdave-photographyblog-qy6wzg8er1r.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -53,6 +53,12 @@ INSTALLED_APPS = [
     'blog',
 ]
 
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_LOGIN_TEMPLATE = 'photoblog/registration/login.html'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,12 +70,18 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+SOCIALACCOUNT_PROVIDERS = {
+  'google': {
+      'EMAIL_AUTHENTICATION': True
+  }
+}
+
 ROOT_URLCONF = 'photoblog.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'allauth')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,6 +135,21 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'APP_ID': 'your_facebook_app_id',
+        'APP_SECRET': 'your_facebook_app_secret',
+    },
+    'x': {
+        'APP_ID': 'your_x_app_id',
+        'APP_SECRET': 'your_x_app_secret',
+    },
+    'google': {
+        'APP_ID': 'your_google_app_id',
+        'APP_SECRET': 'your_google_app_secret',
+    }
+}
 
 
 # Internationalization
