@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
-from .models import Photo
+from .models import Category, Post, Photo
 from django.contrib.auth.views import LoginView, LogoutView
 
 class PhotoListView(ListView):
@@ -53,3 +53,8 @@ def signup_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'blog/signup.html', {'form': form})
+
+def category_view(request, category):
+    category_obj = get_object_or_404(Category, name=category)
+    posts = Post.objects.filter(category=category_obj)
+    return render(request, 'blog/category.html', {'posts': posts, 'category': category_obj})

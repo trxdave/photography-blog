@@ -4,6 +4,32 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <h1>Blog</h1>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">All</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'category' 'landscape' %}">Landscape</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'category' 'portrait' %}">Portrait</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'category' 'wildlife' %}">Wildlife</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'category' 'treet' %}">Street</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'category' 'acro' %}">Macro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
     {% for post in post_list %}
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">

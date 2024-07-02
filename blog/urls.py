@@ -1,7 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
-from .views import PhotoListView, PhotoDetailView, signup_view, homepage_view, about, blog_view
+from.views import PhotoListView, PhotoDetailView, signup_view, homepage_view, about, blog_view, category_view
 
 urlpatterns = [
     path('', homepage_view, name='homepage'),
@@ -11,4 +11,6 @@ urlpatterns = [
     path('about/', about, name='about'),
     path('blog/', blog_view, name='blog'),
     path('photo/<pk>/', PhotoDetailView.as_view(), name='photo_detail'),
+    path('photos/', PhotoListView.as_view(), name='photo_list'),
+    path('category/<str:category>/', category_view, name='category'),
 ]
