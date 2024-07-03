@@ -387,10 +387,10 @@ img {
 
 .center_img {
   display: block;
+  margin: 20px auto; 
   width: 50%;
   height: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  object-fit: cover; 
 }
 
 .h1404 {
@@ -398,6 +398,7 @@ img {
   color: #333;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center; 
 }
 
 .btn-404 {
@@ -407,6 +408,8 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: block; 
+  margin: 20px auto; 
 }
 
 .btn-404:hover {
