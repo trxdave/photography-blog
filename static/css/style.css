@@ -112,6 +112,10 @@ h2 {
   background-color: #444;
 }
 
+add-post {
+  padding-top: 20px;
+}
+
 /* footer */
 footer {
   background-color: #333;
@@ -381,11 +385,12 @@ img {
 
 /* 404 html */
 
-img {
-  margin: 40px auto;
-  width: 100px;
-  height: 100px;
-  
+.center_img {
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .h1404 {
