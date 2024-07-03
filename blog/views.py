@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
 from .models import Category, Post, Photo
 from django.contrib.auth.views import LoginView, LogoutView
+from .forms import LandscapeImageForm
+from .models import LandscapeImage
 
 class PhotoListView(ListView):
     model = Photo
@@ -55,6 +57,23 @@ def signup_view(request):
     return render(request, 'blog/signup.html', {'form': form})
 
 def category_view(request, category):
-    category_obj = get_object_or_404(Category, name=category)
-    posts = Post.objects.filter(category=category_obj)
-    return render(request, 'blog/category.html', {'posts': posts, 'category': category_obj})
+    category_obj = Category.objects.filter(name=category).first()
+    if category_obj:
+        photos = Photo.objects.filter(category=category_obj)
+        return render(request, 'blog/category.html', {'photos': photos, 'category': category})
+    else:
+        return render(request, 'blog/404.html')
+
+def upload_landscape_image(request):
+    if request.method == 'Post':
+        form = LandscapeImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('landscape_image_list')
+    else:
+        form = LandscapeImageForm()
+    return render(request, 'upload_landscape_image.html', {'form': form})
+
+def landscape_image_list(request):
+    images = LandscapeImage.objects.all()
+    return render(request, 'landscape_image_list.html', {'images': images})

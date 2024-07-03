@@ -1,4 +1,5 @@
 from django.urls import path
+from. import views
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
 from.views import PhotoListView, PhotoDetailView, signup_view, homepage_view, about, blog_view, category_view
@@ -13,4 +14,6 @@ urlpatterns = [
     path('photo/<pk>/', PhotoDetailView.as_view(), name='photo_detail'),
     path('photos/', PhotoListView.as_view(), name='photo_list'),
     path('category/<str:category>/', category_view, name='category'),
+    path('upload_landscape_image/', views.upload_landscape_image, name='upload_landscape_image'),
+    path('landscape_image_list/', views.landscape_image_list, name='landscape_image_list'),
 ]

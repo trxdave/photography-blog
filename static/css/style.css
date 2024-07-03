@@ -370,3 +370,40 @@ label {
   padding: 10px;
   border-radius: 5px;
 }
+
+/* Landscape */
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 404 html */
+
+img {
+  margin: 40px auto;
+  width: 100px;
+  height: 100px;
+  
+}
+
+.h1404 {
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.btn-404 {
+  background-color: #337ab7;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-404:hover {
+  background-color: #23527c;
+}

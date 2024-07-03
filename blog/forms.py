@@ -1,4 +1,5 @@
 from django import forms
+from .models import LandscapeImage
 from django.contrib.auth.models import User
 
 class SignupForm(forms.ModelForm):
@@ -22,3 +23,8 @@ class SignupForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class LandscapeImageForm(forms.ModelForm):
+    class Meta:
+        model = LandscapeImage
+        fields = ('image',)

@@ -2,6 +2,19 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+<div class="add-post">
+  <a href="{% url 'add_post' %}" class="btn btn-danger add-post" aria-label="Add Post">Add Post</a>
+</div>
+{% else %}
+<div>
+  <h6 class="add-post">Please <a class="link2" href="{% url 'login' %}" aria-label="Log in to add a post">log in</a>, or
+    <a class="link2" href="{% url 'signup' %}" aria-label="Sign up to add a post">create an account</a> to create a
+    post.
+  </h6>
+</div>
+{% endif %}
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -45,18 +58,7 @@
   </div>
 </div>
 
-{% if user.is_authenticated %}
-<div class="add-post">
-  <a href="{% url 'add_post' %}" class="btn btn-danger add-post" aria-label="Add Post">Add Post</a>
-</div>
-{% else %}
-<div>
-  <h6 class="add-post">Please <a class="link2" href="{% url 'login' %}" aria-label="Log in to add a post">log in</a>, or
-    <a class="link2" href="{% url 'signup' %}" aria-label="Sign up to add a post">create an account</a> to create a
-    post.
-  </h6>
-</div>
-{% endif %}
+
 
 <div class="col-12 mt-3 left">
   <div class="row">

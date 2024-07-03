@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @page {
-            size: landscape;
-        }
-        
-        /* Set the body to take up the full page */
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100vh;
-        }
-    </style>
+    <title>Upload Landscape Image</title>
 </head>
+
 <body>
-    <!-- Content will be rendered here -->
-    {% block content %}{% endblock %}
+    <h1>Upload Landscape Image</h1>
+    <ul>
+        {% for image in images %}
+        <li>
+            <img src="{{ image.image.url }}" alt="Landscape Image">
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="post" enctrype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
 </body>
+
 </html>
