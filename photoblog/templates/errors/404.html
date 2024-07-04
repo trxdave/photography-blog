@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+
 {% load static %}
-<html>
-<head>
-    <title>404 Error - Page Not Found</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-</head>
-<body>
+
+{% block content %}
+
+<section>
     <div class="d-flex justify-content-center mb-4">
         <img src="{% static 'image/404.png' %}" alt="cartoon" class="img-fluid mx-auto">
     </div>
@@ -16,5 +15,5 @@
             <p><a class="btn btn-primary" href="{% url 'login' %}">Return to Home Page</a></p>
         </div>
     </div>
-</body>
-</html>
+</section>
+{% endblock %}

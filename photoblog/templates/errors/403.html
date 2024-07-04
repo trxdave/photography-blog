@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section>
+    <div class="d-flex justify-content-center mb-4">
+        <img src="{% static 'image/403.png' %}" alt="cartoon" class="img-fluid mx-auto">
+    </div>
+    <div class="text-center">
+        <h1 class="h1403">AWWWW...DON'T CRY.</h1>
+        <p class="p403">Sorry, you're not allowed in here. Please contact IT</p>
+        <div class="wrapper">
+            <p><a class="btn btn-primary" href="{% url 'login' %}">Return to Home Page</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}
