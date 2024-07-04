@@ -385,33 +385,49 @@ img {
 
 /* 404 html */
 
-.center_img {
-  display: block;
-  margin: 20px auto; 
-  width: 50%;
-  height: 50%;
-  object-fit: cover; 
+.h1404 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
 }
 
-.h1404 {
-  font-size: 36px;
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 20px;
+.p404 {
+  font-size: 24px;
+  color: #666;
   text-align: center; 
 }
 
 .btn-404 {
-  background-color: #337ab7;
-  color: #ffffff;
-  padding: 10px 20px;
+  background-color: #337ab7; 
+  color: #fff; 
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
   cursor: pointer;
-  display: block; 
-  margin: 20px auto; 
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  
 }
 
 .btn-404:hover {
-  background-color: #23527c;
+  background-color: #23527c; 
+}
+
+.d-flex {
+  margin-top: 100px; 
+}
+
+img {
+  width: 400px; 
+  height: auto;
+  display: block; 
+  margin: 0 auto; 
+}
+
+.wrapper {
+  text-align: center;
+  margin-top: 40px;
+  text-decoration: none;
 }
