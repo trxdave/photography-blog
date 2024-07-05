@@ -3,45 +3,44 @@ from django.urls import reverse
 from django.template.defaultfilters import slugify
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, blank=False, help_text='Enter the category name')
     slug = models.SlugField(unique=True)
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super(Category, self).save(*args, **kwargs)
-
-    def get_absolute_url(self):
-        return reverse('blog_category', kwargs={'slug': self.slug})
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
-    title = models.CharField(max_length=255)
-    content = models.TextField()
+    title = models.CharField(max_length=255, blank=False, help_text='Enter the post title')
+    content = models.TextField(blank=False, help_text='Enter the post content')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     slug = models.SlugField(unique=True)
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super(Post, self).save(*args, **kwargs)
+    def save(self):
+        self.slug = slugify(self.title)
+        super().save()
 
-    def get_absolute_url(self):
-        return reverse('blog_post_detail', kwargs={'slug': self.slug})
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        unique_together = ('title', 'category')
 
 class Photo(models.Model):
-    title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images/')
-    description = models.TextField()
+    title = models.CharField(max_length=255, blank=False, help_text='Enter the photo title')
+    image = models.ImageField(upload_to='images/', blank=False, help_text='Select an image file')
+    description = models.TextField(blank=True, help_text='Enter a description of the photo')
     slug = models.SlugField(unique=True)
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super(Photo, self).save(*args, **kwargs)
+    def save(self):
+        self.slug = slugify(self.title)
+        super().save()
 
-    def get_absolute_url(self):
-        return reverse('blog_post_detail', kwargs={'slug': self.slug})
+    def __str__(self):
+        return self.title
 
 class LandscapeImage(models.Model):
-    image = models.ImageField(upload_to='landscape_images/')
+    image = models.ImageField(upload_to='landscape_images/', blank=False, help_text='Select an image file')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.uploaded_at)
