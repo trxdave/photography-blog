@@ -1,5 +1,5 @@
 from django import forms
-from .models import LandscapeImage
+from .models import Post, LandscapeImage, Category
 from django.contrib.auth.models import User
 
 class SignupForm(forms.ModelForm):
@@ -28,3 +28,10 @@ class LandscapeImageForm(forms.ModelForm):
     class Meta:
         model = LandscapeImage
         fields = ('image',)
+
+class PostForm(forms.ModelForm):
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Select a category")
+
+    class Meta:
+        model = Post
+        fields = ('title', 'content', 'image', 'category')

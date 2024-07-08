@@ -431,3 +431,71 @@ img {
   margin-top: 40px;
   text-decoration: none;
 }
+
+/* Homepages */
+
+.home-content {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.home-content h1 {
+  margin-bottom: 20px;
+}
+
+.btn-explore {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-explore:hover {
+  background-color: #3e8e41;
+}
+
+/* add post */
+
+.form-control {
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-success:hover {
+  background-color: #3e8e41;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.control-label {
+  padding-top: 7px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.form-control {
+  width: 100%;
+}

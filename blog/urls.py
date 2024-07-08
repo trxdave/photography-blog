@@ -16,4 +16,5 @@ urlpatterns = [
     path('category/<str:category>/', category_view, name='category'),
     path('upload_landscape_image/', views.upload_landscape_image, name='upload_landscape_image'),
     path('landscape_image_list/', views.landscape_image_list, name='landscape_image_list'),
+    path('add_post/', views.add_post, name='add_post'),
 ]

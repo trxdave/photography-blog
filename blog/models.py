@@ -12,6 +12,9 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255, blank=False, help_text='Enter the post title')
     content = models.TextField(blank=False, help_text='Enter the post content')
+    image = models.ImageField(upload_to='posts/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     slug = models.SlugField(unique=True)
 
