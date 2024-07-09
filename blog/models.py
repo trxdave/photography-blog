@@ -1,6 +1,10 @@
 from django.db import models
 from django.urls import reverse
 from django.template.defaultfilters import slugify
+from cloudinary.models import CloudinaryField
+
+class MyModel(models.Model):
+    image = CloudinaryField('image')
 
 class Category(models.Model):
     name = models.CharField(max_length=255, blank=False, help_text='Enter the category name')

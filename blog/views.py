@@ -83,6 +83,10 @@ def add_post(request):
         form = PostForm()
     return render(request, 'blog/add_post.html', {'form': form})
 
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'post_list.html', {'posts': posts})
+
 def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
