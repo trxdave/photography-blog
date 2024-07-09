@@ -462,7 +462,7 @@ img {
 /* add post */
 
 .form-container {
-  max-width: 400px;
+  max-width: 100%;
   margin: 40px auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -510,3 +510,35 @@ label {
   background-color: #f2dede;
   color: #a94442
 }
+
+.content {
+  max-width: 100%;
+  padding: 20%;
+  box-sizing: border-box;
+}
+
+/* Media responsive */
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-control {
+    padding: 8px;
+  }
+  .btn-success {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group {
+    margin-bottom: 10px;
+  }
+  .form-control {
+    padding: 6px;
+  }
+  .btn-success {
+    padding: 6px;
+  }
+}
+

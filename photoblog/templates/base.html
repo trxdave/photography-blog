@@ -38,14 +38,14 @@
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signout' as 'signout' %}">Sign out</a>
+                        <a class="nav-link" href="{% url 'signout' %}">Sign out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' as 'signup' %}">Sign Up</a>
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signin' as 'signin' %}">Sign In</a>
+                        <a class="nav-link" href="{% url 'signin' %}">Sign In</a>
                     </li>
                     {% endif %}
                 </ul>
