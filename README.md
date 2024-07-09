@@ -23,8 +23,19 @@ Log Out
 The standard logout form template from Django is styled to match the look of the rest of the site. It simply confirms that you want to log out.
 
 
-ERD
+Model Design
 ![alt text](<documentation/erd/Database ER diagram Photography Blog.png>)
+
+Design
+
+Wireframes
+
+Testing
+
+Validators
+
+Performance and Accessibility
+
 
 
 Credits
