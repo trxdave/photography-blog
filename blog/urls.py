@@ -6,7 +6,7 @@ from.views import PhotoListView, PhotoDetailView, signup_view, homepage_view, ab
 
 urlpatterns = [
     path('', homepage_view, name='homepage'),
-    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('login/', auth_views.LoginView.as_view(), name='signin'),
     path('signup/', signup_view, name='signup'),
     path('signout/', LogoutView.as_view(next_page='signout.html'), name='signout'),
     path('about/', about, name='about'),

@@ -29,6 +29,14 @@ class LandscapeImageForm(forms.ModelForm):
         model = LandscapeImage
         fields = ('image',)
 
+    def clean_image(self):
+        image = self.cleaned_data.get('image')
+        if image.size > 1024 * 1024:
+            raise forms.ValidationError('Image size should not exceed 1MB')
+        if not image.content_type.startswith('image/'):
+            raise forms.ValidationError('Only image files are allowed')
+        return image
+
 class PostForm(forms.ModelForm):
     category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Select a category")
 

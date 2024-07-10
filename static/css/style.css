@@ -313,23 +313,24 @@ input[type="submit"]:hover {
 
 /* signup */
 
+.container-login {
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .row {
-  justify-content: center;
+  margin: 0;
 }
 
 .col-md-6 {
-  background-color: #fff;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 60px;
 }
 
 h2 {
   margin-top: 0;
-  font-weight: bold;
-  color: #333;
 }
 
 .form-group {
@@ -337,23 +338,43 @@ h2 {
 }
 
 label {
+  font-weight: bold;
   display: block;
   margin-bottom: 10px;
-  font-weight: bold;
-  color: #333;
 }
 
 .form-control {
+  width: 100%;
   height: 40px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 .form-control:focus {
   border-color: #aaa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.errorlist {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.messages li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.messages li.error {
+  color: red;
 }
 
 .btn-primary {
@@ -369,11 +390,37 @@ label {
   background-color: #23527c;
 }
 
-.messages li.success {
-  color: #0f0; /* Green color */
-  background-color: #dfd;
+.social-login {
+  margin-top: 20px;
+}
+
+.social-login button {
+  width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
+  font-size: 16px;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.social-login button:hover {
+  opacity: 0.8;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  color: #ffffff;
+}
+
+.btn-gmail {
+  background-color: #dd4b39;
+  color: #ffffff;
+}
+
+.btn-linkedin {
+  background-color: #007bb5;
+  color: #ffffff;
 }
 
 /* Landscape */

@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-u$kptmbry7*t3p_7l+66zf@*ky@m-7$9fm=#ef$$yjpim_4$=e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ["DEV"] = "1"
 
-ALLOWED_HOSTS = ['8000-trxdave-photographyblog-n1baig5ywl2.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['8000-trxdave-photographyblog-5w9lb0l1ou8.ws.codeinstitute-ide.net',
 'photography-blog-5d35eeace3db.herokuapp.com', 'photography-blog.herokuapp.com',
 ]
 

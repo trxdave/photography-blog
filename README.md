@@ -41,3 +41,4 @@ Performance and Accessibility
 Credits
 
 https://www.pexels.com/photo/man-standing-on-rock-formation-22185/
+https://medium.com/@parkdong1015/django-form-and-login-eaed1b9170d2
