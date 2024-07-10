@@ -5,10 +5,20 @@
 
 {% block content %}
 <div class="about-page container">
-  <h1>About Us</h1>
-  <p>Welcome to Photography Blog, a haven for photography enthusiasts of all levels!</p>
-  <p>Our mission is to inspire and educate through high-quality tutorials, in-depth gear reviews, and stunning photo galleries.</p>
-  <p>Whether you're a budding photographer or a seasoned pro, join us on a journey to explore the art and craft of photography, discover new techniques, and stay updated with the latest industry trends.</p>
-  <p>Let's capture the world, one frame at a time!</p>
-</div>
+  <h1 class="about-us">About Us</h1>
+  <p class="description-about">Welcome to Photography Blog, a haven for photography enthusiasts of all levels!<br>
+  Our mission is to inspire and educate through high-quality tutorials, in-depth gear reviews, and stunning photo galleries. <br> 
+  We believe in the power of photography to tell stories, evoke emotions, and capture the beauty of the world around us.
+  Whether you're a budding photographer or a seasoned pro, join us on a journey to explore the art and craft of photography. <br>
+  Discover new techniques, stay updated with the latest industry trends, and find inspiration in our diverse range of content.
+  At Photography Blog, we are more than just a blog; we are a community. We encourage you to share your experiences, <br>
+  participate in discussions, and connect with fellow photography enthusiasts. Together, let's capture the world, one frame at a time!
+  Thank you for being a part of our journey. We look forward to seeing your amazing work and helping you grow as a photographer.</p>
+  <div>
+    <p><strong>Contact Us:</strong> Have questions or want to get in touch? Feel free to contact us at <a href="mailto:contact@photographyblog.com">contact@photographyblog.com</a>. We’d love to hear from you!</p>
+  </div>
+  <!-- Add Post button -->
+  <div class="add-post">
+    <a href="{% url 'add_post' %}" class="btn btn-danger add-post" aria-label="Add Post">**Create a New Post**</a>
+  </div>
 {% endblock %}
