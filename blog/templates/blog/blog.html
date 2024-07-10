@@ -25,26 +25,16 @@
           <a class="nav-link" href="{% url 'category' 'treet' %}">Street</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'category' 'acro' %}">Macro</a>
+          <a class="nav-link" href="{% url 'category' 'macro' %}">Macro</a>
         </li>
       </ul>
     </div>
   </div>
 
   {% if user.is_authenticated %}
-  <div>
-    <h6 class="add-post">Please <a class="link2" href="{% url 'login' %}" aria-label="Log in to add a post">log in</a>, or
-      <a class="link2" href="{% url 'signup' %}" aria-label="Sign up to add a post">create an account</a> to create a
-      post.
-    </h6>
-  </div>
-  
-  
   <div class="add-post">
     <a href="{% url 'add_post' %}" class="btn btn-danger add-post" aria-label="Add Post">Add Post</a>
   </div>
-  {% else %}
-  
   {% endif %}
 
   <div class="row">
