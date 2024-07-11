@@ -24,9 +24,9 @@ header h1 {
 
 .header-image {
   background-image: url('https://res.cloudinary.com/ds0ualpzt/image/upload/v1718635173/hwhw04qijnra63kdxjv9.jpg');
-  background-size: cover;
   background-position: center;
-  height: 800px;
+  background-size: cover;
+  height: 300px;
   width: 100%;
 }
 
@@ -137,13 +137,20 @@ footer {
   padding: 1em;
   text-align: center;
   clear: both;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 /* about */
 
 .about-us {
   margin-top: 20px;
+  text-align: center;
+}
+
+.description-about {
+  text-align: center;
+  font-size: 20px;
+  line-height: 2.5;
 }
 
 .add-post {
@@ -164,6 +171,18 @@ footer {
   background-color: #23527c;
 }
 
+.about-page.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.contact-us {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
 @media (max-width: 768px) {
  .about-page {
     padding: 20px; 
@@ -178,6 +197,16 @@ footer {
     font-size: 16px;
     margin-bottom: 20px; 
   }
+}
+
+/* homepages */
+
+.welcome-p {
+  text-align: center;
+  font-size: 130%;
+  line-height: 1.8;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* Login */
@@ -464,7 +493,6 @@ img {
 /* Homepages */
 
 .home-content {
-  max-width: 800px;
   margin: 40px auto;
   text-align: center;
 }
@@ -480,11 +508,19 @@ img {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  text-decoration: none;
+  margin-top: 50px;
 }
 
 .btn-explore:hover {
   background-color: #3e8e41;
+}
+
+.lens {
+  background-image: url('https://res.cloudinary.com/ds0ualpzt/image/upload/v1720704490/lens_zt2clc.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  width: 80%;
 }
 
 /* add post */

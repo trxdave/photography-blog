@@ -8,13 +8,14 @@
 {% block content %}
 
 <div class="home-content">
-    <h1>Welcome to My Photography Blog</h1>
-    <p>Explore the beauty of the world through my lens. This blog is a collection of my favorite photography pieces,
-        showcasing the wonders of nature, cityscapes, and everything in between.</p>
-    <p>From the majestic mountains to the vibrant streets, I capture the essence of each moment, telling stories that
-        evoke emotions and inspire the imagination.</p>
-    <p>Take a journey with me as I share my passion for photography, and get ready to be inspired by the beauty of the
+    <h1 class="welcome">Welcome to My Photography Blog</h1>
+    <p class="welcome-p">Explore the beauty of the world through my lens. This blog is a collection of my favorite photography pieces,
+        showcasing the wonders of nature, cityscapes, and everything in between.
+    From the majestic mountains to the vibrant streets, I capture the essence of each moment, telling stories that
+        evoke emotions and inspire the imagination.
+    Take a journey with me as I share my passion for photography, and get ready to be inspired by the beauty of the
         world around us.</p>
+        <img class="lens">
     <button class="btn-explore"><a href="{% url 'blog' %}">Explore My Blog</a></button>
 </div>
 {% endblock %}
