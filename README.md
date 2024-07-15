@@ -12,7 +12,7 @@ For my fourth portfolio project, I have decided to create a photography blog. Th
 1. Create a User-Friendly Interface: Design a clean, intuitive interface that allows users to easily navigate through the blog, view photography posts, and interact with the content.
 2. Build a Responsive Website: Ensure that the blog is fully responsive and accessible on various devices, including desktops, tablets, and smartphones.
 3. Implement Photography Showcase Features: Develop features that allow photographers to upload their work, add descriptions, and categorize their photos for better visibility.
-4. Enable Community Interaction: Integrate functionality for comments, likes, and shares to foster community engagement and interaction among users.
+4. Enable Community Interaction: Integrate functionality for comments, and likes.
 5. Optimize Performance: Ensure the website loads quickly and efficiently, providing a smooth user experience even with high-resolution images.
 
 ## User Goals
@@ -107,7 +107,7 @@ This project was organized and executed using Agile methodology. A Kanban board 
 
 
 ## Credits
-[Man standing on rock formation](<documentation/images/hero-image.jpg>) 
+[Man standing on rock formation](<documentation/images/hero-image.jpg>)
 [Black and silver DSLR lens](<documentation/images/lens.jpg>)
 [Inside out 'Bad Request' 400](<documentation/images/400.png>)
 [Inside out 'Forbidden' 403](<documentation/images/403.png>)
