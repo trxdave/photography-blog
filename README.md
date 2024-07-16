@@ -178,5 +178,8 @@ For either method, you will need to install any applicable packages found within
 * [Django Search Box](https://docs.djangoproject.com/en/5.0/search/?q=search+box)
 * [Daisy's walkthrough](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2)
 * [Build a Photographer Personal Portfolio with Django 2020](https://www.youtube.com/watch?v=EBrm7h05vbg)
+* [Pillow](https://pillow.readthedocs.io/en/stable/installation.html)
+* [Cloudinary](https://cloudinary.com/)
+
 
 # Acknowledgements
