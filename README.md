@@ -166,15 +166,17 @@ For either method, you will need to install any applicable packages found within
 - `pip3 install -r requirements.txt`.
 
 # Credits
-[Man standing on rock formation](<documentation/images/hero-image.jpg>)
-[Black and silver DSLR lens](<documentation/images/lens.jpg>)
-[Nikon Camera](<documentation/images/nikon-camera.jpg>)
-[Inside out 'Bad Request' 400](<documentation/images/400.png>)
-[Inside out 'Forbidden' 403](<documentation/images/403.png>)
-[Inside out 'Not Found' 404](<documentation/images/404.png>)
-[Inside out 'Internal Server Error' 500](<documentation/images/500.png>)
-[Django Allauth](https://docs.allauth.org/en/latest/)
-[Django documentation](https://docs.djangoproject.com/en/5.0/)
-[Django Search Box](https://docs.djangoproject.com/en/5.0/search/?q=search+box)
+* [Man standing on rock formation](<documentation/images/hero-image.jpg>)
+* [Black and silver DSLR lens](<documentation/images/lens.jpg>)
+* [Nikon Camera](<documentation/images/nikon-camera.jpg>)
+* [Inside out 'Bad Request' 400](<documentation/images/400.png>)
+* [Inside out 'Forbidden' 403](<documentation/images/403.png>)
+* [Inside out 'Not Found' 404](<documentation/images/404.png>)
+* [Inside out 'Internal Server Error' 500](<documentation/images/500.png>)
+* [Django Allauth](https://docs.allauth.org/en/latest/)
+* [Django documentation](https://docs.djangoproject.com/en/5.0/)
+* [Django Search Box](https://docs.djangoproject.com/en/5.0/search/?q=search+box)
+* [Daisy's walkthrough](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2)
+* [Build a Photographer Personal Portfolio with Django 2020](https://www.youtube.com/watch?v=EBrm7h05vbg)
 
 # Acknowledgements
