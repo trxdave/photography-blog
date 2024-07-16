@@ -1,5 +1,14 @@
 # Photography Blog
 
+View the live project here [Photography Blog](https://photography-blog-5d35eeace3db.herokuapp.com)
+
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/trxdave/photography-blog)](https://github.com/trxdave/photography-blog/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/trxdave/photography-blog)](https://github.com/trxdave/photography-blog/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/trxdave/photography-blog)](https://github.com/trxdave/photography-blog)
+
+Am I Responsive
+Here's deployed site: [Am I Responsive](https://ui.dev/amiresponsive?url=https://photography-blog-5d35eeace3db.herokuapp.com/)
+
 ## Introduction
 
 Photography has the power to capture moments, tell stories, and evoke emotions. With the increasing popularity of social media platforms, photographers often find their work lost amidst the noise. This project aims to create a dedicated space where amateur photographers can showcase their work, share their experiences, and connect with like-minded individuals.
@@ -26,41 +35,41 @@ This photography blog will not only serve as a portfolio for my development skil
 
 ![alt text](<documentation/erd/Database ER diagram Photography Blog.png>)
 
-## Learning Outcomes
-1. ### Django Framework Proficiency:
+# Learning Outcomes
+1. ## Django Framework Proficiency:
 
 - Gain a deep understanding of Django, a high-level Python web framework, including its architecture, components, and how to effectively use it to build robust web applications.
 
-2. ### Bootstrap Integration:
+2. ## Bootstrap Integration:
 
 - Learn to integrate Bootstrap, a popular front-end framework, into a Django project to create responsive, mobile-first web designs with minimal effort.
 
-3. ### Python Programming Skills:
+3. ## Python Programming Skills:
 
 - Enhance Python programming skills, focusing on writing clean, efficient, and maintainable code that integrates seamlessly with Django.
 
-4. ### Image Handling with Pillow and Cloudinary:
+4. ## Image Handling with Pillow and Cloudinary:
 
 - The installation and use of Pillow, a Python Imaging Library fork, to handle image processing tasks such as uploading and resizing.
 - Integrate Cloudinary, a cloud-based image and video management service, for efficient storage, processing, and delivery of images, leveraging its APIs for image optimization and manipulation.
 
-5. ### CRUD Operations:
+5. ## CRUD Operations:
 
 - Full CRUD (Create, Read, Update, Delete) functionality, allowing users to create, view, update, and delete their photography posts.
 
-6. ### User Authentication and Authorization:
+6. ## User Authentication and Authorization:
 
 - User authentication and authorization features in Django, providing secure login, registration, and user management functionalities. Include sign-up, logout, and login features to manage user sessions effectively.
 
-7. ### Template Rendering and Static Files Management:
+7. ## Template Rendering and Static Files Management:
 
 - Learn to use Django's template system to render dynamic content and manage static files like CSS, JavaScript, and images effectively.
 
-## User Experience (UX)
+# User Experience (UX)
 
 The goal of this project is to create a seamless and enjoyable user experience for amateur photographers. The blog is designed to be intuitive, visually appealing, and functional, ensuring users can easily navigate the site, upload their work, and engage with the community.
 
-## User Stories
+# User Stories
 1. As a Site User I can view a paginated list of posts so that easily select a post to view.
 2. As a Site User / Admin I can view the number of likes on each post so that I can see which is the most popular or viral.
 3. As a Site User, I want to log in, so that I can access my account and manage my posts.
@@ -69,47 +78,103 @@ The goal of this project is to create a seamless and enjoyable user experience f
 6. As a Site User, I want to comment on posts, so that I can provide feedback and engage with the community.
 7. As a Site User, I want to log out, so that I can securely leave the site.
 
-## Development Plan
+# Development Plan
 
 This project was organized and executed using Agile methodology. A Kanban board within GitHub Projects was utilized to facilitate this, with tasks and objectives managed through interconnected GitHub Issues. [Link to the Kanban board here]
 
-## Features
+# Features
 
-### Login
+## Login
 
 - The standard login form template from Django is styled to match the look of the rest of the site. It requests a username and password, with an option to remember the login.
 
-### Sign Up
+## Sign Up
 - The standard signup form template from Django is styled to match the look of the rest of the site. It requests a username and a password that meets certain criteria.
 
-### Sign In
+## Sign In
 - The standard sign-in form template from Django is styled to match the look of the rest of the site. It requests a username and password, with an option to remember the login.
 
-### Log Out
+## Log Out
 - The standard logout form template from Django is styled to match the look of the rest of the site. It simply confirms that you want to log out.
 
-## Model Design
+# Model Design
 
 ## Design
 
-## Wireframes
+### Colours
+
+
+
+
+# Wireframes
 
 - Wireframes were created to visualize the layout and design of the photography blog.
 
-## Testing
+# Testing
 
-## Validators
+## Validator Testing
 
 - The project was tested using various validation tools to ensure code quality, performance, and accessibility standards were met.
 
 ## Performance and Accessibility
 
+# Technologies Used
 
+## Tools
 
-## Credits
+## Frameworks - Libraries - Programs Used
+
+# Future Plans
+
+# Bugs
+
+# Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
+- Further down, to support dependencies, select **Add Buildpack**.
+- The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
+
+Heroku needs three additional files in order to deploy properly.
+
+- requirements.txt
+- Procfile
+
+You can install this project's **requirements** (where applicable) using:
+
+- `pip3 install requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+
+- `pip3 freeze > requirements.txt`
+
+The **Procfile** can be created with the following command:
+
+- `echo web: node index.js > Procfile`
+
+# Local Deployment #
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+
+- `pip3 install -r requirements.txt`.
+
+# Credits
 [Man standing on rock formation](<documentation/images/hero-image.jpg>)
 [Black and silver DSLR lens](<documentation/images/lens.jpg>)
+[Nikon Camera](<documentation/images/nikon-camera.jpg>)
 [Inside out 'Bad Request' 400](<documentation/images/400.png>)
 [Inside out 'Forbidden' 403](<documentation/images/403.png>)
 [Inside out 'Not Found' 404](<documentation/images/404.png>)
 [Inside out 'Internal Server Error' 500](<documentation/images/500.png>)
+[Django Allauth](https://docs.allauth.org/en/latest/)
+[Django documentation](https://docs.djangoproject.com/en/5.0/)
+[Django Search Box](https://docs.djangoproject.com/en/5.0/search/?q=search+box)
+
+# Acknowledgements
