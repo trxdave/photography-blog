@@ -35,6 +35,10 @@
                         <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
                 </ul>
+                <form>
+                    <input type="search" id="search-input" placeholder="Search...">
+                    <button id="search-btn">Search</button>
+                </form>
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -102,5 +106,6 @@
             </div>
         </div>
     </footer>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

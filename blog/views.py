@@ -51,7 +51,7 @@ class SigninView(LoginView):
     """
     template_name = 'blog/signin.html'
 
-def signup_view(request) -> render:
+def signup_view(request):
     """
     A view to handle user signup.
 
@@ -69,7 +69,7 @@ def signup_view(request) -> render:
     return render(request, 'blog/signup.html', {'form': form})
 
 @login_required
-def homepage_view(request) -> render:
+def homepage_view(request):
     """
     A view to display the homepage.
 
@@ -78,7 +78,7 @@ def homepage_view(request) -> render:
     """
     return render(request, 'blog/homepage.html')
 
-def about(request) -> render:
+def about(request):
     """
     A view to display the about page.
 
@@ -87,7 +87,7 @@ def about(request) -> render:
     """
     return render(request, 'blog/about.html')
 
-def blog_view(request) -> render:
+def blog_view(request):
     """
     A view to display the blog page.
 
@@ -96,7 +96,7 @@ def blog_view(request) -> render:
     """
     return render(request, 'blog/blog.html')
 
-def signup_view(request) -> render:
+def signup_view(request):
     """
     A view to handle user signup.
 
@@ -113,7 +113,7 @@ def signup_view(request) -> render:
         form = UserCreationForm()
     return render(request, 'blog/signup.html', {'form': form})
 
-def category_view(request, category: str) -> render:
+def category_view(request, category: str):
     """
     A view to display photos by category.
 
@@ -130,7 +130,7 @@ def category_view(request, category: str) -> render:
     else:
         return render(request, 'errors/404.html')
 
-def upload_landscape_image(request) -> render:
+def upload_landscape_image(request):
     """
     A view to handle landscape image upload.
 
@@ -147,7 +147,7 @@ def upload_landscape_image(request) -> render:
     return render(request, 'upload_landscape_image.html', {'form': form})
 
 @login_required
-def add_post(request) -> render:
+def add_post(request):
     """
     A view to handle post creation.
 
@@ -163,7 +163,7 @@ def add_post(request) -> render:
         form = PostForm()
     return render(request, 'blog/add_post.html', {'form': form})
 
-def post_list(request) -> render:
+def post_list(request):
     """
     A view to display a list of posts.
 
@@ -173,7 +173,7 @@ def post_list(request) -> render:
     posts = Post.objects.all()
     return render(request, 'post_list.html', {'posts': posts})
 
-def create_post(request) -> redirect:
+def create_post(request):
     """
     Create a new post.
 
@@ -209,7 +209,7 @@ def create_post(request) -> redirect:
         form = PostForm()
     return render(request, 'blog/create_post.html', {'form': form})
 
-def landscape_image_list(request) -> render:
+def landscape_image_list(request):
     """
     A view to display a list of landscape images.
 

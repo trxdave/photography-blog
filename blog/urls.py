@@ -19,3 +19,8 @@ urlpatterns = [
     path('add_post/', views.add_post, name='add_post'),
     path('posts/', views.post_list, name='post_list'),
 ]
+
+handler400 = 'blog.views.handler400'
+handler403 = 'blog.views.handler403'
+handler404 = 'blog.views.handler404'
+handler500 = 'blog.views.handler500'
