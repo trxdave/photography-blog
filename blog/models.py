@@ -45,6 +45,13 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
 
+class Image(models.Model):
+    image = models.ImageField(upload_to='images/', blank=False, help_text='Select an image file')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.uploaded_at)
+
 class LandscapeImage(models.Model):
     image = models.ImageField(upload_to='landscape_images/', blank=False, help_text='Select an image file')
     uploaded_at = models.DateTimeField(auto_now_add=True)

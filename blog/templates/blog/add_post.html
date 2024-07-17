@@ -9,7 +9,7 @@
     <div class="form-container">
       <h1>Add Post</h1>
       <div class="content">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" action="{% url 'add_post' %}">
           {% csrf_token %}
           {% for field in form %}
           <div class="form-group">

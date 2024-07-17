@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, LandscapeImage, Category
+from .models import Post, Photo, Category, LandscapeImage
 from django.contrib.auth.models import User
 
 class SignupForm(forms.ModelForm):
@@ -14,7 +14,7 @@ class SignupForm(forms.ModelForm):
         password = self.cleaned_data.get('password')
         confirm_password = self.cleaned_data.get('confirm_password')
         if password and confirm_password and password != confirm_password:
-            raise forms.ValidationError("Passwords do not match")
+            raise forms.ValidationError("Passwords do not match. Please try again.")
         return confirm_password
 
     def save(self, commit=True):
@@ -25,6 +25,8 @@ class SignupForm(forms.ModelForm):
         return user
 
 class LandscapeImageForm(forms.ModelForm):
+    image = forms.ImageField(label='Image', help_text='Select an image file less than 1MB in size.')
+
     class Meta:
         model = LandscapeImage
         fields = ('image',)
@@ -32,13 +34,13 @@ class LandscapeImageForm(forms.ModelForm):
     def clean_image(self):
         image = self.cleaned_data.get('image')
         if image.size > 1024 * 1024:
-            raise forms.ValidationError('Image size should not exceed 1MB')
+            raise forms.ValidationError('Image size should not exceed 1MB. Please select a smaller image.')
         if not image.content_type.startswith('image/'):
-            raise forms.ValidationError('Only image files are allowed')
+            raise forms.ValidationError('Only image files are allowed. Please select a valid image file.')
         return image
 
 class PostForm(forms.ModelForm):
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Select a category")
+    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Select a category", help_text='Select a category for your post.')
 
     class Meta:
         model = Post

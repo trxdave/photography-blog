@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
-from django.views.generic import ListView, DetailView
-from .models import Category, Post, Photo, LandscapeImage
-from django.contrib.auth.views import LoginView, LogoutView
-from .forms import LandscapeImageForm, PostForm
+from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.views import LogoutView, LoginView
+from blog.models import Image, Post, Photo, Category
+from.forms import LandscapeImageForm, PostForm
+from cloudinary.uploader import upload
 
 class PhotoListView(ListView):
     """
@@ -130,6 +131,7 @@ def category_view(request, category: str):
     else:
         return render(request, 'errors/404.html')
 
+@login_required
 def upload_landscape_image(request):
     """
     A view to handle landscape image upload.
@@ -140,11 +142,90 @@ def upload_landscape_image(request):
     if request.method == 'POST':
         form = LandscapeImageForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('landscape_image_list')
+            image = form.save(commit=False)
+            image.category = 'Landscape'
+            image.save()
+            return redirect('landscape')
     else:
-        form = LandscapeImageForm()
-    return render(request, 'upload_landscape_image.html', {'form': form})
+        form = ImageForm()
+    return render(request, 'blog/landscape.html', {'form': form, 'images': Image.object.filter(category='Landscape')})
+
+
+@login_required
+def upload_portrait_image(request):
+    """
+    A view to handle portrait image upload.
+
+    Returns:
+    A render of the upload portrait image template with a form, or a redirect to the portrait image list if the form is valid.
+    """
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.category = 'Portrait'
+            image.save()
+            return redirect('portrait')
+    else:
+        form = ImageForm()
+    return render(request, 'blog/portrait.html', {'form': form, 'images': Image.object.filter(category='Portrait')})
+
+@login_required
+def upload_wildlife_image(request):
+    """
+    A view to handle wildlife image upload.
+
+    Returns:
+    A render of the upload wildlife image template with a form, or a redirect to the wildlife image list if the form is valid.
+    """
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.category = 'Wildlife'
+            image.save()
+            return redirect('wildlife_image_list')
+    else:
+        form = ImageForm()
+    return render(request, 'blog/wildlife.html', {'form': form, 'images': Image.objects.filter(category='Wildlife')})
+
+@login_required
+def upload_street_image(request):
+    """
+    A view to handle street image upload.
+
+    Returns:
+    A render of the upload street image template with a form, or a redirect to the street image list if the form is valid.
+    """
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.category = 'Street'
+            image.save()
+            return redirect('street')
+    else:
+        form = ImageForm()
+    return render(request, 'blog/street.html', {'form': form, 'images': Image.object.filter(category='Street')})
+
+@login_required
+def upload_macro_image(request):
+    if request.method == 'POST':
+        """
+    A view to handle macro image upload.
+
+    Returns:
+    A render of the upload macro image template with a form, or a redirect to the macro image list if the form is valid.
+    """
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.category = 'Macro'
+            image.save()
+            return redirect('macro')
+    else:
+        form = ImageForm()
+    return render(request, 'blog/macro.html', {'form': form, 'images': Image.object.filter(category='Macro')})
 
 @login_required
 def add_post(request):
@@ -157,7 +238,14 @@ def add_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save()
+            if 'image' in request.FILES:
+                image = request.FILES['image']
+                upload_result = upload(image)
+                post = form.save(commit=False)
+                post.image_url = upload_result['url']
+            else:
+                post = form.save(commit=False)
+            post.save()
             return redirect('post_list')
     else:
         form = PostForm()
@@ -209,6 +297,7 @@ def create_post(request):
         form = PostForm()
     return render(request, 'blog/create_post.html', {'form': form})
 
+@login_required
 def landscape_image_list(request):
     """
     A view to display a list of landscape images.
@@ -216,8 +305,52 @@ def landscape_image_list(request):
     Returns:
     A render of the landscape image list template with a list of landscape images.
     """
-    images = LandscapeImage.objects.all()
+    images = Image.objects.filter(category='Landscape')
     return render(request, 'landscape_image_list.html', {'images': images})
+
+@login_required
+def portrait_image_list(request):
+    """
+    A view to display a list of portrait images.
+
+    Returns:
+    A render of the portrait image list template with a list of portrait images.
+    """
+    images = Image.objects.filter(category='Portrait')
+    return render(request, 'portrait_image_list.html', {'images': images})
+
+@login_required
+def wildlife_image_list(request):
+    """
+    A view to display a list of wildlife images.
+
+    Returns:
+    A render of the wildlife image list template with a list of wildlife images.
+    """
+    images = Image.objects.filter(category='Wildlife')
+    return render(request, 'wildlife_image_list.html', {'images': images})
+
+@login_required
+def street_image_list(request):
+    """
+    A view to display a list of street images.
+
+    Returns:
+    A render of the street image list template with a list of street images.
+    """
+    images = Image.objects.filter(category='Street')
+    return render(request, 'street_image_list.html', {'images': images})
+
+@login_required
+def macro_image_list(request):
+    """
+    A view to display a list of macro images.
+
+    Returns:
+    A render of the macro image list template with a list of macro images.
+    """
+    images = Image.objects.filter(category='Macro')
+    return render(request, 'macro_image_list.html', {'images': images})
 
 def handler400(request, exception):
     """
