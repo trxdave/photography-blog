@@ -532,7 +532,7 @@ img {
 }
 
 .btn-explore {
-  background-color: #fdcc27;
+  background-color: #337ab7;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -542,7 +542,7 @@ img {
 }
 
 .btn-explore:hover {
-  background-color: #3e8e41;
+  background-color: #23527c;
 }
 
 .lens {
@@ -607,7 +607,7 @@ label {
 
 .content {
   max-width: 100%;
-  padding: 20%;
+  padding: 5%;
   box-sizing: border-box;
 }
 

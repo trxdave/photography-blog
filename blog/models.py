@@ -21,6 +21,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     slug = models.SlugField(unique=True)
+    image_url = CloudinaryField('image', blank=True, null=True)
 
     def save(self):
         self.slug = slugify(self.title)

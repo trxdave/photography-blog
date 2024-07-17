@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
+from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.views import LogoutView, LoginView
 from blog.models import Image, Post, Photo, Category
@@ -240,16 +241,26 @@ def add_post(request):
         if form.is_valid():
             if 'image' in request.FILES:
                 image = request.FILES['image']
-                upload_result = upload(image)
-                post = form.save(commit=False)
-                post.image_url = upload_result['url']
+                if image.content_type.startswith('image/'):
+                    try:
+                        upload_result = upload(image)
+                        post = form.save(commit=False)
+                        post.image_url = upload_result['url']
+                    except Exception as e:
+                        messages.error(request, 'Error uploading image: {}'.format(e))
+                        return render(request, 'blog/add_post.html', {'form': form})
+                else:
+                    messages.error(request, 'Please upload an image file.')
+                    return render(request, 'blog/add_post.html', {'form': form})
             else:
                 post = form.save(commit=False)
             post.save()
+            messages.success(request, 'Post added successfully!')
             return redirect('post_list')
     else:
         form = PostForm()
     return render(request, 'blog/add_post.html', {'form': form})
+
 
 def post_list(request):
     """
@@ -259,7 +270,7 @@ def post_list(request):
     A render of the post list template with a list of posts.
     """
     posts = Post.objects.all()
-    return render(request, 'post_list.html', {'posts': posts})
+    return render(request, 'blog/post_list.html', {'posts': posts})
 
 def create_post(request):
     """
