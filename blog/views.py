@@ -5,7 +5,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.views import LogoutView, LoginView
-from blog.models import Image, Post, Photo, Category
+from blog.models import Photo, Category
 from.forms import LandscapeImageForm, PostForm
 from cloudinary.uploader import upload
 
@@ -19,8 +19,6 @@ class PhotoListView(ListView):
     context_object_name: The name to use for the object list in the template.
     """
     model = Photo
-    template_name = 'blog.html'
-    context_object_name = 'post_list'
 
 class PhotoDetailView(DetailView):
     """
