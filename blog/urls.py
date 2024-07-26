@@ -23,7 +23,7 @@ urlpatterns = [
     path('street_image_list/', views.street_image_list, name='street_image_list'),
     path('upload_macro_image/', views.upload_macro_image, name='upload_macro_image'),
     path('macro_image_list/', views.macro_image_list, name='macro_image_list'),
-    path('add_post/', views.add_post, name='add_post'),
+    path('add_post/', views.add_photo, name='add_photo'),
     path('posts/', views.post_list, name='post_list'),
 ]
 

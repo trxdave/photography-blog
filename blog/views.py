@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.views import LogoutView, LoginView
 from blog.models import Photo, Category
-from.forms import LandscapeImageForm, PostForm
+from.forms import PhotoForm
 from cloudinary.uploader import upload
 
 class PhotoListView(ListView):
@@ -227,7 +227,7 @@ def upload_macro_image(request):
     return render(request, 'blog/macro.html', {'form': form, 'images': Image.object.filter(category='Macro')})
 
 @login_required
-def add_post(request):
+def add_photo(request):
     """
     A view to handle post creation.
 
@@ -235,7 +235,7 @@ def add_post(request):
     A render of the add post template with a form, or a redirect to the post list if the form is valid.
     """
     if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)
+        form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
             if 'image' in request.FILES:
                 image = request.FILES['image']
@@ -256,7 +256,7 @@ def add_post(request):
             messages.success(request, 'Post added successfully!')
             return redirect('post_list')
     else:
-        form = PostForm()
+        form = PhotoForm()
     return render(request, 'blog/add_post.html', {'form': form})
 
 
