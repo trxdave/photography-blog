@@ -463,6 +463,24 @@ label {
   background-color: #23527c;
 }
 
+/* Category */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photo-item {
+  margin-bottom: 20px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 /* Landscape */
 
 img {

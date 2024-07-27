@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
@@ -6,64 +6,30 @@ from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.views import LogoutView, LoginView
 from blog.models import Photo, Category
-from.forms import PhotoForm
+from .forms import PhotoForm, LandscapeImageForm, PortraitImageForm, WildlifeImageForm, StreetImageForm, MacroImageForm
 from cloudinary.uploader import upload
 
 def homepage_view(request):
-    return render(request, 'homepage.html')
+    return render(request, 'blog/homepage.html')
 
 @login_required
 def add_photo(request):
-    """
-    A view to handle post creation.
-
-    Returns:
-    A render of the add post template with a form, or a redirect to the post list if the form is valid.
-    """
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
-            if 'image' in request.FILES:
-                image = request.FILES['image']
-                if image.content_type.startswith('image/'):
-                    try:
-                        upload_result = upload(image)
-                        post = form.save(commit=False)
-                        post.image_url = upload_result['url']
-                    except Exception as e:
-                        messages.error(request, 'Error uploading image: {}'.format(e))
-                        return render(request, 'blog/add_post.html', {'form': form})
-                else:
-                    messages.error(request, 'Please upload an image file.')
-                    return render(request, 'blog/add_post.html', {'form': form})
-            else:
-                post = form.save(commit=False)
-            post.save()
-            messages.success(request, 'Post added successfully!')
-            return redirect('post_list')
+            form.save()
+            return redirect('photo_list')
     else:
         form = PhotoForm()
-    return render(request, 'blog/add_post.html', {'form': form})
+    return render(request, 'blog/add_photo.html', {'form': form})
 
 @login_required
 def photo_list(request):
-    """
-    A view to display a list of posts.
-
-    Returns:
-    A render of the post list template with a list of posts.
-    """
-    posts = Post.objects.all()
-    return render(request, 'blog/photo_list.html', {'post_list': post_list})
+    photos = Photo.objects.all()
+    return render(request, 'blog/photo_list.html', {'photos': photos})
 
 @login_required
 def create_photo(request):
-    """
-    Create a new photo.
-
-    Returns:
-    A redirect to the blog view if the form is valid, otherwise a render of the create post template.
-    """
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
@@ -76,9 +42,9 @@ def create_photo(request):
     return render(request, 'blog/create_photo.html', {'form': form})
 
 @login_required
-def photo_detail(request):
+def photo_detail(request, pk):
     photo = Photo.objects.get(pk=pk)
-    return reder(request, 'blog/photo_detail.html', {'photo': photo})
+    return render(request, 'blog/photo_detail.html', {'photo': photo})
 
 @login_required
 def update_photo(request, pk):
@@ -94,13 +60,9 @@ def update_photo(request, pk):
 
 @login_required
 def delete_photo(request, pk):
-    photo = Photo.object.get(pk=pk)
+    photo = Photo.objects.get(pk=pk)
     photo.delete()
     return redirect('photo_list')
-
-def post_list(request):
-    photos = Photo.objects.all()
-    return render(request, 'photo_list.html', {'photos': photos})
 
 def signup_view(request):
     if request.method == 'POST':
@@ -112,7 +74,7 @@ def signup_view(request):
 
 def blog_view(request):
     photos = Photo.objects.all()
-    return render(request, 'blog.html', {'photos': photos})
+    return render(request, 'blog/blog.html', {'photos': photos})
 
 class PhotoListView(ListView):
     model = Photo
@@ -123,8 +85,25 @@ class PhotoDetailView(DetailView):
     template_name = 'photo_detail.html'
 
 def category_view(request, category):
-    category_photos = Photo.objects.filter(category__name=category)
-    return render(request, 'category.html', {'category': category, 'photos': category_photos})
+    if category == 'landscape':
+        photos = Photo.objects.filter(category__slug='landscape')
+    elif category == 'portrait':
+        photos = Photo.objects.filter(category__slug='portrait')
+    elif category == 'wildlife':
+        photos = Photo.objects.filter(category__slug='wildlife')
+    elif category == 'treet':
+        photos = Photo.objects.filter(category__slug='street')
+    elif category == 'acro':
+        photos = Photo.objects.filter(category__slug='macro')
+    else:
+        # Handle unknown categories
+        return HttpResponseNotFound('Category not found')
+
+    return render(request, 'blog/category.html', {'photos': photos})
+
+def landscape_view(request):
+    photos = Photo.objects.filter(category='landscape')
+    return render(request, 'blog/category.html', {'photos': photos})
 
 def upload_landscape_image(request):
     if request.method == 'POST':
@@ -132,14 +111,14 @@ def upload_landscape_image(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Image uploaded successfully!')
-            return redirect('photo_list')
+            return redirect('blog/photo_list.html')
     else:
         form = LandscapeImageForm()
-    return render(request, 'upload_landscape_image.html', {'form': form})
+    return render(request, 'blog/landscape.html', {'form': form})
 
-def portrait_image_list(request):
-    portrait_images = Photo.objects.filter(category__name='Portrait')
-    return render(request, 'portrait_image_list.html', {'images': portrait_images})
+def portrait_view(request):
+    photos = Photo.objects.filter(category='portrait')
+    return render(request, 'blog/category.html', {'photos': photos})
 
 def upload_portrait_image(request):
     if request.method == 'POST':
@@ -147,14 +126,71 @@ def upload_portrait_image(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Image uploaded successfully!')
-            return redirect('portrait_image_list')
+            return redirect('blog/photo_list.html')
     else:
         form = PortraitImageForm()
-    return render(request, 'upload_portrait_image.html', {'form': form})
+    return render(request, 'blog/portrait.html', {'form': form})
 
-def wildlife_image_list(request):
-    wildlife_images = Photo.objects.filter(category__name='Wildlife')
-    return render(request, 'wildlife.html', {'images': wildlife_images})
+def wildlife_view(request):
+    photos = Photo.objects.filter(category='wildlife')
+    return render(request, 'blog/category.html', {'photos': photos})
+
+def upload_wildlife_image(request):
+    if request.method == 'POST':
+        form = WildlifeImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Image uploaded successfully!')
+            return redirect('blog/photo_list.html')
+    else:
+        form = WildlifeImageForm()
+    return render(request, 'blog/wildlife.html', {'form': form})
+
+def street_view(request):
+    photos = Photo.objects.filter(category='street')
+    return render(request, 'blog/category.html', {'photos': photos})
+
+def upload_street_image(request):
+    if request.method == 'POST':
+        form = StreetImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Image uploaded successfully!')
+            return redirect('blog/photo_list.html')
+    else:
+        form = StreetImageForm()
+    return render(request, 'blog/street.html', {'form': form})
+
+def macro_view(request):
+    photos = Photo.objects.filter(category='macro')
+    return render(request, 'blog/category.html', {'photos': photos})
+
+def upload_macro_image(request):
+    if request.method == 'POST':
+        form = MacroImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Image uploaded successfully!')
+            return redirect('blog/photo_list.html')
+    else:
+        form = MacroImageForm()
+    return render(request, 'blog/macro.html', {'form': form})
+
+class LogoutView(LogoutView):
+    next_page = 'homepage'
+
+class LoginView(LoginView):
+    form_class = AuthenticationForm
+    template_name = 'blog/login.html'
+    next_page = 'homepage'
+
+def upload_image(request):
+    if request.method == 'POST':
+        result = upload(request.FILES['image'])
+        photo = Photo(image=result['secure_url'], user=request.user)
+        photo.save()
+        return redirect('photo_list')
+    return render(request, 'blog/upload_image.html')
 
 def about(request):
     return render(request, 'about.html')

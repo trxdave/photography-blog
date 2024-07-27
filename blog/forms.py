@@ -25,8 +25,46 @@ class SignupForm(forms.ModelForm):
         return user
 
 class PhotoForm(forms.ModelForm):
-    category = forms.ModelChoiceField(queryset=Category.objects.all(), empty_label="Select a category", help_text='Select a category for your post.')
-
     class Meta:
         model = Photo
         fields = ('title', 'content', 'image', 'category')
+
+class LandscapeImageForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = ('image',)
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'})
+        }
+
+class PortraitImageForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = ('image',)
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'})
+        }
+
+class WildlifeImageForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = ('image',)
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'})
+        }
+
+class StreetImageForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = ('image',)
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'})
+        }
+
+class MacroImageForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = ('image',)
+        widgets = {
+            'image': forms.FileInput(attrs={'accept': 'image/*'})
+        }
