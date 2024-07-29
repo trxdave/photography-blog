@@ -193,7 +193,7 @@ def upload_image(request):
     return render(request, 'blog/upload_image.html')
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'blog/about.html')
 
 def handler400(request, exception):
     """

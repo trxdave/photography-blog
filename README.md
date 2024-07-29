@@ -31,6 +31,28 @@ For my fourth portfolio project, I have decided to create a photography blog. Th
 
 This photography blog will not only serve as a portfolio for my development skills but also as a meaningful platform for the photography community to thrive and grow.
 
+## Problem Statement
+### Background
+Photography is a popular hobby and profession, with millions of people around the world capturing and sharing their photos online. However, many photographers struggle to showcase their work in a professional and visually appealing way, often relying on social media platforms or generic website templates that lack customization and flexibility.
+
+### Problem
+The lack of a dedicated platform for photographers to showcase their work in a professional and customizable way leads to:
+
+- Branding and visual identity
+- Limited control over layout and design
+- Difficulty in showcasing multiple types of content (e.g. photos, videos, blog posts)
+
+### Requirements
+The Photography Blog platform should:
+
+- Provide a clean and modern design that is highly customizable
+- Allow photographers to easily upload and manage their photos with blog posts
+- Include features for engagement and interaction, such as commenting
+- Be scalable and reliable, with high uptime and fast loading times
+
+### Target Audience
+The target audience for the Photography Blog platform is professional and amateur photographers who want to showcase their work in a professional and customizable way.
+
 ## Entity-Relationship Diagram (ERD)
 
 ![alt text](<documentation/erd/Database ER diagram Photography Blog.png>)
@@ -100,11 +122,20 @@ This project was organized and executed using Agile methodology. A Kanban board 
 # Model Design
 
 ## Design
+The design of the Photography Blog is modern and minimalist, with a focus on showcasing high-quality images. The layout is clean and simple, with ample whitespace to create a visually appealing experience for users. The color scheme is a combination of neutral tones, with accents of blue to evoke a sense of creativity and inspiration.
 
-### Colours
+## Design Choices
+The design choices were influenced by the need to create a platform that is easy to navigate and visually appealing. The use of a minimalist layout and neutral color scheme allows the focus to be on the photography, while the accents of blue add a touch of personality to the design.
 
+## Colours
+The primary colors used in the design are:
 
+#FFFFFF (white) for the background
+#333333 (dark gray) for text
+#4567b7 (blue) for accents
 
+## Fonts
+The font used in the design is Open Sans, a clean and modern sans-serif font that is highly legible.
 
 # Wireframes
 
