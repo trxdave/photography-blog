@@ -17,8 +17,17 @@ def add_photo(request):
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('photo_list')
+            category = form.cleaned_data['category']
+            if category == 'landscape':
+                return redirect(reverse('landscape'))
+            elif category == 'portrait':
+                return redirect(reverse('portrait'))
+            elif category == 'wildlife':
+                return redirect(reverse('wildlife'))
+            elif category == 'street':
+                return redirect(reverse('street'))
+            elif category == 'macro':
+                return redirect(reverse('macro'))
     else:
         form = PhotoForm()
     return render(request, 'blog/add_photo.html', {'form': form})

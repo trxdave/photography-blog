@@ -7,15 +7,23 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="form-container">
-      <h1 class="add-post">Add Post</h1>
+      <h1 class="add-post">Add Photo</h1>
       <div class="content">
         <form method="post" enctype="multipart/form-data" action="{% url 'add_photo' %}">
+          {% csrf_token %}
           <div class="form-group">
             <label for="formGroupExampleInput">Title</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="title">
           </div>
+          <div class="form-group">
             <label for="formGroupExampleInput2">Description</label>
-            <textarea type="textarea" class="textarea" id="formGroupExampleInput2" placeholder=""></textarea>
+            <textarea type="textarea" class="textarea" id="formGroupExampleInput2" placeholder="" name="description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" id="image" name="image">
+          </div>
+          <div class="form-group">
             <label for="category">Category:</label>
             <select id="category" name="category">
               <option value="">Select a category</option>
@@ -26,7 +34,7 @@
               <option value="macro">Macro</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-success">Upload</button>
+          <button type="submit" class="btn btn-success">UPLOAD</button>
         </form>
       </div>
     </div>

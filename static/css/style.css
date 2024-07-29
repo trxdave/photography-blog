@@ -571,10 +571,10 @@ img {
   width: 80%;
 }
 
-/* add post */
+/* add photo */
 
 .form-container {
-  max-width: 100%;
+  max-width: 80%;
   margin: 40px auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -629,24 +629,8 @@ label {
   box-sizing: border-box;
 }
 
-/* Add-post blog */
-
-.add-post {
-  padding-top: 10px;
-  margin-top: 20px;
-}
-
-.add-post button {
-  background-color: #d9534f;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 10px 20px;
-}
-
-.add-post button:hover {
-  background-color: #c9302c;
+.textarea {
+  width: 100%;
 }
 
 /* Media responsive */
