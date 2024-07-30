@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}Landscape Images{% endblock %}
+{% block title %}Landscape Photos{% endblock %}
 
 {% block content %}
-  <h1>Landscape Images</h1>
-  <ul>
-    {% for image in landscape_images %}
-    <li>
-      <img src="{{ image.image.url }}" alt="Landscape Image">
-      <p>{{ image.description }}</p>
-    </li>
-    {% endfor %}
-  </ul>
+    <h1>Landscape Photos</h1>
+    <div class="photo-grid">
+        <!-- Add your landscape photos here -->
+        <div>
+            <img src="{% cloudinary 'landscape_photo1.jpg' %}" alt="Landscape Photo 1">
+            <p>Landscape Photo 1</p>
+        </div>
+        <div>
+            <img src="{% cloudinary 'landscape_photo2.jpg' %}" alt="Landscape Photo 2">
+            <p>Landscape Photo 2</p>
+        </div>
+        <!-- Add more photos here -->
+    </div>
 {% endblock %}

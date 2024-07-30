@@ -2,7 +2,22 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
-    name = models.CharField(max_length=255, blank=False, help_text='Enter the category name')
+
+    LANDSCAPE = 'Landscape'
+    PORTRAIT = 'Portrait'
+    WILDLIFE = 'Wildlife'
+    STREET = 'Street'
+    MACRO = 'Macro'
+
+    CATEGORY_CHOICES = [
+        (LANDSCAPE, 'Landscape'),
+        (PORTRAIT, 'Portrait'),
+        (WILDLIFE, 'Wildlife'),
+        (STREET, 'Street'),
+        (MACRO, 'Macro'),
+    ]
+
+    name = models.CharField(max_length=225)
     slug = models.SlugField(unique=True)
 
     def __str__(self):
@@ -11,10 +26,9 @@ class Category(models.Model):
 class Photo(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
-    image = CloudinaryField('image')
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

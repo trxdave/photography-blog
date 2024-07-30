@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ category.name }} Photos{% endblock %}
+
 {% block content %}
-  <h1>{{ category_name }} Photos</h1>
-  <div class="photo-grid">
-    {% for photo in photos %}
-      <div class="photo-item">
-        <a href="{% url 'photo_detail' photo.pk %}">
-          <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
-        </a>
-        <p>{{ photo.title }}</p>
-      </div>
-    {% empty %}
-      <p>No photos in this category.</p>
-    {% endfor %}
-  </div>
+    <h1>{{ category.name }} Photos</h1>
+    <div class="photo-grid">
+        {% for photo in photos %}
+            <div>
+                <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                <p>{{ photo.title }}</p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

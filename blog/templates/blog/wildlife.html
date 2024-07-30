@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Wildlife Image</title>
-</head>
+{% block title %}Wildlife Photos{% endblock %}
 
-<body>
-    <h1>Upload Wildlife Image</h1>
-    <ul>
-        {% for image in images %}
-        <li>
-            <img src="{{ image.image.url }}" alt="Wildlife Image">
-        </li>
-        {% endfor %}
-    </ul>
-    <form method="post" enctype="multipart/form-data" action="{% url 'upload_wildlife_image' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
-</body>
-
-</html>
+{% block content %}
+    <h1>Wildlife Photos</h1>
+    <div class="photo-grid">
+        
+        <div>
+            <img src="{% cloudinary 'wildlife_photo1.jpg' %}" alt="Wildlife Photo 1">
+            <p>Wildlife Photo 1</p>
+        </div>
+        <div>
+            <img src="{% cloudinary 'wildlife_photo2.jpg' %}" alt="Wildlife Photo 2">
+            <p>Wildlife Photo 2</p>
+        </div>
+        <!-- Add more photos here -->
+    </div>
+{% endblock %}

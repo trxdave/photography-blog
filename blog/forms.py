@@ -25,9 +25,11 @@ class SignupForm(forms.ModelForm):
         return user
 
 class PhotoForm(forms.ModelForm):
+    category = forms.ChoiceField(choices=Category.CATEGORY_CHOICES)
+
     class Meta:
         model = Photo
-        fields = ('title', 'content', 'image', 'category')
+        fields = ('title', 'description', 'image', 'category')
 
 class LandscapeImageForm(forms.ModelForm):
     class Meta:

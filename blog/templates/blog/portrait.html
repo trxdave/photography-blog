@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portrait Images</title>
-</head>
+{% block title %}Portrait Photos{% endblock %}
 
-<body>
-    <h1>Portrait Images</h1>
-    <ul>
-        {% for post in posts %}
-        <li>
-            <img src="{{ post.image.url }}" alt="Portrait Image">
-            <p>{{ post.title }}</p>
-            <p>{{ post.content }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-</body>
-
-</html>
+{% block content %}
+    <h1>Portrait Photos</h1>
+    <div class="photo-grid">
+        <!-- Add your portrait photos here -->
+        <div>
+            <img src="{% cloudinary 'portrait_photo1.jpg' %}" alt="Portrait Photo 1">
+            <p>Portrait Photo 1</p>
+        </div>
+        <div>
+            <img src="{% cloudinary 'portrait_photo2.jpg' %}" alt="Portrait Photo 2">
+            <p>Portrait Photo 2</p>
+        </div>
+        <!-- Add more photos here -->
+    </div>
+{% endblock %}
