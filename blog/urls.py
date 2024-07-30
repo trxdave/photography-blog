@@ -3,6 +3,7 @@ from. import views
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
 
+
 urlpatterns = [
     path('', views.homepage_view, name='homepage'),
     path('login/', auth_views.LoginView.as_view(), name='signin'),
@@ -12,7 +13,7 @@ urlpatterns = [
     path('blog/', views.blog_view, name='blog'),
     path('photo/<pk>/', views.PhotoDetailView.as_view(), name='photo_detail'),
     path('photos/', views.PhotoListView.as_view(), name='photo_list'),
-    path('category/<str:category_slug>/', views.category_photos, name='category'),
+    path('category/<slug:category_slug>/', views.category_view, name='category'),
     path('upload/', views.add_photo, name='upload'),
     path('add_photo/', views.add_photo, name='add_photo'),
     path('posts/', views.photo_list, name='post_list'),

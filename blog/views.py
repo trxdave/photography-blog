@@ -42,9 +42,9 @@ def photo_list(request):
 
 @login_required
 def category_photos(request, category_slug):
-    category = Category.objects.get(slug=category_slug)
+    category = get_object_or_404(Category,slug=category_slug)
     photos = Photo.objects.filter(category=category)
-    return render(request, 'category.html', {'photos': photos, 'category': category})
+    return render(request, 'blog/category.html', {'photos': photos, 'category': category})
 
 @login_required
 def photo_detail(request, pk):

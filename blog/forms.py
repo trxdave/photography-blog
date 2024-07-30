@@ -33,7 +33,7 @@ class PhotoForm(forms.ModelForm):
         ('macro', 'Macro'),
     ]
 
-    category = forms.ChoiceField(choices=Category.CATEGORY_CHOICES)
+    category = forms.ChoiceField(choices=CATEGORY_CHOICES)
 
     class Meta:
         model = Photo

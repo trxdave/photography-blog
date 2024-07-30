@@ -30,3 +30,15 @@ searchBtn.addEventListener('click', (e) => {
          });
     }
 });
+
+// Add event listener to dropdown list items
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+dropdownItems.forEach(item => {
+  item.addEventListener('click', function() {
+    const selectedItem = this.textContent;
+    // Update search input with selected item
+    searchInput.value = selectedItem;
+    // Close dropdown menu
+    dropdownList.classList.remove('show');
+  });
+});

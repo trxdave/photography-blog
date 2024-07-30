@@ -3,13 +3,18 @@
 {% block title %}{{ category.name }} Photos{% endblock %}
 
 {% block content %}
-    <h1>{{ category.name }} Photos</h1>
-    <div class="photo-grid">
-        {% for photo in photos %}
-            <div>
-                <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
-                <p>{{ photo.title }}</p>
-            </div>
-        {% endfor %}
-    </div>
+<h1>{{ category.name }}</h1>
+
+{% if photos %}
+    <ul>
+    {% for photo in photos %}
+        <li>
+            <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+            <p>{{ photo.title }}</p>
+        </li>
+    {% empty %}
+        <li>No photos in this category.</li>
+    {% endfor %}
+    </ul>
+{% endif %}
 {% endblock %}
