@@ -5,8 +5,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.views import LogoutView, LoginView
-from blog.models import Photo, Category
-from .forms import PhotoForm, LandscapeImageForm, PortraitImageForm, WildlifeImageForm, StreetImageForm, MacroImageForm
+from blog.models import Photo
+from .forms import PhotoForm, ContactForm
 from cloudinary.uploader import upload
 
 def homepage_view(request):
@@ -17,39 +17,20 @@ def add_photo(request):
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
-            photo = form.save(commit=False)
-            category = request.POST['category']
-            if category == 'landscape':
-                return render(request, 'landscape.html')
-            elif category == 'portrait':
-                return render(request, 'portrait.html')
-            elif category == 'wildlife':
-                return render(request, 'wildlife.html')
-            elif category == 'treet':
-                return render(request, 'treet.html')
-            elif category == 'acro':
-                return render(request, 'acro.html')
-            else:
-                return render(request, 'default.html')
+            form.save()
+            return redirect('photo_list')
     else:
         form = PhotoForm()
     return render(request, 'blog/add_photo.html', {'form': form})
+
+def blog(request):
+    photos = Photo.objects.all()
+    return render(request, 'blog.html', {'photos': photos})
 
 @login_required
 def photo_list(request):
     photos = Photo.objects.all()
     return render(request, 'blog/photo_list.html', {'photos': photos})
-
-@login_required
-def category_photos(request, category_slug):
-    category = get_object_or_404(Category,slug=category_slug)
-    photos = Photo.objects.filter(category=category)
-    return render(request, 'blog/category.html', {'photos': photos, 'category': category})
-
-@login_required
-def photo_detail(request, pk):
-    photo = Photo.objects.get(pk=pk)
-    return render(request, 'blog/photo_detail.html', {'photo': photo})
 
 @login_required
 def update_photo(request, pk):
@@ -89,34 +70,24 @@ class PhotoDetailView(DetailView):
     model = Photo
     template_name = 'photo_detail.html'
 
-def category_view(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
-    photos = Photo.objects.filter(category=category)
-    return render(request, 'blog/category.html', {'category': category, 'photos': photos})
-
 def landscape_photos(request):
-    category = Category.objects.get(name='Landscape')
-    photos = Photo.objects.filter(category=category)
+    photos = Photo.objects.all()
     return render(request, 'landscape.html', {'photos': photos})
 
 def portrait_photos(request):
-    category = Category.objects.get(name='Portrait')
-    photos = Photo.objects.filter(category=category)
+    photos = Photo.objects.all()
     return render(request, 'portrait.html', {'photos': photos})
 
 def wildlife_photos(request):
-    category = Category.objects.get(name='Wildlife')
-    photos = Photo.objects.filter(category=category)
+    photos = Photo.objects.all()
     return render(request, 'wildlife.html', {'photos': photos})
 
 def street_photos(request):
-    category = Category.objects.get(name='Street')
-    photos = Photo.objects.filter(category=category)
+    photos = Photo.objects.all()
     return render(request, 'street.html', {'photos': photos})
 
 def macro_photos(request):
-    category = Category.objects.get(name='Macro')
-    photos = Photo.objects.filter(category=category)
+    photos = Photo.objects.all()
     return render(request, 'macro.html', {'photos': photos})
 
 class LogoutView(LogoutView):
@@ -133,10 +104,29 @@ def upload_image(request):
         photo = Photo(image=result['secure_url'], user=request.user)
         photo.save()
         return redirect('photo_list')
-    return render(request, 'blog/upload_image.html')
+    return render(request, 'blog/add_photo.html')
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            send_mail(
+                'Contact Form Submission',
+                f'Name: {name}\nEmail: {email}\nMessages: {message}',
+                email,
+                ['56hq2ig9@students.codeinstitute.net'],
+                fail_silently=False,
+            )
+            return redirect('success')
+    else:
+        form = ContactForm()
+    return render(request, 'blog/contact.html', {'form': form})
 
 def handler400(request, exception):
     """

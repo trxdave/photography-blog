@@ -11,29 +11,7 @@
       <div class="content">
         <form method="post" enctype="multipart/form-data" action="{% url 'add_photo' %}">
           {% csrf_token %}
-          <div class="form-group">
-            <label for="formGroupExampleInput">Title</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" name="title">
-          </div>
-          <div class="form-group">
-            <label for="formGroupExampleInput2">Description</label>
-            <textarea type="textarea" class="textarea" id="formGroupExampleInput2" placeholder="" name="description"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="image">Image:</label>
-            <input type="file" class="form-control" id="image" name="image">
-          </div>
-          <div class="form-group">
-            <label for="category">Category:</label>
-            <select id="category" name="category">
-              <option value="">Select a category</option>
-              <option value="landscape">Landscape</option>
-              <option value="portrait">Portrait</option>
-              <option value="wildlife">Wildlife</option>
-              <option value="street">Street</option>
-              <option value="macro">Macro</option>
-            </select>
-          </div>
+          {{ form.as_p }}
           <button type="submit" class="btn btn-success">UPLOAD</button>
         </form>
       </div>

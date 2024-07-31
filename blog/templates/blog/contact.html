@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form>
+    <div class="form-group">
+        <h1 class="contact-us">Contact Us</h1>
+        <form method="post">
+            {% csrf_token %}
+      <label for="name">Name:</label>
+      <input type="text" class="name" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
+      <small id="Name" class="form-text text-muted">Please put your name</small>
+    </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" cols="50" placeholder="Write a Message" required></textarea>
+      <small id="messagehelp" class="form-text text-muted">We'll get reply back to you as soon as possible.</small> 
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+{% endblock %}

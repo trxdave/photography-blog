@@ -1,5 +1,5 @@
 from django import forms
-from .models import Photo, Category
+from .models import Photo
 from django.contrib.auth.models import User
 
 class SignupForm(forms.ModelForm):
@@ -25,21 +25,23 @@ class SignupForm(forms.ModelForm):
         return user
 
 class PhotoForm(forms.ModelForm):
-    CATEGORY_CHOICES = [
-        ('landscape', 'Landscape'),
-        ('portrait', 'Portrait'),
-        ('wildlife', 'Wildlife'),
-        ('street', 'Street'),
-        ('macro', 'Macro'),
-    ]
-
-    category = forms.ChoiceField(choices=CATEGORY_CHOICES)
-
+    
     class Meta:
         model = Photo
-        fields = ('title', 'description', 'image', 'category')
+        fields = ('title', 'content', 'description', 'image')
+        labels = {
+            'title': 'Photo Title',
+            'content': 'Photo Content',
+            'description': 'Photo Description',
+            'image': 'Upload Image'
+        }
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+        }
 
-class LandscapeImageForm(forms.ModelForm):
+class ImageForm(forms.ModelForm):
     class Meta:
         model = Photo
         fields = ('image',)
@@ -47,34 +49,11 @@ class LandscapeImageForm(forms.ModelForm):
             'image': forms.FileInput(attrs={'accept': 'image/*'})
         }
 
-class PortraitImageForm(forms.ModelForm):
-    class Meta:
-        model = Photo
-        fields = ('image',)
-        widgets = {
-            'image': forms.FileInput(attrs={'accept': 'image/*'})
-        }
+    def __init__(self, *args, **kwargs):
+        super(ImageForm, self).__init__(*args, **kwargs)
+        self.fields['image'].required = True
 
-class WildlifeImageForm(forms.ModelForm):
-    class Meta:
-        model = Photo
-        fields = ('image',)
-        widgets = {
-            'image': forms.FileInput(attrs={'accept': 'image/*'})
-        }
-
-class StreetImageForm(forms.ModelForm):
-    class Meta:
-        model = Photo
-        fields = ('image',)
-        widgets = {
-            'image': forms.FileInput(attrs={'accept': 'image/*'})
-        }
-
-class MacroImageForm(forms.ModelForm):
-    class Meta:
-        model = Photo
-        fields = ('image',)
-        widgets = {
-            'image': forms.FileInput(attrs={'accept': 'image/*'})
-        }
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)

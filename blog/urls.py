@@ -13,8 +13,6 @@ urlpatterns = [
     path('blog/', views.blog_view, name='blog'),
     path('photo/<pk>/', views.PhotoDetailView.as_view(), name='photo_detail'),
     path('photos/', views.PhotoListView.as_view(), name='photo_list'),
-    path('category/<slug:category_slug>/', views.category_view, name='category'),
-    path('upload/', views.add_photo, name='upload'),
     path('add_photo/', views.add_photo, name='add_photo'),
     path('posts/', views.photo_list, name='post_list'),
     path('landscape/', views.landscape_photos, name='landscape_photos'),
@@ -22,6 +20,7 @@ urlpatterns = [
     path('wildlife/', views.wildlife_photos, name='wildlife_photos'),
     path('street/', views.street_photos, name='street_photos'),
     path('macro/', views.macro_photos, name='macro_photos'),
+    path('contact/', views.contact, name='contact'),
 ]
 
 handler400 = 'blog.views.handler400'
