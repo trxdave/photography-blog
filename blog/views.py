@@ -5,23 +5,34 @@ from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.views import LogoutView, LoginView
-from blog.models import Photo
+from blog.models import Photo, Category
 from .forms import PhotoForm, ContactForm
 from cloudinary.uploader import upload
+import cloudinary
 
 def homepage_view(request):
     return render(request, 'blog/homepage.html')
 
 @login_required
-def add_photo(request):
-    if request.method == 'POST':
-        form = PhotoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('photo_list')
+def add_photo(request, category=None):
+    if category is None:
+        return redirect('select_category')
     else:
-        form = PhotoForm()
+        if request.method == 'POST':
+            form = PhotoForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('blog')
+            else:
+                return render(request, 'blog/add_photo.html', {'form': form})
+        else:
+            form = PhotoForm()
     return render(request, 'blog/add_photo.html', {'form': form})
+
+@login_required
+def select_category(request):
+    categories = Category.objects.all()
+    return render(request, 'blog/select_category.html', {'categories': categories})
 
 def blog(request):
     photos = Photo.objects.all()
@@ -57,6 +68,9 @@ def signup_view(request):
             user = form.save()
             login(request, user)
             return redirect('homepage')
+
+def signout_view(request):
+    return LogoutView.as_view(next_page='homepage')(request)
 
 def blog_view(request):
     photos = Photo.objects.all()
@@ -119,7 +133,7 @@ def contact(request):
             send_mail(
                 'Contact Form Submission',
                 f'Name: {name}\nEmail: {email}\nMessages: {message}',
-                email,
+                '56hq2ig9@students.codeinstitute.net',
                 ['56hq2ig9@students.codeinstitute.net'],
                 fail_silently=False,
             )
@@ -127,6 +141,9 @@ def contact(request):
     else:
         form = ContactForm()
     return render(request, 'blog/contact.html', {'form': form})
+
+def success(request):
+    return render(request, 'success.html')
 
 def handler400(request, exception):
     """

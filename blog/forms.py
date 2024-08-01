@@ -25,15 +25,15 @@ class SignupForm(forms.ModelForm):
         return user
 
 class PhotoForm(forms.ModelForm):
-    
     class Meta:
         model = Photo
-        fields = ('title', 'content', 'description', 'image')
+        fields = ('title', 'content', 'description', 'categoryimage', 'image')
         labels = {
             'title': 'Photo Title',
             'content': 'Photo Content',
             'description': 'Photo Description',
-            'image': 'Upload Image'
+            'image': 'Upload Image',
+            'categoryimage': 'Photo Category Image',
         }
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),

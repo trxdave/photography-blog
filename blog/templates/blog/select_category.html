@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 class="select-category">Select a Category</h1>
+    <div class="category-cards">
+        <div class="card">
+            <img src="{% static 'image/landscape.jpg' %}" alt="Landscape">
+            <h2>Landscape</h2>
+            <p>A beautiful landscape photo</p>
+            <a href="{% url 'add_photo' 1 %}" class="btn">Select</a>
+        </div>
+        <div class="card">
+            <img src="{% static 'image/portrait.jpg' %}" alt="Portrait">
+            <h2>Portrait</h2>
+            <p>A stunning portrait photo</p>
+            <a href="{% url 'add_photo' 2 %}" class="btn">Select</a>
+        </div>
+        <div class="card">
+            <img src="{% static 'image/wildlife.jpg' %}" alt="Wildlife">
+            <h2>Wildlife</h2>
+            <p>A fascinating wildlife photo</p>
+            <a href="{% url 'add_photo' 3 %}" class="btn">Select</a>
+        </div>
+        <div class="card">
+            <img src="{% static 'image/street.jpg' %}" alt="Street">
+            <h2>Street</h2>
+            <p>A captivating street photo</p>
+            <a href="{% url 'add_photo' 4 %}" class="btn">Select</a>
+        </div>
+        <div class="card">
+            <img src="{% static 'image/macro.jpg' %}" alt="Macro">
+            <h2>Macro</h2>
+            <p>A detailed macro photo</p>
+            <a href="{% url 'add_photo' 5 %}" class="btn">Select</a>
+        </div>
+    </div>
+{% endblock %}
