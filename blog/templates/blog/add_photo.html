@@ -9,7 +9,12 @@
     <div class="form-container">
       <h1 class="add-post">Add Photo</h1>
       <div class="content">
-        <form method="post" enctype="multipart/form-data" action="{% url 'blog:add_photo' %}">
+        {% if success %}
+        <div class="alert alert-success">
+          Photo uploaded successfully!
+        </div>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data" action="{% url 'add_photo' %}">
           {% csrf_token %}
           <div class="form-group">
             <label for="id_title">Title</label>
@@ -26,6 +31,11 @@
             <label for="id_image">Image</label>
             {{ form.image }}
           </div>
+          {% if form.errors %}
+          <div class="alert alert-danger">
+            {{ form.errors }}
+          </div>
+          {% endif %}
           <button type="submit" class="btn btn-success">UPLOAD</button>
         </form>
       </div>

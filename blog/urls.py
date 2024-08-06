@@ -20,6 +20,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('success/', views.success, name='success'),
     path('select_category/', views.select_category, name='select_category'),
+    path('category_detail/<int:pk>/', views.CategoryDetailView.as_view(), name='category_detail'),
+    path('categories/', views.category_list_view, name='category_list'),
 ]
 
 handler400 = 'blog.views.handler400'

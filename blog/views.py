@@ -84,6 +84,19 @@ class PhotoDetailView(DetailView):
     model = Photo
     template_name = 'photo_detail.html'
 
+class CategoryDetailView(DetailView):
+    model = Category
+    context_object_name = 'category'
+
+def category_detail_view(request, pk):
+    category = get_object_or_404(Category, pk=pk)
+    photos = category.category_photos.all()
+    return render(request, 'category_detail.html', {'category': category, 'photos': photos})
+
+def category_list_view(request):
+    categories = Category.objects.all()
+    return render(request, 'category_list.html', {'categories': categories})
+
 def landscape_photos(request):
     photos = Photo.objects.all()
     return render(request, 'landscape.html', {'photos': photos})
