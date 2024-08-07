@@ -39,6 +39,7 @@ class PhotoForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'categoryimage': forms.Select(attrs={'class': 'form-control'}),
         }
 
 class ImageForm(forms.ModelForm):

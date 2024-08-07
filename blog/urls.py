@@ -12,6 +12,9 @@ urlpatterns = [
     path('blog/', views.blog_view, name='blog'),
     path('add_photo/', views.add_photo, name='add_photo'),
     path('add_photo/<str:category>/', views.add_photo, name='add_photo'),
+    path('photo/<str:pk>/', views.viewPhoto, name='photo'),
+    path('photo/edit/<int:pk>/', views.edit_photo, name='edit_photo'),
+    path('photo/delete/<int:pk>/', views.delete_photo, name='delete_photo'),
     path('landscape/', views.landscape_photos, name='landscape_photos'),
     path('portrait/', views.portrait_photos, name='portrait_photos'),
     path('wildlife/', views.wildlife_photos, name='wildlife_photos'),
@@ -19,11 +22,9 @@ urlpatterns = [
     path('macro/', views.macro_photos, name='macro_photos'),
     path('contact/', views.contact, name='contact'),
     path('success/', views.success, name='success'),
-    path('select_category/', views.select_category, name='select_category'),
-    path('category_detail/<int:pk>/', views.CategoryDetailView.as_view(), name='category_detail'),
-    path('categories/', views.category_list_view, name='category_list'),
 ]
 
+# Error handlers
 handler400 = 'blog.views.handler400'
 handler403 = 'blog.views.handler403'
 handler404 = 'blog.views.handler404'

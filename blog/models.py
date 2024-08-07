@@ -2,10 +2,6 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField(blank=True)
-    slug = models.SlugField(unique=True)
-
     CATEGORY_CHOICES = (
         (1, 'Landscape'),
         (2, 'Portrait'),
@@ -15,10 +11,12 @@ class Category(models.Model):
     )
 
     name = models.IntegerField(choices=CATEGORY_CHOICES, unique=True)
+    description = models.TextField(blank=True)
+    slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='category_images/')
 
     def __str__(self):
-        return self.name
+        return dict(self.CATEGORY_CHOICES).get(self.name, 'Unknown')
 
 class Photo(models.Model):
     title = models.CharField(max_length=255)
