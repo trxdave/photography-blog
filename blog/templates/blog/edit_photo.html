@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Photo{% endblock %}
+
+{% block content %}
+<h1>Edit Photo</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save Changes</button>
+</form>
+<a href="{% url 'blog' %}">Back to list</a>
+{% endblock %}

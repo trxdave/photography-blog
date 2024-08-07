@@ -20,15 +20,22 @@ def viewPhoto(request, pk):
 
 @login_required
 def add_photo(request):
-    form = PhotoForm(request.POST or None, request.FILES or None)
-    if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('photo_list')
+    if request.method == 'POST':
+        form = PhotoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('photo_list')
+    else:
+        form = PhotoForm()
     return render(request, 'blog/add_photo.html', {'form': form})
 
 def photo_list(request):
     photos = Photo.objects.all()
     return render(request, 'blog/photo_list.html', {'photos': photos})
+
+def photo_detail(request, pk):
+    photo = get_object_or_404(Photo, pk=pk)
+    return render(render, 'blog/photo_detail.html', {'photo': photo})
 
 @login_required
 def edit_photo(request, pk):
@@ -37,18 +44,18 @@ def edit_photo(request, pk):
         form = PhotoForm(request.POST, request.FILES, instance=photo)
         if form.is_valid():
             form.save()
-            return redirect('some_view_to_redirect')
+            return redirect('photo_list')
     else:
         form = PhotoForm(instance=photo)
-    return render(request, 'edit_photo.html', {'form': form})
+    return render(request, 'blog/edit_photo.html', {'form': form})
 
 @login_required
 def delete_photo(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
     if request.method == 'POST':
         photo.delete()
-        return redirect('some_view_to_redirect')
-    return render(request, 'confirm_delete.html', {'photo': photo})
+        return redirect('photo_list')
+    return render(request, 'blog/confirm_delete.html', {'photo': photo})
 
 def signup_view(request):
     if request.method == 'POST':
