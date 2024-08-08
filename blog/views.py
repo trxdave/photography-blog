@@ -29,6 +29,13 @@ def add_photo(request):
         form = PhotoForm()
     return render(request, 'blog/add_photo.html', {'form': form})
 
+def blog(request):
+    photo_list = Photo.objects.all()
+    paginator = Paginator(photos_list, 6)
+    page_number = request.GET.get('page')
+    photos = paginator.get_page(page_number)
+    return render(request, 'blog/blog.html', {'photos': photos})
+
 def photo_list(request):
     photos = Photo.objects.all()
     return render(request, 'blog/photo_list.html', {'photos': photos})

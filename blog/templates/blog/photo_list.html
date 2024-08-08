@@ -3,15 +3,22 @@
 {% block title %}Photo List{% endblock %}
 
 {% block content %}
-<h1>Photo List</h1>
-<ul>
-    {% for photo in photos %}
-    <li>
-        {{ photo.title }} ({{ photo.image.url }})
-        <a href="{% url 'photo_detail' photo.pk %}">View</a>
-        <a href="{% url 'edit_photo' photo.pk %}">Edit</a>
-        <a href="{% url 'delete_photo' photo.pk %}" onclick="return confirm('Are you sure you want to delete this photo?');">Delete</a>
-    </li>
-    {% endfor %}
-</ul>
+<div class="container">
+    <h1 class="my-4">Photo List</h1>
+    <div class="row">
+        {% for photo in photos %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ photo.title }}</h5>
+                    <a href="{% url 'photo_detail' photo.pk %}" class="btn btn-primary btn-sm">View</a>
+                    <a href="{% url 'edit_photo' photo.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="{% url 'delete_photo' photo.pk %}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this photo?');">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

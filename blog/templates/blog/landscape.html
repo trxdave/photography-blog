@@ -9,7 +9,24 @@
     <div class="col-md-12">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="navbar-nav mr-auto">
-          <!-- Navigation items here -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}">All</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'landscape_photos' %}">Landscape</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'portrait_photos' %}">Portrait</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'wildlife_photos' %}">Wildlife</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'street_photos' %}">Street</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'macro_photos' %}">Macro</a>
+          </li>
         </ul>
       </nav>
     </div>
