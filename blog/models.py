@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
@@ -24,6 +25,7 @@ class Photo(models.Model):
     description = models.TextField()
     categoryimage = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_photos')
     image = CloudinaryField('image')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

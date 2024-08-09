@@ -3,8 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib import messages
 from blog.models import Photo, Category
-from .forms import PhotoForm, ContactForm
+from .forms import PhotoForm, ContactForm, SignupForm
 from django.core.paginator import Paginator
 import cloudinary.uploader as uploader
 
@@ -53,32 +54,54 @@ def photo_detail(request, pk):
 @login_required
 def edit_photo(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
+
+    # Check if the current logged-in user is the owner of the photo
+    if not request.user == photo.user:
+        # This user does not own this photo
+        messages.error(request, "Access Denied: This is not your photo")
+        return redirect('blog')  # Redirect to the blog page
+
+    # This user owns this photo - proceed with the edit
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES, instance=photo)
         if form.is_valid():
             form.save()
-            return redirect('photo_list')
+            messages.success(request, "Photo successfully updated!")
+            return redirect('blog')  # Redirect to the blog page
+        else:
+            messages.error(request, "Error: Please try again.")
     else:
         form = PhotoForm(instance=photo)
+    
     return render(request, 'blog/edit_photo.html', {'form': form})
 
 @login_required
 def delete_photo(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
+
+    # Check if the current logged-in user is the owner of the photo
+    if not request.user == photo.user:
+        # This user does not own this photo
+        messages.error(request, "Access Denied: This is not your photo")
+        return redirect('blog')  # Redirect to the blog page
+
+    # This user owns this photo - proceed with the delete
     if request.method == 'POST':
         photo.delete()
-        return redirect('photo_list')
+        messages.success(request, "Photo successfully deleted!")
+        return redirect('blog')  # Redirect to the blog page
+
     return render(request, 'blog/confirm_delete.html', {'photo': photo})
 
 def signup_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignupForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('homepage')
     else:
-        form = UserCreationForm()
+        form = SignupForm()
     return render(request, 'registration/signup.html', {'form': form})
 
 def login_view(request):
@@ -132,7 +155,7 @@ class PhotoDetailView(DetailView):
 def contact(request):
     form = ContactForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
-        form.save()  # Assume you handle sending email inside the form's save method
+        form.save()
         return redirect('success')
     return render(request, 'blog/contact.html', {'form': form})
 

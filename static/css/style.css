@@ -153,8 +153,26 @@ h2 {
   background-color: #444;
 }
 
-add-post {
+.add-post {
   padding-top: 20px;
+}
+
+.card col-md-4 mb-4 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.photo-owner {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 /* General styling for the container */
