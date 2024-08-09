@@ -1,5 +1,5 @@
 from django import forms
-from .models import Photo
+from .models import Photo, Comment
 from django.contrib.auth.models import User
 
 class SignupForm(forms.ModelForm):
@@ -72,3 +72,11 @@ class ContactForm(forms.Form):
     name = forms.CharField(max_length=100)
     email = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea)
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+        widgets = {
+            'text': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Add a comment...', 'rows': 3}),
+        }

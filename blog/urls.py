@@ -15,6 +15,7 @@ urlpatterns = [
     path('photo/edit/<int:pk>/', views.edit_photo, name='edit_photo'),
     path('photo/delete/<int:pk>/', views.delete_photo, name='delete_photo'),
     path('photos/', views.photo_list, name='photo_list'),
+    path('photo/<int:pk>/like/', views.like_photo, name='like_photo'),
     path('landscape/', views.landscape_photos, name='landscape_photos'),
     path('portrait/', views.portrait_photos, name='portrait_photos'),
     path('wildlife/', views.wildlife_photos, name='wildlife_photos'),

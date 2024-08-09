@@ -5,7 +5,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib import messages
 from blog.models import Photo, Category
-from .forms import PhotoForm, ContactForm, SignupForm
+from .forms import PhotoForm, ContactForm, SignupForm, CommentForm
 from django.core.paginator import Paginator
 import cloudinary.uploader as uploader
 
@@ -47,9 +47,38 @@ def photo_list(request):
     photos = Photo.objects.all()
     return render(request, 'blog/photo_list.html', {'photos': photos})
 
+@login_required
 def photo_detail(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
-    return render(render, 'blog/photo_detail.html', {'photo': photo})
+    is_liked = photo.likes.filter(id=request.user.id).exists()
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.photo = photo
+            comment.user = request.user
+            comment.save()
+            return redirect('photo_detail', pk=photo.pk)
+    else:
+        comment_form = CommentForm()
+
+    context = {
+        'photo': photo,
+        'is_liked': is_liked,
+        'total_likes': photo.total_likes,
+        'comment_form': comment_form,
+    }
+    return render(request, 'blog/photo_detail.html', context)
+
+@login_required
+def like_photo(request, pk):
+    photo = get_object_or_404(Photo, pk=pk)
+    if photo.likes.filter(id=request.user.id).exists():
+        photo.likes.remove(request.user)
+    else:
+        photo.likes.add(request.user)
+    return redirect('photo_detail', pk=pk)
 
 @login_required
 def edit_photo(request, pk):
