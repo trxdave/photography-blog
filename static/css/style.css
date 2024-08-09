@@ -646,12 +646,15 @@ img {
 
 .btn-explore {
   background-color: #337ab7;
+  display: inline-block;
   color: #ffffff;
-  border: none;
   padding: 10px 20px;
   font-size: 16px;
-  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
   margin-top: 50px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-explore:hover {
@@ -883,3 +886,80 @@ label {
   }
 }
 
+/* Mobile Navbar */
+
+@media (max-width: 768px) {
+  .navbar-toggler {
+      display: block;
+  }
+  .navbar-collapse {
+      flex-direction: column; 
+  }
+  .navbar-nav {
+      flex-direction: column; 
+      text-align: center; 
+  }
+  .navbar-nav .nav-item {
+      margin-bottom: 10px; 
+  }
+  .navbar-nav .nav-link {
+      padding: 10px 0; 
+  }
+}
+
+/* Photo Gallery */
+
+@media (max-width: 768px) {
+  .photo-gallery .card {
+      width: calc(50% - 15px); 
+  }
+}
+
+@media (max-width: 576px) {
+  .photo-gallery .card {
+      width: 100%; 
+  }
+}
+
+/* Forms */
+
+@media (max-width: 768px) {
+  .form-group {
+      margin-bottom: 15px;
+  }
+  .form-control {
+      padding: 8px;
+  }
+  .btn-success {
+      padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-group {
+      margin-bottom: 10px;
+  }
+  .form-control {
+      padding: 6px;
+  }
+  .btn-success {
+      padding: 6px;
+  }
+}
+
+/* Footer */
+
+@media (max-width: 768px) {
+  footer {
+      text-align: center; 
+      padding: 20px;
+  }
+  footer .list-inline {
+      padding: 0;
+      margin: 0;
+  }
+  footer .list-inline-item {
+      display: inline-block; 
+      margin: 0 10px; 
+  }
+}

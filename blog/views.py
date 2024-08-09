@@ -5,13 +5,19 @@ from django.contrib.auth import login, authenticate, logout
 from django.views.generic import ListView, DetailView, CreateView
 from blog.models import Photo, Category
 from .forms import PhotoForm, ContactForm
+from django.core.paginator import Paginator
 import cloudinary.uploader as uploader
 
 def homepage_view(request):
     return render(request, 'blog/homepage.html')
 
 def blog_view(request):
-    photos = Photo.objects.all()
+    photos_list = Photo.objects.all()
+    paginator = Paginator(photos_list, 6)  # Show 6 photos per page
+
+    page_number = request.GET.get('page')
+    photos = paginator.get_page(page_number)
+
     return render(request, 'blog/blog.html', {'photos': photos})
 
 def viewPhoto(request, pk):
