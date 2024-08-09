@@ -659,6 +659,8 @@ img {
 
 .btn-explore:hover {
   background-color: #23527c;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .lens {
@@ -667,6 +669,8 @@ img {
   background-position: center;
   height: 600px;
   width: 80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* add photo */
