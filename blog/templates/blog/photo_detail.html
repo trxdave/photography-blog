@@ -1,64 +1,73 @@
 {% extends "base.html" %}
 
-{% load static %}
-{% load cloudinary %}
-
 {% block title %}Photo Detail{% endblock %}
 
 {% block content %}
-<div class="photo-detail-container">
-  <!-- Display the photo -->
-  <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="img-fluid">
+<div class="container d-flex justify-content-center align-items-center flex-column mt-5">
+  <div class="photo-detail-container text-center" style="max-width: 800px; width: 100%; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    
+    <!-- Display the photo -->
+    <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="img-fluid mb-4" style="border-radius: 10px;">
 
-  <!-- Photo title -->
-  <h2>{{ photo.title }}</h2>
+    <!-- Photo title -->
+    <h2>{{ photo.title }}</h2>
 
-  <!-- Photo owner -->
-  <p class="photo-owner">By: {{ photo.user.username }}</p>
+    <!-- Photo owner -->
+    <p class="photo-owner">By: {{ photo.user.username }}</p>
 
-  <!-- Photo description -->
-  <p>{{ photo.description }}</p>
+    <!-- Photo description -->
+    <p>{{ photo.description }}</p>
 
-  <!-- Like button -->
-  <form method="post" action="{% url 'like_photo' photo.pk %}">
-    {% csrf_token %}
-    <button type="submit" class="like-button btn btn-outline-primary">
-      {% if is_liked %}
-      Unlike
+    <!-- Like button -->
+    <form method="post" action="{% url 'like_photo' photo.pk %}">
+      {% csrf_token %}
+      <button type="submit" class="like-button btn btn-outline-primary mt-3">
+        {% if is_liked %}
+        Unlike
+        {% else %}
+        Like
+        {% endif %}
+      </button>
+    </form>
+
+    <!-- Display the number of likes -->
+    <p class="mt-3">{{ total_likes }} Likes</p>
+
+    <!-- Comments Section -->
+    <div class="comments-section mt-4 text-left" style="width: 100%;">
+      <h3>Comments</h3>
+      {% if comments_page_obj %}
+      {% for comment in comments_page_obj %}
+      <div class="comment" style="padding: 10px; border-bottom: 1px solid #ddd;">
+        <strong>{{ comment.user.username }}</strong>
+        <p>{{ comment.text }}</p>
+        <small>{{ comment.created_at|date:"F j, Y, g:i a" }}</small>
+        {% if user.is_authenticated and user == comment.user %}
+        <form method="post" action="{% url 'delete_comment' photo.pk comment.pk %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        </form>
+        {% endif %}
+      </div>
+      {% endfor %}
       {% else %}
-      Like
+      <p>No comments yet. Be the first to comment!</p>
       {% endif %}
-    </button>
-  </form>
-
-  <!-- Display the number of likes -->
-  <p>{{ total_likes }} Likes</p>
-
-  <!-- Comments Section -->
-  <div class="comments-section">
-    <h3>Comments</h3>
-    {% if photo.comments.exists %}
-    {% for comment in photo.comments.all %}
-    <div class="comment">
-      <strong>{{ comment.user.username }}</strong>
-      <p>{{ comment.text }}</p>
-      <small>{{ comment.created_at|date:"F j, Y, g:i a" }}</small>
     </div>
-    {% endfor %}
+
+    <!-- Comment Form -->
+    {% if user.is_authenticated %}
+    <form class="comment-form mt-4" method="post" style="width: 100%;">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="{{ comment_form.text.id_for_label }}">{{ comment_form.text.label }}</label>
+        <textarea id="{{ comment_form.text.id_for_label }}" name="{{ comment_form.text.name }}" class="form-control" placeholder="Add a comment"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Comment</button>
+    </form>
     {% else %}
-    <p>No comments yet. Be the first to comment!</p>
+    <p>You must be <a href="{% url 'signin' %}">logged in</a> to add a comment.</p>
     {% endif %}
   </div>
-
-  <!-- Comment Form -->
-  {% if user.is_authenticated %}
-  <form class="comment-form" method="post">
-    {% csrf_token %}
-    {{ comment_form.as_p }}
-    <button type="submit" class="btn btn-primary">Add Comment</button>
-  </form>
-  {% else %}
-  <p>You must be <a href="{% url 'signin' %}">logged in</a> to add a comment.</p>
-  {% endif %}
 </div>
 {% endblock %}

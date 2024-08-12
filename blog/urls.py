@@ -23,6 +23,7 @@ urlpatterns = [
     path('macro/', views.macro_photos, name='macro_photos'),
     path('contact/', views.contact, name='contact'),
     path('success/', views.success, name='success'),
+    path('photo/<int:pk>/comment/<int:comment_pk>/delete/', views.delete_comment, name='delete_comment'),
 ]
 
 # Error handlers

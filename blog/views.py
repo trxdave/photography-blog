@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib import messages
-from blog.models import Photo, Category
+from blog.models import Photo, Category, Comment
 from .forms import PhotoForm, ContactForm, SignupForm, CommentForm
 from django.core.paginator import Paginator
 import cloudinary.uploader as uploader
@@ -57,26 +57,36 @@ def photo_list(request):
 @login_required
 def photo_detail(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
-    is_liked = photo.likes.filter(id=request.user.id).exists()
+    comments = photo.comments.all()
+
+    # Pagination for comments
+    paginator = Paginator(comments, 3)  # Show 3 comments per page
+    page_number = request.GET.get('page')
+    comments_page_obj = paginator.get_page(page_number)
+
+    # Check if the user has liked this photo
+    is_liked = False
+    if photo.likes.filter(id=request.user.id).exists():
+        is_liked = True
 
     if request.method == 'POST':
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.photo = photo
-            comment.user = request.user
-            comment.save()
+            new_comment = comment_form.save(commit=False)
+            new_comment.photo = photo
+            new_comment.user = request.user
+            new_comment.save()
             return redirect('photo_detail', pk=photo.pk)
     else:
         comment_form = CommentForm()
 
-    context = {
+    return render(request, 'blog/photo_detail.html', {
         'photo': photo,
-        'is_liked': is_liked,
-        'total_likes': photo.total_likes,
         'comment_form': comment_form,
-    }
-    return render(request, 'blog/photo_detail.html', context)
+        'comments_page_obj': comments_page_obj,
+        'is_liked': is_liked,
+        'total_likes': photo.total_likes(),
+    })
 
 @login_required
 def like_photo(request, pk):
@@ -128,6 +138,13 @@ def delete_photo(request, pk):
         return redirect('blog')  # Redirect to the blog page
 
     return render(request, 'blog/confirm_delete.html', {'photo': photo})
+
+@login_required
+def delete_comment(request, pk, comment_pk):
+    comment = get_object_or_404(Comment, pk=comment_pk, photo_id=pk)
+    if request.user == comment.user:
+        comment.delete()
+    return redirect('photo_detail', pk=pk)
 
 def signup_view(request):
     if request.method == 'POST':
