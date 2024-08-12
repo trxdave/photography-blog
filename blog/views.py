@@ -30,7 +30,9 @@ def add_photo(request):
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            photo = form.save(commit=False)
+            photo.user = request.user      
+            photo.save()            
             return redirect('photo_list')
     else:
         form = PhotoForm()
@@ -44,8 +46,13 @@ def blog(request):
     return render(request, 'blog/blog.html', {'photos': photos})
 
 def photo_list(request):
-    photos = Photo.objects.all()
-    return render(request, 'blog/photo_list.html', {'photos': photos})
+    user_photos = Photo.objects.filter(user=request.user)
+    paginator = Paginator(user_photos, 12)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'blog/photo_list.html', {'page_obj': page_obj})
 
 @login_required
 def photo_detail(request, pk):
@@ -170,7 +177,7 @@ def street_photos(request):
     return render(request, 'blog/street.html', {'photos': street_photos})
 
 def macro_photos(request):
-    marco_photos = Photo.objects.filter(categoryimage__name='5')
+    macro_photos = Photo.objects.filter(categoryimage__name='5')
     return render(request, 'blog/macro.html', {'photos': macro_photos})
 
 class PhotoListView(ListView):

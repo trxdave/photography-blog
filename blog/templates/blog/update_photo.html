@@ -3,10 +3,13 @@
 {% block title %}Update Photo{% endblock %}
 
 {% block content %}
-    <h1>Update Photo</h1>
-    <form method="post" enctype="multipart/form-data">
+<div class="container mt-5">
+    <h1 class="mb-4">Update Photo</h1>
+    <form method="post" enctype="multipart/form-data" class="form-container">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Update Photo</button>
+        <button type="submit" class="btn btn-success mt-3">Update Photo</button>
+        <a href="{% url 'blog' %}" class="btn btn-secondary mt-3">Cancel</a>
     </form>
+</div>
 {% endblock %}

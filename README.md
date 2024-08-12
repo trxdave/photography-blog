@@ -54,8 +54,15 @@ The Photography Blog platform should:
 The target audience for the Photography Blog platform is professional and amateur photographers who want to showcase their work in a professional and customizable way.
 
 ## Entity-Relationship Diagram (ERD)
+The Entity-Relationship Diagram (ERD) representing the relationships between the User, Category, Photo and Comment models.
 
-![alt text](<documentation/erd/Database ER diagram Photography Blog.png>)
+- User to Photo: A one to many relationship where a user can upload many photos.
+- Category to Photo: A one to many relationship where each photo belongs to one category.
+- Photo to Comment: A one to many relationship where a photo can have many comments.
+- User to Comment: A one to many relationship where a user can make many comments.
+- User to Photo (Likes): A many to many relationship where users can like many photos, and each photo can be liked by many users.
+
+![alt text](<documentation/erd/database-erd-photography-blog.png>)
 
 # Learning Outcomes
 1. ## Django Framework Proficiency:

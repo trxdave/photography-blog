@@ -45,7 +45,7 @@
     <div class="col-md-12 d-flex justify-content-between">
       <a href="{% url 'blog' %}" class="btn btn-primary">Back to Blog</a>
       {% if user.is_authenticated %}
-      <a href="{% url 'add_photo' %}" class="btn btn-success">Add Photo</a>
+      <a href="{% url 'add_photo' %}" class="btn btn-success-blog">Add Photo</a>
       {% endif %}
     </div>
   </div>
@@ -53,21 +53,18 @@
   <!-- Landscape photo gallery -->
   <div class="photo-gallery row">
     {% for photo in photos %}
-    <div class="col-md-4 mb-4">
-      <div class="card">
-        <a href="{% url 'photo_detail' photo.pk %}">
-          <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="card-img-top img-fluid">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">{{ photo.title }}</h5>
-          <p class="photo-owner">By: {{ photo.user.username }}</p>
-          <p class="card-text">{{ photo.description|slice:":100" }}{% if photo.description|length > 100 %}...<a href="{% url 'photo_detail' photo.pk %}" class="read-more">Read more</a>{% endif %}</p>
-          {% if user.is_authenticated and user == photo.user %}
-          <!-- Edit and Delete Buttons -->
-          <a href="{% url 'edit_photo' photo.id %}" class="btn btn-primary">Edit</a>
-          <a href="{% url 'delete_photo' photo.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this photo?');">Delete</a>
-          {% endif %}
-        </div>
+    <div class="card col-md-4 mb-4">
+      <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="card-img-top img-fluid">
+      <div class="card-body">
+        <p class="photo-owner">By: {{ photo.user.username }}</p>
+        <h5 class="card-title">{{ photo.title }}</h5>
+        <p class="card-text short-text">{{ photo.description|slice:":100" }}{% if photo.description|length > 100 %}...<a href="#" class="read-more">Read more</a>{% endif %}</p>
+        <p class="card-text full-text d-none">{{ photo.description }}</p>
+        {% if user.is_authenticated and user == photo.user %}
+        <a href="{% url 'photo_detail' photo.pk %}" class="btn btn-primary">View</a>
+        <a href="{% url 'edit_photo' photo.pk %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'delete_photo' photo.pk %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this photo?');">Delete</a>
+        {% endif %}
       </div>
     </div>
     {% empty %}
@@ -119,6 +116,5 @@
       </nav>
     </div>
   </div>
-
 </div>
 {% endblock %}

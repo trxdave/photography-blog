@@ -55,8 +55,8 @@
     <div class="card col-md-4 mb-4">
       <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="card-img-top img-fluid">
       <div class="card-body">
-        <h5 class="card-title">{{ photo.title }}</h5>
         <p class="photo-owner">By: {{ photo.user.username }}</p>
+        <h5 class="card-title">{{ photo.title }}</h5>
         <p class="card-text short-text">{{ photo.description|slice:":100" }}{% if photo.description|length > 100 %}...<a href="#" class="read-more">Read more</a>{% endif %}</p>
         <p class="card-text full-text d-none">{{ photo.description }}</p>
         {% if user.is_authenticated and user == photo.user %}  <!-- Only show edit/delete if user owns the photo -->

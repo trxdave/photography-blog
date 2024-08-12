@@ -166,13 +166,27 @@ h2 {
 }
 
 .photo-owner {
-  background-color: #333;
+  background-color: #4CAF50;
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
   display: inline-block;
   font-weight: bold;
   margin-top: 10px;
+}
+
+.btn-success-blog {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-success-blog:hover {
+  background-color: #3e8e41;
+  color: #ffffff;
 }
 
 /* General styling for the container */
@@ -255,6 +269,7 @@ h2 {
 .photo-gallery .card-title {
   font-size: 1.25rem;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .photo-gallery .card-text {
@@ -772,7 +787,7 @@ label {
 
 .card p {
   font-size: 16px;
-  color: #666;
+  color: #ffffff;
   text-align: center;
 }
 
