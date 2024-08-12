@@ -3,11 +3,19 @@
 {% block title %}Edit Photo{% endblock %}
 
 {% block content %}
-<h1>Edit Photo</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Save Changes</button>
-</form>
-<a href="{% url 'blog' %}">Back to list</a>
+<div class="container mt-5">
+    <h1 class="text-center">Edit Photo</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-success btn-block">Save Changes</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="{% url 'blog' %}" class="btn btn-secondary">Back to list</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -3,10 +3,16 @@
 {% block title %}Confirm Delete{% endblock %}
 
 {% block content %}
-<h1>Are you sure you want to delete "{{ photo.title }}"?</h1>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a href="{% url 'photo_list' %}" class="btn btn-secondary">Cancel</a>
-</form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1 class="mb-4">Are you sure you want to delete "{{ photo.title }}"?</h1>
+            <form method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            <a href="{% url 'photo_list' %}" class="btn btn-secondary ml-2">Cancel</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

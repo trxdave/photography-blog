@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 
+{% load static %}
+{% load cloudinary %}
+
 {% block title %}Photo Detail{% endblock %}
 
 {% block content %}
 <div class="container d-flex justify-content-center align-items-center flex-column mt-5">
-  <div class="photo-detail-container text-center" style="max-width: 800px; width: 100%; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+  <div class="photo-detail-container text-center" style="max-width: 1000px; width: 100%; padding: 20px; background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
     
     <!-- Display the photo -->
-    <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="img-fluid mb-4" style="border-radius: 10px;">
+    <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="img-fluid mb-4" style="border-radius: 10px; max-height: 80vh; object-fit: cover; width: 100%;">
 
     <!-- Photo title -->
     <h2>{{ photo.title }}</h2>
@@ -50,6 +53,46 @@
         {% endif %}
       </div>
       {% endfor %}
+      <!-- Pagination Controls -->
+      <div class="pagination mt-3">
+        <nav aria-label="Comments pagination">
+          <ul class="pagination justify-content-center">
+            {% if comments_page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ comments_page_obj.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+              <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            {% endif %}
+            {% for num in comments_page_obj.paginator.page_range %}
+            {% if comments_page_obj.number == num %}
+            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+            {% elif num > comments_page_obj.number|add:'-5' and num < comments_page_obj.number|add:'5' %}
+            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if comments_page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ comments_page_obj.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+              <a class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
       {% else %}
       <p>No comments yet. Be the first to comment!</p>
       {% endif %}
@@ -61,7 +104,7 @@
       {% csrf_token %}
       <div class="form-group">
         <label for="{{ comment_form.text.id_for_label }}">{{ comment_form.text.label }}</label>
-        <textarea id="{{ comment_form.text.id_for_label }}" name="{{ comment_form.text.name }}" class="form-control" placeholder="Add a comment"></textarea>
+        <textarea id="{{ comment_form.text.id_for_label }}" name="{{ comment_form.text.name }}" class="form-control" placeholder="Add a comment...">{% if comment_form.text.value %}{{ comment_form.text.value }}{% endif %}</textarea>
       </div>
       <button type="submit" class="btn btn-primary">Add Comment</button>
     </form>

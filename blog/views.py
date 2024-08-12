@@ -59,12 +59,10 @@ def photo_detail(request, pk):
     photo = get_object_or_404(Photo, pk=pk)
     comments = photo.comments.all()
 
-    # Pagination for comments
-    paginator = Paginator(comments, 3)  # Show 3 comments per page
+    paginator = Paginator(comments, 3)
     page_number = request.GET.get('page')
     comments_page_obj = paginator.get_page(page_number)
 
-    # Check if the user has liked this photo
     is_liked = False
     if photo.likes.filter(id=request.user.id).exists():
         is_liked = True
