@@ -9,11 +9,15 @@
     <div class="form-container">
       <h1 class="add-post">Add Photo</h1>
       <div class="content">
-        {% if success %}
+        <!-- Display success message -->
+        {% if messages %}
         <div class="alert alert-success">
-          Photo uploaded successfully!
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
         </div>
         {% endif %}
+        
         <form method="post" enctype="multipart/form-data" action="{% url 'add_photo' %}">
           {% csrf_token %}
           <div class="form-group">
