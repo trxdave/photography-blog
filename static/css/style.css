@@ -229,11 +229,6 @@ h2 {
   padding: 0.5rem 0;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #000;
-}
-
 .nav-link-login {
   background-color: #4CAF50;
   color: #ffffff;

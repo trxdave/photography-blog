@@ -34,13 +34,6 @@
                         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                 </ul>
-                <!-- Hide search form on smaller screens -->
-                <form class="d-flex ms-auto" id="search-form">
-                    <input id="search-input" type="search" class="form-control rounded me-2" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-                    <button id="search-btn" class="btn btn-outline-secondary" type="button">
-                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                    </button>
-                </form>
                 {% if user.is_authenticated %}
                 <form action="{% url 'signout' %}" method="post" class="ms-3">
                     {% csrf_token %}
@@ -56,6 +49,15 @@
                     </li>
                 </ul>
                 {% endif %}
+            </div>
+            <!-- Add search form to dropdown for small screens -->
+            <div class="collapse navbar-collapse d-lg-none" id="navbarSupportedContent">
+                <form class="d-flex w-100 mt-3" id="search-form">
+                    <input id="search-input" type="search" class="form-control rounded me-2" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+                    <button id="search-btn" class="btn btn-outline-secondary" type="button">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </nav>
