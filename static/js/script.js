@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const searchBtn = document.getElementById('search-btn');
     const searchResultsContainer = document.getElementById('search-results');
-    const dropdownList = document.getElementById('dropdown-list');
+    const dropdownList = document.getElementById('dropdown-list');  // Ensure this exists in your HTML
     const cardBody = document.getElementById('pagination');
 
     // Search Bar
@@ -13,21 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (searchTerm) {
                 fetch(`/search?q=${searchTerm}`)
                     .then(response => {
-                        if (response.ok) {
-                            return response.json();
-                        } else {
+                        if (!response.ok) {
                             throw new Error('Error fetching search results');
                         }
+                        return response.json();
                     })
                     .then(posts => {
                         searchResultsContainer.innerHTML = '';
-                        posts.forEach(post => {
-                            const postHTML = `
-                                <h2>${post.title}</h2>
-                                <p>${post.content}</p>
-                            `;
-                            searchResultsContainer.innerHTML += postHTML;
-                        });
+                        if (posts.length === 0) {
+                            searchResultsContainer.innerHTML = '<p>No results found.</p>';
+                        } else {
+                            posts.forEach(post => {
+                                const postHTML = `
+                                    <h2>${post.title}</h2>
+                                    <p>${post.content}</p>
+                                `;
+                                searchResultsContainer.innerHTML += postHTML;
+                            });
+                        }
                     })
                     .catch(error => {
                         console.error(error);
@@ -37,27 +40,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add dropdown list items
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
-    if (dropdownItems.length > 0) {
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', function() {
+    // Dropdown List Items
+    if (dropdownList) {  // Ensure the dropdownList exists before adding an event listener
+        dropdownList.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('dropdown-item')) {
                 console.log('Dropdown item clicked!');
-                const selectedItem = this.textContent;
-                // Handle the selected item
-            });
+                const selectedItem = e.target.textContent;
+                // Handle the selected item here
+            }
         });
     }
 
     // Card Body Read More/Read Less
     const readMoreElements = document.querySelectorAll('.read-more');
     if (readMoreElements.length > 0) {
-        readMoreElements.forEach(function(element) {
-            element.addEventListener('click', function(event) {
+        readMoreElements.forEach(element => {
+            element.addEventListener('click', (event) => {
                 event.preventDefault();
                 const cardBody = event.target.closest('.card-body');
-                cardBody.querySelector('.short-text').classList.toggle('d-none');
-                cardBody.querySelector('.full-text').classList.toggle('d-none');
+                const shortText = cardBody.querySelector('.short-text');
+                const fullText = cardBody.querySelector('.full-text');
+                
+                if (shortText && fullText) {
+                    shortText.classList.toggle('d-none');
+                    fullText.classList.toggle('d-none');
+                }
             });
         });
     }

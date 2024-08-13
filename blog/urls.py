@@ -24,6 +24,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('success/', views.success, name='success'),
     path('photo/<int:pk>/comment/<int:comment_pk>/delete/', views.delete_comment, name='delete_comment'),
+    path('search/', views.search_view, name='search'),
 ]
 
 # Error handlers

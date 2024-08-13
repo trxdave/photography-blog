@@ -234,6 +234,54 @@ h2 {
   color: #000;
 }
 
+.nav-link-login {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.nav-link-login:hover {
+  background-color: #3e8e41;
+  color: #ffffff;
+}
+
+.nav-link-signup {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.nav-link-signup:hover {
+  background-color: #3e8e41;
+  color: #ffffff;
+}
+
+.nav-link-logout {
+  background-color: red;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.nav-link-logout:hover {
+  background-color: rgb(180, 28, 28);
+  color: #ffffff;
+}
+
 /* Photo gallery styling */
 .photo-gallery {
   display: flex;
@@ -989,6 +1037,12 @@ label {
   }
   .navbar-nav .nav-link {
       padding: 10px 0; 
+  }
+}
+
+@media (max-width: 991.98px) {
+  #search-form {
+      display: none;
   }
 }
 

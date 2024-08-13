@@ -7,6 +7,7 @@ from django.contrib import messages
 from blog.models import Photo, Category, Comment
 from .forms import PhotoForm, ContactForm, SignupForm, CommentForm
 from django.core.paginator import Paginator
+from django.db.models import Q
 import cloudinary.uploader as uploader
 
 def homepage_view(request):
@@ -169,6 +170,18 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('homepage')
+
+def search_view(request):
+    query = request.GET.get('q')
+    results = []
+    
+    if query:
+        results = Photo.objects.filter(
+            Q(title__icontains=query) | 
+            Q(description__icontains=query)
+        )
+    
+    return render(request, 'blog/search_results.html', {'results': results, 'query': query})
 
 def category_view(request, category_name):
     category = get_object_or_404(Category, name=category_name)

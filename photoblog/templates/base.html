@@ -13,56 +13,61 @@
 </head>
 <body>
     <!-- Navigation bar -->
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'homepage' %}">Photography Blog</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'about' %}">About</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                  </li>
-              </ul>
-              <form class="d-flex input-group w-auto">
-                  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-                  <span class="input-group-text border-0" id="search-addon">
-                      <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                  </span>
-              </form>
-              {% if user.is_authenticated %}
-              <form action="{% url 'signout' %}" method="post" class="ms-3">
-                  {% csrf_token %}
-                  <button type="submit" class="btn btn-link nav-link">Logout</button>
-              </form>
-              {% else %}
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'login' %}">Login</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-                  </li>
-              </ul>
-              {% endif %}
-          </div>
-      </div>
-  </nav>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'homepage' %}">Photography Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                </ul>
+                <!-- Hide search form on smaller screens -->
+                <form class="d-flex ms-auto" id="search-form">
+                    <input id="search-input" type="search" class="form-control rounded me-2" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+                    <button id="search-btn" class="btn btn-outline-secondary" type="button">
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                    </button>
+                </form>
+                {% if user.is_authenticated %}
+                <form action="{% url 'signout' %}" method="post" class="ms-3">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link nav-link-logout">Logout</button>
+                </form>
+                {% else %}
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link-login" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-signup" href="{% url 'signup' %}">Signup</a>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
 
     <!-- Header Content -->
     <header class="header-image"></header>
 
     {% block content %}{% endblock %}
+
+    <!-- Search results -->
+    <div id="search-results"></div>
 
     <!-- Footer -->
     <footer class="border-top">
@@ -109,7 +114,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-c7UZ5BcOIJVHvaTpGWLK40XHg7CeoJl+MQ4PlfgGjQlCn08NDG2QlusMbHn3IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
