@@ -1,27 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
-    <form class="mx-auto">
-    <div class="form-group">
-        <h1 class="contact-us">Contact Us</h1>
-        <div class="contact-us">
-          <p class="questions">Have questions or want to get in touch?<br>Feel free to contact us<br>We’d love to hear from you!</p>
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+    <div class="mx-auto">
+        <h1 class="contact-us text-center">Contact Us</h1>
+        <div class="contact-us text-center mb-4">
+            <p class="questions">Have questions or want to get in touch?<br>Feel free to contact us.<br>We’d love to hear from you!</p>
         </div>
+        
+        <!-- Display success message if exists -->
+        {% if messages %}
+            <div class="alert alert-success" role="alert">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <form method="post">
             {% csrf_token %}
-      <label for="name">Name:</label>
-      <input type="text" class="name" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">Name:</label>
+                <input type="text" class="form-control" id="{{ form.name.id_for_label }}" name="{{ form.name.name }}" placeholder="Enter Name" value="{{ form.name.value|default_if_none:'' }}">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email address</label>
+                <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="Enter Your Email" value="{{ form.email.value|default_if_none:'' }}">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.message.id_for_label }}">Message</label>
+                <textarea id="{{ form.message.id_for_label }}" name="{{ form.message.name }}" class="form-control" rows="5" placeholder="Write a Message">{{ form.message.value|default_if_none:'' }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+        </form>
     </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email">
-    </div>
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" cols="50" placeholder="  Write a Message" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Send Message</button>
-  </form>
-  </div>
+</div>
 {% endblock %}

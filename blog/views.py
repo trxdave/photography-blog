@@ -33,7 +33,8 @@ def add_photo(request):
         if form.is_valid():
             photo = form.save(commit=False)
             photo.user = request.user      
-            photo.save()            
+            photo.save()
+            messages.success(request, 'Photo uploaded successfully!')         
             return redirect('photo_list')
     else:
         form = PhotoForm()
@@ -219,8 +220,11 @@ class PhotoDetailView(DetailView):
 def contact(request):
     form = ContactForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
-        form.save()
-        return redirect('success')
+        
+        messages.success(request, 'Your message has been sent successfully!')
+        
+        return redirect('contact')
+    
     return render(request, 'blog/contact.html', {'form': form})
 
 def about(request):
