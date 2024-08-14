@@ -174,14 +174,26 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 The design choices were influenced by the need to create a platform that is easy to navigate and visually appealing. The use of a minimalist layout and neutral color scheme allows the focus to be on the photography, while the accents of blue add a touch of personality to the design.
 
 ## Colours
-The primary colors used in the design are:
+The colors used in the design are:
 
-#FFFFFF (white) for the background
-#333333 (dark gray) for text
-#4567b7 (blue) for accents
+- Primary Text Color: #333 - Used for the main text across the website.
+- Background Color: #f9f9f9 - Used for the overall background of the site and form backgrounds.
+- Header Background Color: #333 - Used for the header and other key areas, providing a dark contrast.
+- Button Primary Color: #4CAF50 - Used for primary action buttons, such as submit and upload.
+- Button Hover Color: #3e8e41 - The hover state for primary buttons, creating an interactive feel.
+- Alert Success Background: #dff0d8 - Used for success messages, like after form submissions.
+- Alert Success Text: #3c763d - Text color for success alerts.
+- Alert Danger Background: #f2dede - Used for error or danger messages.
+- Alert Danger Text: #a94442 - Text color for error alerts.
+- Footer Background Color: #333 - Provides a dark footer with contrasting white text.
+- Footer Text and Icon Color: #fff - Ensures good readability against the dark background.
+
+![alt text](documentation/images/color.png)
 
 ## Fonts
-The font used in the design is Open Sans, a clean and modern sans-serif font that is highly legible.
+The fonts used in your project are:
+
+Arial, sans-serif: This is the main font used throughout your CSS for body text and headings. It's a widely used, clean, and highly readable font that is supported across all browsers and devices.
 
 # Wireframes
 
