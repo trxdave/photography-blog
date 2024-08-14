@@ -131,6 +131,8 @@ The goal of this project is to create a seamless and enjoyable user experience f
 6. As a Site User, I want to comment on posts, so that I can provide feedback and engage with the community.
 7. As a Site User, I want to log out, so that I can securely leave the site.
 
+and more. [Link to the Kanban board here](https://github.com/users/trxdave/projects/6)
+
 # Development Plan
 
 This project was organized and executed using Agile methodology. A Kanban board within GitHub Projects was utilized to track progress and manage tasks, ensuring a structured and iterative development process. [Link to the Kanban board here](https://github.com/users/trxdave/projects/6)
@@ -204,6 +206,12 @@ Arial, sans-serif: This is the main font used throughout your CSS for body text 
 ## Validator Testing
 
 - The project was tested using various validation tools to ensure code quality, performance, and accessibility standards were met.
+
+### CSS Validation
+
+| **Tested** | **Result** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|styles.css | No errors |<details><summary>Screenshot of result</summary>![Result](documentation/validator/css-validation.png)</details>| :white_check_mark:|
 
 ## Performance and Accessibility
 
