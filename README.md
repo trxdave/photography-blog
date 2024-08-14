@@ -205,7 +205,21 @@ Arial, sans-serif: This is the main font used throughout your CSS for body text 
 
 ## Validator Testing
 
-- The project was tested using various validation tools to ensure code quality, performance, and accessibility standards were met.
+### HTML Validation
+ll pages were validated, and the code was pasted in. A filter was applied to remove issues related to the Django templating system. 
+
+| **Tested** | **Result** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|base| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/base.png)</details>| :white_check_mark:|
+|about| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/about.png)</details>| :white_check_mark:|
+|add photo | No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/add-photo.png)</details>| :white_check_mark:|
+|blog| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/blog1.png)(documentation/validator/blog2.png)</details>| :white_check_mark:|
+|confirm delete| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/confirm-delete.png)</details>| :white_check_mark:|
+|contact| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/contact.png)</details>| :white_check_mark:|
+|edit photo| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/edit-photo.png)</details>| :white_check_mark:|
+|homepage| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/homepage.png)</details>| :white_check_mark:|
+|landscape| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/landscape1.png)(documentation/validator/landscape2.png)</details>| :white_check_mark:|
+|marco| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/macro1.png)(documentation/validator/macro2.png)</details>| :white_check_mark:|
 
 ### CSS Validation
 
