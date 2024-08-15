@@ -237,18 +237,97 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 
 # Technologies Used
 
-- Frontend: HTML, CSS (Bootstrap), JavaScript
-- Backend: Python, Django
-- Database: PostgreSQL
-- Image Hosting: Cloudinary
-- Authentication: Django's built-in authentication system
-- Version Control: Git and Github
+- HTML: Used for structuring the content on the web pages. It forms the backbone of the project, ensuring that all elements are correctly placed and accessible.
+
+- CSS: Used for styling the HTML elements, providing the visual appearance and layout of the web pages. CSS ensures the platform is visually appealing and user-friendly.
+
+- JavaScript: Adds interactivity and dynamic behavior to the web pages. It enhances the user experience by allowing for real-time updates, form validations, and interactive elements.
+
+- Python: a primary programming language for the backend of the project. It is used in conjunction with the Django framework to handle server-side logic, data processing, and integration with the database.
 
 ## Tools
 
+
+
 ## Frameworks - Libraries - Programs Used
 
+1. Django
+Purpose: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+Use Case: Used for building the backend, managing databases, handling user authentication, and rendering templates.
+
+2. Bootstrap
+Purpose: A popular front-end framework for developing responsive, mobile-first websites.
+Use Case: Used for styling the website, creating responsive layouts, and ensuring a consistent design across devices.
+
+3. Cloudinary API
+Purpose: A cloud-based image and video management service.
+Use Case: Used for handling image uploads, storage, and optimization, ensuring fast and reliable content delivery.
+
+4. Pillow
+Purpose: A Python Imaging Library that adds image processing capabilities to your Python interpreter.
+Use Case: Used to manage and process image uploads, including resizing and format conversions.
+
+5. JavaScript
+Purpose: A programming language that enables dynamic content on web pages.
+Use Case: Used for front-end interactions such as the search bar functionality, dropdowns, and form validations.
+
+6. GitHub
+Purpose: A platform for version control and collaborative development.
+Use Case: Used to host the project repository, manage version control with Git, and collaborate through issues and pull requests.
+
+7. JQuery
+Purpose: A fast, small, and feature-rich JavaScript library.
+Use Case: Used to simplify HTML document traversal and manipulation, event handling, and animation.
+
+8. SQLite
+Purpose: A lightweight, disk-based database that doesn’t require a separate server process.
+Use Case: Used as the database for storing all application data during development.
+
+9. Chrome DevTools
+Purpose: A set of web developer tools built directly into the Google Chrome browser.
+Use Case: Used for debugging JavaScript, analyzing runtime performance, and optimizing website responsiveness.
+
+10. Balsamiq
+Purpose: A wireframing tool that allows designers to create sketches of their web pages or applications.
+Use Case: Used for creating wireframes and mockups to plan the layout and design of the website before development.
+
+11. Responsive Design Mode
+Purpose: A browser tool that allows developers to view their website on different screen sizes and resolutions.
+Use Case: Used to test and ensure the website is responsive across a range of devices, including mobile phones and tablets.
+
+12. Coolors.co
+Purpose: An online tool for generating color palettes.
+Use Case: Used to select and create the color scheme for the website, ensuring a visually appealing design.
+
+13. StartBootstrap.com
+Purpose: A website offering free and premium Bootstrap themes and templates.
+Use Case: Used as a resource for finding Bootstrap templates and inspiration for the website’s design.
+
+14. Heroku
+- Description: Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps.
+- Purpose: Used to deploy the Django application.
+
 # Future Plans
+
+1. Enhanced User Profiles
+- Description: Develop detailed user profiles where photographers can showcase their portfolios and follow others.
+- Objective: To create a more personalized and interactive community experience.
+
+2. Advanced Search and Filtering
+- Description: Implement advanced search options based on categories and tags to help users find specific content easily.
+- Objective: To improve content discoverability and user experience.
+
+3. Mobile App Development
+- Description: Create a mobile app for Android and iOS to allow users to access and upload content on the go.
+- Objective: To increase accessibility and engagement with a mobile-friendly solution.
+
+4. Social Media Integration
+- Description: Add features that allow users to share their photos directly to social media platforms like Instagram and Facebook.
+- Objective: To broaden the reach of shared content and attract more users.
+
+5. Photography Challenges
+- Description: Organize photography challenges to engage the community and showcase talent.
+- Objective: To increase user participation and foster a vibrant community atmosphere.
 
 # Bugs
 
