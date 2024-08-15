@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% load cloudinary%}
+{% load cloudinary %}
+
+{% block title %}About Us{% endblock %}
 
 {% block content %}
 <div class="about-page container">
   <h1 class="about-us">About Us</h1>
-  <img class="nikon-camera"
-                src="https://res.cloudinary.com/ds0ualpzt/image/upload/v1721117229/nikon-camera_pkpjhj.jpg">
-  <p class="description-about">Welcome to Photography Blog, a haven for photography enthusiasts of all levels!<br>
-  Our mission is to inspire and educate through high-quality tutorials, in-depth gear reviews, and stunning photo galleries. <br> 
-  We believe in the power of photography to tell stories, evoke emotions, and capture the beauty of the world around us.
-  Whether you're a budding photographer or a seasoned pro, join us on a journey to explore the art and craft of photography. <br>
-  Discover new techniques, stay updated with the latest industry trends, and find inspiration in our diverse range of content.
-  At Photography Blog, we are more than just a blog; we are a community. We encourage you to share your experiences, <br>
-  participate in discussions, and connect with fellow photography enthusiasts. Together, let's capture the world, one frame at a time!
-  Thank you for being a part of our journey. We look forward to seeing your amazing work and helping you grow as a photographer.</p>
-  </div>
-  
-  <!-- Add Post button -->
-  <div class="add-post">
-    <a href="{% url 'add_photo' %}" class="btn btn-danger add-post" aria-label="Add Post">Create a New Post</a>
-  </div>
+
+  <!-- Nikon Camera Image -->
+  <img class="nikon-camera" 
+       src="https://res.cloudinary.com/ds0ualpzt/image/upload/v1721117229/nikon-camera_pkpjhj.jpg" 
+       alt="nikon-camera">
+
+  <p class="description-about">
+    Welcome to Photography Blog, a haven for photography enthusiasts of all levels!<br>
+    Our mission is to inspire and educate through high-quality tutorials, in-depth gear reviews, and stunning photo galleries. <br> 
+    We believe in the power of photography to tell stories, evoke emotions, and capture the beauty of the world around us.
+    Whether you're a budding photographer or a seasoned pro, join us on a journey to explore the art and craft of photography. <br>
+    Discover new techniques, stay updated with the latest industry trends, and find inspiration in our diverse range of content.
+    At Photography Blog, we are more than just a blog; we are a community. We encourage you to share your experiences, <br>
+    participate in discussions, and connect with fellow photography enthusiasts. Together, let's capture the world, one frame at a time!
+    Thank you for being a part of our journey. We look forward to seeing your amazing work and helping you grow as a photographer.
+  </p>
+</div>
+
+<!-- Add Post button -->
+<div class="add-post">
+  <a href="{% url 'add_photo' %}" class="btn btn-danger" aria-label="Create a new post">Create a New Post</a>
+</div>
 {% endblock %}
