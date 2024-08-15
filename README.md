@@ -213,7 +213,7 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 |base| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/base.png)</details>| :white_check_mark:|
 |about| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/about.png)</details>| :white_check_mark:|
 |add photo | No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/add-photo.png)</details>| :white_check_mark:|
-|blog| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/blog1.png) [Result](documentation/validator/blog2.png)</details>| :white_check_mark:|
+|blog| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/blog1.png) ![Result](documentation/validator/blog2.png)</details>| :white_check_mark:|
 |confirm delete| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/confirm-delete.png)</details>| :white_check_mark:|
 |contact| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/contact.png)</details>| :white_check_mark:|
 |edit photo| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/edit-photo.png)</details>| :white_check_mark:|
