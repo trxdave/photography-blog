@@ -213,19 +213,19 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 |base| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/base.png)</details>| :white_check_mark:|
 |about| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/about.png)</details>| :white_check_mark:|
 |add photo | No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/add-photo.png)</details>| :white_check_mark:|
-|blog| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/blog1.png), (documentation/validator/blog2.png)</details>| :white_check_mark:|
+|blog| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/blog1.png), [](documentation/validator/blog2.png)</details>| :white_check_mark:|
 |confirm delete| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/confirm-delete.png)</details>| :white_check_mark:|
 |contact| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/contact.png)</details>| :white_check_mark:|
 |edit photo| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/edit-photo.png)</details>| :white_check_mark:|
 |homepage| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/homepage.png)</details>| :white_check_mark:|
-|landscape| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/landscape1.png), (documentation/validator/landscape2.png)</details>| :white_check_mark:|
-|marco| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/macro1.png), (documentation/validator/macro2.png)</details>| :white_check_mark:|
-|photo detail| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/photo-detail1.png), (documentation/validator/photo-detail2.png)</details>| :white_check_mark:|
-|photo list| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/photo-list1.png), (documentation/validator/photo-list2.png)</details>| :white_check_mark:|
-|portrait| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/portrait1.png), (documentation/validator/portrait2.png)</details>| :white_check_mark:|
+|landscape| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/landscape1.png), [](documentation/validator/landscape2.png)</details>| :white_check_mark:|
+|marco| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/macro1.png), [](documentation/validator/macro2.png)</details>| :white_check_mark:|
+|photo detail| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/photo-detail1.png), [](documentation/validator/photo-detail2.png)</details>| :white_check_mark:|
+|photo list| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/photo-list1.png), [](documentation/validator/photo-list2.png)</details>| :white_check_mark:|
+|portrait| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/portrait1.png), [](documentation/validator/portrait2.png)</details>| :white_check_mark:|
 |search results| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/search-results.png)</details>| :white_check_mark:|
-|street| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/street1.png), (documentation/validator/street2.png)</details>| :white_check_mark:|
-|wildlife| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/wildlife1.png), (documentation/validator/wildlife2.png)</details>| :white_check_mark:|
+|street| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/street1.png), [](documentation/validator/street2.png)</details>| :white_check_mark:|
+|wildlife| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/wildlife1.png), [](documentation/validator/wildlife2.png)</details>| :white_check_mark:|
 
 ### CSS Validation
 
