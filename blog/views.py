@@ -230,9 +230,6 @@ def contact(request):
 def about(request):
     return render(request, 'blog/about.html')
 
-def success(request):
-    return render(request, 'success.html')
-
 # Error Handlers
 def handler400(request, exception):
     return render(request, 'errors/400.html', status=404)
