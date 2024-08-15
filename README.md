@@ -224,8 +224,8 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 |photo list| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/photo-list1.png) ![Result](documentation/validator/photo-list2.png)</details>| :white_check_mark:|
 |portrait| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/portrait1.png)</details>| :white_check_mark:|
 |search results| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/search-results.png)</details>| :white_check_mark:|
-|street| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/street1.png) ![Result](documentation/validator/street2.png)</details>| :white_check_mark:|
-|wildlife| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/wildlife1.png) ![Result](documentation/validator/wildlife2.png)</details>| :white_check_mark:|
+|street| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/validator/street1.png)</details>| :white_check_mark:|
+|wildlife| No errors | <details><summary>Screenshot of result</summary>![Result]() ![Result](documentation/validator/wildlife1.png)</details>| :white_check_mark:|
 
 ### CSS Validation
 
