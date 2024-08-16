@@ -22,7 +22,10 @@ urlpatterns = [
     path('street/', views.street_photos, name='street_photos'),
     path('macro/', views.macro_photos, name='macro_photos'),
     path('contact/', views.contact, name='contact'),
-    path('photo/<int:pk>/comment/<int:comment_pk>/delete/', views.delete_comment, name='delete_comment'),
+    path(
+        'photo/<int:pk>/comment/<int:comment_pk>/delete/',
+        views.delete_comment,
+        name='delete_comment'),
     path('search/', views.search_view, name='search'),
 ]
 

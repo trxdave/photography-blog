@@ -26,10 +26,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u$kptmbry7*t3p_7l+66zf@*ky@m-7$9fm=#ef$$yjpim_4$=e'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ["DEV"] = "0"
+DEBUG = os.environ.get("DEBUG", False)
 
 ALLOWED_HOSTS = ['8000-trxdave-photographyblog-qt1zjzqmrvc.ws.codeinstitute-ide.net',
 'photography-blog-5d35eeace3db.herokuapp.com', 'photography-blog.herokuapp.com',
@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
     'cloudinary',
+    'django.contrib.staticfiles',
     'django_summernote',
     'photoblog',
     'allauth',
