@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.getElementById('search-btn');
     const searchResultsContainer = document.getElementById('search-results');
     const dropdownList = document.getElementById('dropdown-list');
-    const cardBody = document.getElementById('pagination');
 
     // Search Bar
     if (searchBtn && searchInput && searchResultsContainer) {
@@ -45,8 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownList.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('dropdown-item')) {
                 console.log('Dropdown item clicked!');
-                const selectedItem = e.target.textContent;
                 // Handle the selected item here
+                // The selectedItem variable was removed since it's not used
             }
         });
     }
@@ -57,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         readMoreElements.forEach(element => {
             element.addEventListener('click', (event) => {
                 event.preventDefault();
-                const cardBody = event.target.closest('.card-body');
+                const cardBody = event.target.closest('.card-body'); // This is now used within the function scope
                 const shortText = cardBody.querySelector('.short-text');
                 const fullText = cardBody.querySelector('.full-text');
                 
