@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const searchBtn = document.getElementById('search-btn');
     const searchResultsContainer = document.getElementById('search-results');
-    const dropdownList = document.getElementById('dropdown-list');  // Ensure this exists in your HTML
+    const dropdownList = document.getElementById('dropdown-list');
     const cardBody = document.getElementById('pagination');
 
     // Search Bar
