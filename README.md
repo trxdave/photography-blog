@@ -304,8 +304,8 @@ Purpose: A website offering free and premium Bootstrap themes and templates.
 Use Case: Used as a resource for finding Bootstrap templates and inspiration for the website’s design.
 
 14. Heroku
-- Description: Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps.
-- Purpose: Used to deploy the Django application.
+Purpose: Used to deploy the Django application.
+Use Case: Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps.
 
 # Future Plans
 
