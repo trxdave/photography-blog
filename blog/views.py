@@ -11,9 +11,15 @@ from django.db.models import Q
 import cloudinary.uploader as uploader
 
 def homepage_view(request):
+    """
+    the homepage of the photography blog.
+    """
     return render(request, 'blog/homepage.html')
 
 def blog_view(request):
+    """
+    Display a paginated list of all photos in the blog.
+    """
     photos_list = Photo.objects.all()
     paginator = Paginator(photos_list, 6)  # Show 6 photos per page
 
@@ -23,11 +29,18 @@ def blog_view(request):
     return render(request, 'blog/blog.html', {'photos': photos})
 
 def viewPhoto(request, pk):
+    """
+    Display the details of a single photo based on its primary key (pk)
+    """
     photo = get_object_or_404(Photo, pk=pk)
     return render(request, 'blog/photo_detail.html', {'photo': photo})
 
 @login_required
 def add_photo(request):
+    """
+    Allow logged-in users to upload a new photo.
+    Display a success message and redirect to the success page upon successful upload.
+    """
     if request.method == 'POST':
         form = PhotoForm(request.POST, request.FILES)
         if form.is_valid():
@@ -41,6 +54,9 @@ def add_photo(request):
     return render(request, 'blog/add_photo.html', {'form': form})
 
 def blog(request):
+    """
+    Display a paginated list of all photos in the blog.
+    """
     photo_list = Photo.objects.all()
     paginator = Paginator(photos_list, 6)
     page_number = request.GET.get('page')
@@ -48,6 +64,9 @@ def blog(request):
     return render(request, 'blog/blog.html', {'photos': photos})
 
 def photo_list(request):
+    """
+    Display a list of photos uploaded by the currently logged-in user.
+    """
     user_photos = Photo.objects.filter(user=request.user)
     paginator = Paginator(user_photos, 12)
 
@@ -58,6 +77,10 @@ def photo_list(request):
 
 @login_required
 def photo_detail(request, pk):
+    """
+    Display the details of a photo, including comments and like status.
+    Allow logged in users to add comments to the photo.
+    """
     photo = get_object_or_404(Photo, pk=pk)
     comments = photo.comments.all()
 
@@ -90,6 +113,9 @@ def photo_detail(request, pk):
 
 @login_required
 def like_photo(request, pk):
+    """
+    Allow logged in users to like or unlike a photo.
+    """
     photo = get_object_or_404(Photo, pk=pk)
     if photo.likes.filter(id=request.user.id).exists():
         photo.likes.remove(request.user)
@@ -99,6 +125,10 @@ def like_photo(request, pk):
 
 @login_required
 def edit_photo(request, pk):
+    """
+    Allow the owner of a photo to edit it.
+    If the user does not own the photo, they are denied access.
+    """
     photo = get_object_or_404(Photo, pk=pk)
 
     # Check if the current logged-in user is the owner of the photo
@@ -123,6 +153,10 @@ def edit_photo(request, pk):
 
 @login_required
 def delete_photo(request, pk):
+    """
+    Allow the owner of a photo to delete it.
+    If the user does not own the photo, they are denied access.
+    """
     photo = get_object_or_404(Photo, pk=pk)
 
     # Check if the current logged-in user is the owner of the photo
@@ -141,6 +175,9 @@ def delete_photo(request, pk):
 
 @login_required
 def delete_comment(request, pk, comment_pk):
+    """
+    Allow the owner of a comment to delete it from a photo.
+    """
     comment = get_object_or_404(Comment, pk=comment_pk, photo_id=pk)
     if request.user == comment.user:
         comment.delete()
@@ -148,9 +185,15 @@ def delete_comment(request, pk, comment_pk):
 
 @login_required
 def success_view(request):
+    """
+    Render a success page after a photo has been uploaded
+    """
     return render(request, 'blog/success.html')
 
 def signup_view(request):
+    """
+    Handle user signup. If successful, log the user in and redirect to the homepage.
+    """
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
@@ -162,6 +205,9 @@ def signup_view(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 def login_view(request):
+    """
+    Log the user out and redirect to the homepage
+    """
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
@@ -173,10 +219,16 @@ def login_view(request):
     return render(request, 'registration/login.html', {'form': form})
 
 def logout_view(request):
+    """
+    Log the user out and redirect to the homepage.
+    """
     logout(request)
     return redirect('homepage')
 
 def search_view(request):
+    """
+    Search on photos by title or description.
+    """
     query = request.GET.get('q')
     results = []
     
@@ -189,39 +241,67 @@ def search_view(request):
     return render(request, 'blog/search_results.html', {'results': results, 'query': query})
 
 def category_view(request, category_name):
+    """
+    Display photos filtered by category.
+    """
     category = get_object_or_404(Category, name=category_name)
     photos = Photo.objects.filter(categoryimage=category)
     return render(request, f'blog/{category_name}.html', {'photos': photos, 'category': category})
 
 def landscape_photos(request):
+    """
+    Display photos in the Landscape category.
+    """
     landscape_photos = Photo.objects.filter(categoryimage__name='1')
     return render(request, 'blog/landscape.html', {'photos': landscape_photos})
 
 def portrait_photos(request):
+    """
+    Display photos in the Portrait category.
+    """
     portrait_photos = Photo.objects.filter(categoryimage__name='2')
     return render(request, 'blog/portrait.html', {'photos': portrait_photos})
 
 def wildlife_photos(request):
+    """
+    Display photos in the Wildlife category.
+    """
     wildlife_photos = Photo.objects.filter(categoryimage__name='3')
     return render(request, 'blog/wildlife.html', {'photos': wildlife_photos})
 
 def street_photos(request):
+    """
+    Display photos in the Street category.
+    """
     street_photos = Photo.objects.filter(categoryimage__name='4')
     return render(request, 'blog/street.html', {'photos': street_photos})
 
 def macro_photos(request):
+    """
+    Display photos in the Macro category.
+    """
     macro_photos = Photo.objects.filter(categoryimage__name='5')
     return render(request, 'blog/macro.html', {'photos': macro_photos})
 
 class PhotoListView(ListView):
+    """
+    View to display a list of photos.
+    """
     model = Photo
     template_name = 'blog/photo_list.html'
 
 class PhotoDetailView(DetailView):
+    """
+    View to display the details of a single photo.
+    """
     model = Photo
     template_name = 'blog/photo_detail.html'
 
 def contact(request):
+    """
+    The contact form submission.
+    If the form is valid, display a success message and redirect to the contact page.
+    """
     form = ContactForm(request.POST or None)
     if request.method == 'POST' and form.is_valid():
         
@@ -232,17 +312,32 @@ def contact(request):
     return render(request, 'blog/contact.html', {'form': form})
 
 def about(request):
+    """
+    About Us page.
+    """
     return render(request, 'blog/about.html')
 
 # Error Handlers
 def handler400(request, exception):
+    """
+    Handle 400 Bad Request errors.
+    """
     return render(request, 'errors/400.html', status=404)
 
 def handler403(request, exception):
+    """
+    Handle 403 Forbidden errors.
+    """
     return render(request, 'errors/403.html', status=403)
 
 def handler404(request, exception):
+    """
+    Handle 404 Not Found errors.
+    """
     return render(request, 'errors/404.html', status=404)
 
 def handler500(request):
+    """
+    Handle 500 Internal Server errors.
+    """
     return render(request, 'errors/500.html', status=500)

@@ -31,7 +31,7 @@ urlpatterns = [
 ]
 
 # Error handlers
-handler400 = 'blog.views.handler400'
-handler403 = 'blog.views.handler403'
-handler404 = 'blog.views.handler404'
-handler500 = 'blog.views.handler500'
+# handler400 = 'blog.views.handler400'
+# handler403 = 'blog.views.handler403'
+# handler404 = 'blog.views.handler404'
+# handler500 = 'blog.views.handler500'
