@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", False)
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-trxdave-photographyblog-npteo5zchrh.ws.codeinstitute-ide.net',
 'photography-blog-5d35eeace3db.herokuapp.com', 'photography-blog.herokuapp.com',
@@ -183,8 +183,9 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Cloudinary API values
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'your_cloud_name',
-    'API_KEY': 'your_api_key',
+    'CLOUD_NAME': os.environ.get('SECRET_KEY'),
+    'API_KEY': os.environ.get('your_api_key'),
     'API_SECRET': 'your_api_secret'
 }
