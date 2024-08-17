@@ -27,6 +27,7 @@ urlpatterns = [
         views.delete_comment,
         name='delete_comment'),
     path('search/', views.search_view, name='search'),
+    path('success/', views.success_view, name='success'),
 ]
 
 # Error handlers

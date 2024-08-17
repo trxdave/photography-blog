@@ -64,6 +64,16 @@ h2 {
   background-color: #3e8e41;
 }
 
+.nav-link-pl {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .fa-xl {
   margin-bottom: 10px;
 }
@@ -269,7 +279,8 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  margin: 10px;
+  margin-right: 10px;
+  margin-bottom: 13px;
 }
 
 .nav-link-logout:hover {
@@ -486,6 +497,8 @@ input[type="submit"]:hover {
   color: green;
   font-size: 12px;
   margin-bottom: 10px;
+  width: 50%;
+  margin-left: 20px;
 }
 
 .block-heading {
@@ -509,12 +522,16 @@ input[type="submit"]:hover {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #3c763d;
+  width: 50%;
+  margin-left: 20px;
 }
 
 .alert-danger {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
+  width: 50%;
+  margin-left: 20px;
 }
 
 /* Form */

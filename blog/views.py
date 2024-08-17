@@ -35,7 +35,7 @@ def add_photo(request):
             photo.user = request.user      
             photo.save()
             messages.success(request, 'Photo uploaded successfully!')         
-            return redirect('photo_list')
+            return redirect('success')
     else:
         form = PhotoForm()
     return render(request, 'blog/add_photo.html', {'form': form})
@@ -145,6 +145,10 @@ def delete_comment(request, pk, comment_pk):
     if request.user == comment.user:
         comment.delete()
     return redirect('photo_detail', pk=pk)
+
+@login_required
+def success_view(request):
+    return render(request, 'blog/success.html')
 
 def signup_view(request):
     if request.method == 'POST':

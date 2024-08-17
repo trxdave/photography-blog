@@ -10,14 +10,7 @@
             <p class="questions">Have questions or want to get in touch?<br>Feel free to contact us.<br>We’d love to hear from you!</p>
         </div>
         
-        <!-- Display success message if exists -->
-        {% if messages %}
-            <div class="alert alert-success" role="alert">
-                {% for message in messages %}
-                    {{ message }}
-                {% endfor %}
-            </div>
-        {% endif %}
+
 
         <form method="post">
             {% csrf_token %}

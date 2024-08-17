@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Photo Upload Success{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center">
+                <div class="card-header bg-success text-white">
+                    Photo Uploaded Successfully!
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Your photo has been uploaded.</h5>
+                    <p class="card-text">Thank you for sharing your work with our community. Your photo is now available in your portfolio and visible to others.</p>
+                    <a href="{% url 'photo_list' %}" class="btn btn-primary">View My Photos</a>
+                    <a href="{% url 'add_photo' %}" class="btn btn-secondary">Upload Another Photo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
