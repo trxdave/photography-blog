@@ -175,11 +175,11 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 ### base.html
 - Navigation Bar: The navigation bar is placed at the top of the page, providing easy access to the main sections of the blog, including Home, Blog, About, Contact and user-specific options like My Photo List and Logout.
 
-![alt text](documentation/images/header.png)
-
 - Responsive Bahavior:
     - The navigation bar collapses into a hamburger menu on smaller screens.
     - It uses Bootstrap's responsive classes to ensure proper alignment and spacing.
+
+![alt text](documentation/images/header.png)
 
 - Header Image
 - The header image spans the full width of the screen and adjusts its height based on the viewport. It serves as a visually engaging introduction to the site.
@@ -264,6 +264,41 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 ![alt text](documentation/images/street1.png)
 ### macro.html -
 ![alt text](documentation/images/macro1.png)
+
+### Add Photo Page -
+
+- The "Add Photo" page is an essential feature of the Photography Blog, allowing users to contribute their own photography to the site. This page is only accessible to logged-in users. The key features of the "Add Photo" page include:
+
+- Photo Upload: Users can easily upload their photos by selecting a file from their device. The photo will be stored and displayed on the blog, categorized according to the user's choice.
+
+- Title and Description: Along with the photo, users are required to provide a title and a description. The title helps in identifying the photo, while the description allows the user to share the story or context behind the image.
+
+- Category Selection: Users can categorize their photos by choosing from predefined categories such as Landscape, Portrait, Wildlife, Street, and Macro. This helps in organizing the photos within the blog and aids in easy navigation for viewers.
+
+- Form Validation: The form on the "Add Photo" page includes validation to ensure all required fields are filled out correctly. If any issues are detected, the user is prompted to correct them before submission.
+
+![alt text](documentation/images/addphoto1.png)
+
+- Success Message: After successfully uploading a photo, users are redirected to a success page, and a success message is displayed. This confirms that their photo has been added to the blog and is visible to other users.
+
+![alt text](documentation/images/photo-success-deleted.png)
+
+### My Photo List Page
+
+- The "My Photo List" page is a personalized feature for logged-in users, providing them with a dedicated space to manage their uploaded photos. This page displays all the photos a user has uploaded to the Photography Blog. The key features of the "My Photo List" page include:
+
+- Personal Photo Gallery: Users can view a gallery of all the photos they have uploaded. Each photo is displayed with its title and a brief description, offering a quick overview of the user's contributions to the blog.
+
+- View, Edit, Delete Options: For each photo in the gallery, users have the following options:
+
+- View: Opens the detailed view of the photo, allowing the user to see it in full size along with all associated comments and likes.
+- Edit: Allows the user to modify the title, description, or even replace the photo. This is useful for updating content or correcting any mistakes.
+- Delete: Provides the option to remove the photo from the blog. A confirmation prompt ensures that users do not accidentally delete their content.
+- Pagination: The photo list is paginated to ensure that the page remains easy to navigate, even for users with a large number of uploads. Users can easily navigate between pages to view all their photos.
+
+- Responsive Design: The "My Photo List" page is designed to be fully responsive, ensuring a seamless experience across different devices, including desktops, tablets, and mobile phones.
+
+This page serves as a personal management tool, giving users full control over their uploaded content on the Photography Blog. It encourages users to maintain and curate their gallery, contributing to the overall quality and organization of the site.
 
 ## Design Choices
 The design choices were influenced by the need to create a platform that is easy to navigate and visually appealing. The use of a minimalist layout and neutral color scheme allows the focus to be on the photography, while the accents of blue add a touch of personality to the design.
