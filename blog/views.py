@@ -199,7 +199,9 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
+
             messages.success(request, f"Registration successful! Welcome, {user.username}!")
+
             return redirect('homepage')
     else:
         form = SignupForm()
@@ -215,6 +217,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+
             messages.success(request, f"Welcome back, {user.username}! You have successfully logged in.")
             return redirect('homepage')
     else:
@@ -227,7 +230,9 @@ def logout_view(request):
     Success message have logged out.
     """
     logout(request)
+
     messages.success(request, "You have been logged out successfully. Come back soon!")
+
     return redirect('homepage')
 
 def search_view(request):

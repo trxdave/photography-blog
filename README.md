@@ -172,6 +172,99 @@ This project was organized and executed using Agile methodology. A Kanban board 
 ## Design
 The design of the Photography Blog is modern and minimalist, with a focus on showcasing high-quality images. The layout is clean and simple, with ample whitespace to create a visually appealing experience for users. The color scheme is a combination of neutral tones, with accents of blue to evoke a sense of creativity and inspiration.
 
+### base.html
+- Navigation Bar: The navigation bar is placed at the top of the page, providing easy access to the main sections of the blog, including Home, Blog, About, Contact and user-specific options like My Photo List and Logout.
+
+![alt text](documentation/images/header.png)
+
+- Responsive Bahavior:
+    - The navigation bar collapses into a hamburger menu on smaller screens.
+    - It uses Bootstrap's responsive classes to ensure proper alignment and spacing.
+
+- Header Image
+- The header image spans the full width of the screen and adjusts its height based on the viewport. It serves as a visually engaging introduction to the site.
+
+- Implementation:
+    - The image is set as a background image in the CSS, using the background-size: cover property to maintain aspect ratio and cover the container.
+    - The header image is responsive and adapts to different screen sizes without losing its aspect ratio.
+
+![alt text](documentation/images/header-image.jpg)
+
+- Welcome Section:
+    - The homepage of the Photography Blog features a prominent welcome section designed to engage visitors immediately. This section includes a welcoming message, a visually appealing lens image, and a call-to-action button inviting users to explore the blog.
+
+- Lens Image:
+    - The welcome section includes a high-quality image of a camera lens, symbolizing the focus of the blog—photography.
+    - Placement and Sizing: The image is placed below the welcome message and is responsive to screen size. It is designed to scale appropriately on mobile devices, tablets, and desktops, maintaining its visual impact without overwhelming the text.
+
+- Action Button:
+    - The button text reads "Explore My Blog," encouragaing users to dive deeper into the content.
+
+![alt text](documentation/images/welcome.png)
+
+- Footer: 
+    - The footer is kept minimal and clean, with a dark background and white text. It includes social media icons and is centered for symmetry.
+    - The footer's layout adjusts to ensure all elements remain accessible and visually appealing on all screen sizes.
+
+![alt text](documentation/images/footer.png)
+
+### blog.html
+- The blog page showcases a collection of photography posts, organized into categories like Landscape, Portrait, Wildlife, Street, and Macro.
+
+- Layout:
+    - Category Navigation: A horizontal navigation bar at the top allows users to filter photos by category. The active category is highlighted for easy identification.
+    - Photo Grid: Posts are displayed in a responsive grid layout, ensuring that images adjust smoothly across different screen sizes. Each photo is accompanied by a title and a short description.
+
+- Responsive Design:
+    - Mobile: The grid adjusts to a single column, ensuring photos and text are easily viewable.
+    - Tablet and Desktop: The grid expands to multiple columns, providing a balanced and visually appealing display of content.
+
+- Interactive Elements:
+    - Photo Links: Each photo links to a detailed view where users can see the full post, read comments, and interact with the content.
+    - Pagination: Users can navigate through multiple pages of posts with easy-to-use pagination controls at the bottom.
+    
+![alt text](documentation/images/blog1.png)
+![alt text](documentation/images/blog2.png)
+
+### Category Pages: Landscape, Portrait, Wildlife, Street, Macro
+
+- Each category page presents a curated selection of photography posts focused on a specific theme, allowing users to explore content based on their interests.
+
+- Layout:
+    - Category-Specific Navigation: Users can switch between different categories using the navigation bar at the top. The current category is prominently highlighted.
+    - Photo Display: Similar to the blog page, photos are displayed in a responsive grid layout with titles and short descriptions. Each image represents a unique perspective within the chosen category.
+
+- Responsive Design:
+    - Mobile: The grid adapts to a single column for optimal viewing on smaller screens.
+    - Tablet and Desktop: Multiple columns are used to display photos, ensuring a balanced and organized presentation across devices.
+
+- Interactive Elements:
+    - Photo Links: Clicking on a photo takes the user to a detailed view, where they can explore the full post, read and leave comments, and interact with the content.
+    - Pagination: For categories with a large number of posts, pagination controls are provided to navigate through multiple pages.
+
+- Category-Specific Content:
+    - Landscape: Focuses on natural scenery, capturing the beauty of the outdoors.
+    - Portrait: Highlights individual and group portraits, showcasing emotions and expressions.
+    - Wildlife: Features photography of animals and nature, emphasizing the diversity of wildlife.
+    - Street: Captures the essence of urban life, with photos taken in streets and public places.
+    - Macro: Delves into the details of small subjects, offering close-up views that reveal intricate details.
+
+- Photo Management Features:
+    - View Photos: Every user, whether logged in or not, can view all photos uploaded by any user. Each photo can be viewed in detail by clicking the "View" button, which redirects to a detailed view of the photo along with its description and any associated comments.
+    - Edit Photos: Users who have uploaded photos have the option to edit them. When logged in, if a user views their own photos, they will see an "Edit" button alongside the photo. This button allows them to modify the photo's details, such as the title, description, or the photo itself.
+    - Delete Photos: Similarly, users have the ability to delete their own photos. The "Delete" button appears next to photos owned by the logged-in user. Upon clicking, the user is prompted to confirm the deletion, ensuring that photos are not accidentally removed.
+
+### landscape.html -
+![alt text](documentation/images/landscape1.png)
+### portrait.html -
+![alt text](documentation/images/portrait1.png)
+### wildlife.html -
+![alt text](documentation/images/wildlife1.png)
+### street.html -
+![alt text](documentation/images/street1.png)
+### macro.html -
+![alt text](documentation/images/macro1.png)
+
 ## Design Choices
 The design choices were influenced by the need to create a platform that is easy to navigate and visually appealing. The use of a minimalist layout and neutral color scheme allows the focus to be on the photography, while the accents of blue add a touch of personality to the design.
 
