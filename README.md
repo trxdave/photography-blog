@@ -621,6 +621,18 @@ For either method, you will need to install any applicable packages found within
 * [Build a Photographer Personal Portfolio with Django 2020](https://www.youtube.com/watch?v=EBrm7h05vbg)
 * [Pillow](https://pillow.readthedocs.io/en/stable/installation.html)
 * [Cloudinary](https://cloudinary.com/)
+* [Pexels](https://www.pexels.com/)
+* [perplexity](https://www.perplexity.ai/)
+* [Grammerly](https://app.grammarly.com/)
 
 
 # Acknowledgements
+* [Django](https://www.djangoproject.com/): For providing a robust and flexible web framework that made the development of this blog seamless.
+* [Bootstrap](https://getbootstrap.com/): For the responsive grid system and pre-designed components that significantly enhanced the design and usability of the site.
+* [Cloudinary](https://cloudinary.com/): For the powerful media management tools that made image handling in this project straightforward and efficient.
+* [Gitpod](https://www.gitpod.io/): For offering a reliable online IDE that facilitated the development process.
+* [Code Institute](https://codeinstitute.net/ie/): For providing the foundational knowledge and support necessary to undertake this project.
+* [Stack Overflow](https://stackoverflow.com/): For the countless solutions and insights from the developer community.
+* [W3Schools](https://www.w3schools.com/): For their comprehensive tutorials that served as a quick reference throughout development.
+* [Hackathon](https://hackathon.codeinstitute.net/teams/445/): For the invaluable experience gained through participation, where I achieved 3rd place (Bronze). The challenges and teamwork during the event greatly contributed to my learning and growth as a developer.
+* Thanks to Paul Thomas O'Riordan and Kristyna my Cohort Facilitator also Rory Patrick Sheridan my Code Institue Mentor, Tim Nelson second Mentor. 
