@@ -300,6 +300,99 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 
 This page serves as a personal management tool, giving users full control over their uploaded content on the Photography Blog. It encourages users to maintain and curate their gallery, contributing to the overall quality and organization of the site.
 
+![alt text](documentation/images/photolist1.png)
+![alt text](documentation/images/photolist2.png)
+![alt text](documentation/images/photolist3.png)
+
+### View Page
+The View Page displays detailed information about a specific photo, including its title, description, and the photographer's username. Key features include:
+
+- Photo Display: Large view of the image with detailed information below.
+- User Interactions: Authenticated users can comment, like, and view the photo’s popularity.
+- Owner Controls: If the user owns the photo, "Edit" and "Delete" buttons are available.
+- Responsive Design: The page is fully responsive, ensuring optimal display across all device sizes.
+
+![alt text](documentation/images/view1.png)
+![alt text](documentation/images/view2.png)
+
+### Edit Page
+The Edit Page allows users to modify the details of their uploaded photos. Key features include:
+
+- Form for Editing: Users can update the title, description, and category of the photo using a pre-filled form.
+- Image Update: Option to change the photo if necessary.
+- User Authentication: Only the photo's owner can access and edit the photo.
+- Success Messages: After successfully updating the photo, the user is redirected with a confirmation message.
+- Responsive Design: The form layout adjusts seamlessly across all device sizes, ensuring a smooth editing experience.
+
+![alt text](documentation/images/edit.png)
+
+### Delete Photo
+The Delete Page allows users to permanently remove their uploaded photos. Key features include:
+
+- Confirmation Prompt: Users are asked to confirm their decision to delete a photo to prevent accidental deletions.
+- User Authentication: Only the owner of the photo has access to delete it, ensuring security and control.
+- Success Messages: Upon successful deletion, users are redirected to the blog page with a confirmation message.
+- Responsive Design: The confirmation layout is optimized for all device sizes, providing a consistent user experience.
+
+![alt text](documentation/images/deletephoto.png)
+![alt text](documentation/images/deletephoto1.png)
+
+### About Us
+The About Us page provides visitors with insights into the mission and vision of the Photography Blog. Key elements include:
+
+- Introduction: A brief overview of the blog's purpose, highlighting its role in inspiring and educating photography enthusiasts.
+- Mission Statement: Details on how the blog aims to connect photographers of all levels, offering tutorials, gear reviews, and inspiring photo galleries.
+- Community Focus: Emphasis on building a community where photographers can share their experiences, engage in discussions, and showcase their work.
+- Responsive Design: The page is fully responsive, ensuring readability and visual appeal across all devices.
+
+![alt text](documentation/images/aboutus1.png)
+![alt text](documentation/images/aboutus2.png)
+
+### Contact Us
+The Contact Us page is designed to facilitate communication between visitors and the Photography Blog team. Key features include:
+
+- Contact Form: A straightforward form that allows users to submit inquiries, feedback, or requests. The form includes fields for name, email, and message, ensuring that the team can respond effectively.
+- Success Message: Upon successful submission, users receive a confirmation message, assuring them that their message has been received.
+- Responsive Design: The page is fully responsive, ensuring that the form is easy to use on all devices, from desktops to mobile phones.
+- Security: The form includes validation and protection against spam, ensuring that all submissions are genuine and relevant.
+
+![alt text](documentation/images/contactus.png)
+
+### Sign Up
+The Sign Up page allows new users to create an account on the Photography Blog. It includes a simple and user-friendly form where users can enter their desired username, email, and password. Upon successful registration, users are automatically logged in and redirected to the homepage. A success message is displayed to welcome the new user.
+
+- User Registration: Users can sign up by providing a username, email, and password.
+- Automatic Login: After registration, users are automatically logged in.
+- Success Feedback: A confirmation message is shown to the user upon successful registration.
+- Form Validation: The form includes validation to ensure all required fields are filled out correctly.
+
+![alt text](documentation/images/signup.png)
+
+### Login
+The Login page provides a secure way for returning users to access their accounts on the Photography Blog. The page features a straightforward form where users can enter their username and password. After a successful login, users are redirected to the homepage.
+
+- User Authentication: Users can log in with their registered username and password.
+- Redirect on Success: After logging in, users are redirected to the homepage.
+- Error Handling: If login credentials are incorrect, an error message is shown, prompting the user to try again.
+
+![alt text](documentation/images/login.png)
+
+### Error Page
+The Photography Blog includes custom error pages to enhance user experience when something goes wrong. These pages ensure that even in the case of errors, users receive clear and helpful feedback. The custom error pages include:
+
+- 400 Bad Request: This page appears when the server cannot process the request due to a client error, such as a malformed request syntax. It provides a simple, clear explanation and a link to navigate back to the homepage.
+
+- 403 Forbidden: This page is shown when a user tries to access a resource they do not have permission to view. It clearly explains the issue and encourages the user to contact the site administrator if they believe this is an error.
+
+- 404 Not Found: This page is displayed when a user attempts to access a page that doesn't exist. It provides a friendly message, suggesting that the user may have mistyped the URL or clicked on a broken link. The page includes a button to redirect users back to the homepage.
+
+- 500 Internal Server Error: In the event of a server issue, this page informs the user that something went wrong on the server side. It suggests trying again later and includes a link to return to the homepage.
+
+![400 Bad Request](documentation/images/400-bad-request.png)
+![403 Forbidden](documentation/images/403-forbidden.png)
+![404 Not Found](documentation/images/404-not-found.jpg)
+![500 Internal Server Error](documentation/images/500-internal-server-error.png)
+
 ## Design Choices
 The design choices were influenced by the need to create a platform that is easy to navigate and visually appealing. The use of a minimalist layout and neutral color scheme allows the focus to be on the photography, while the accents of blue add a touch of personality to the design.
 
