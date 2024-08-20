@@ -424,6 +424,10 @@ Arial, sans-serif: This is the main font used throughout your CSS for body text 
 
 - Wireframes were created to visualize the layout and design of the photography blog.
 
+| **Page** | **URL** | **Wireframes** | **Pass** |
+--- | --- | --- | :---: |
+
+
 # Testing
 
 ## Validator Testing
