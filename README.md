@@ -473,6 +473,41 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 --- | --- | --- | :---:
 |script.js| No errors | <details><summary>Screenshot of result</summary>![Result](documentation/js/jshint.png)</details>| :white_check_mark:|
 
+## Accessibility
+
+### Desktop
+
+| **Tested** | **Result** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|Homepages| 89 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/homepage-desktop.png)</details>| :white_check_mark:|
+|Blog page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/blog-desktop.png)</details>| :white_check_mark:|
+|Landscape page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/landscape-desktop.png)</details>| :white_check_mark:|
+|Portrait page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/portrait-desktop.png)</details>| :white_check_mark:|
+|Wildlife page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/wildlife-mobile.png)</details>| :white_check_mark:|
+|Street page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/street-desktop.png)</details>| :white_check_mark:|
+|Macro page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/macro-desktop.png)</details>| :white_check_mark:|
+|About Us page| 89 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/aboutus-desktop.png)</details>| :white_check_mark:|
+|Contact page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/contact-desktop.png)</details>| :white_check_mark:|
+|Login page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/login-desktop.png)</details>| :white_check_mark:|
+|Signup page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/signup-desktop.png)</details>| :white_check_mark:|
+
+
+### Mobile
+
+| **Tested** | **Result** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|Homepages| 100 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/homepage-mobile.png)</details>| :white_check_mark:|
+|Blog page| 89 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/blog-mobile.png)</details>| :white_check_mark:|
+|Landscape page| 89 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/landscape-mobile.png)</details>| :white_check_mark:|
+|Portrait page| 89 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/portrait-mobile.png)</details>| :white_check_mark:|
+|Wildlife page| 94 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/wildlife-mobile.png)</details>| :white_check_mark:|
+|Street page| 94 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/street-mobile.png)</details>| :white_check_mark:|
+|Macro page| 89 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/macro-mobile.png)</details>| :white_check_mark:|
+|About Us page| 100 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/about-mobile.png)</details>| :white_check_mark:|
+|Contact page| 100 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/contact-mobile.png)</details>| :white_check_mark:|
+|Login page| 100 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/login-mobile.png)</details>| :white_check_mark:|
+|Signup page| 100 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/signup-mobile.png)</details>| :white_check_mark:|
+
 ## Performance and Accessibility
 
 # Technologies Used
