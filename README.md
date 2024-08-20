@@ -475,7 +475,10 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 
 ## Accessibility
 
-### Desktop
+## PageSpeed Insights Accessibility Results
+I used Google PageSpeed Insights to evaluate the accessibility of our website on both mobile and desktop platforms. PageSpeed Insights provides a score out of 100 for accessibility, which measures how well the content of the web pages is accessible to all users, including those with disabilities.
+
+### Desktop Accessibility Scores
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
@@ -492,7 +495,7 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 |Signup page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/signup-desktop.png)</details>| :white_check_mark:|
 
 
-### Mobile
+### Mobile Accessibility Scores
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
@@ -508,7 +511,33 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 |Login page| 100 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/login-mobile.png)</details>| :white_check_mark:|
 |Signup page| 100 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/signup-mobile.png)</details>| :white_check_mark:|
 
-## Performance and Accessibility
+### Key Accessibility Highlights
+
+- Consistent High Scores: The accessibility scores are consistently high across both mobile and desktop platforms, indicating that the site is well-optimized for accessibility on different devices.
+
+- Responsive Design: The website's design adapts well to both mobile and desktop screens, ensuring that content remains accessible and usable regardless of the device being used.
+
+- Color Contrast: All text elements meet the recommended contrast ratio, ensuring that text is easily readable against background colors on both mobile and desktop devices. This is crucial for users with visual impairments.
+
+- Alt Text for Images: All images include descriptive alt attributes, allowing screen readers to convey the purpose of images to users who are visually impaired, on both mobile and desktop.
+
+- Keyboard Navigation: The site is fully navigable using a keyboard, which is essential for users with motor disabilities who cannot use a mouse. Interactive elements like links, buttons, and forms are easily accessible via keyboard on both platforms.
+
+- Form Labels: All forms, such as those on the Contact Us page, have associated labels, making it clear to screen reader users what information is required on both mobile and desktop.
+
+- ARIA Landmarks: Appropriate ARIA (Accessible Rich Internet Applications) landmarks are used to help assistive technologies understand the structure of the page and navigate through sections effectively on both devices.
+
+### Areas for Improvement
+
+While the overall accessibility scores are high, there are a few areas where improvements could be made:
+
+- Interactive Element States: Ensuring that all interactive elements, such as buttons and links, have visible focus states that are easy to identify when using a keyboard, especially on mobile where touch interactions are more common.
+
+- Language Attributes: Ensuring that the lang attribute is correctly set on all pages to help screen readers determine the correct language of the content on both mobile and desktop.
+
+- Form Validation: Enhancing client-side form validation with more descriptive error messages that are accessible to screen readers, particularly in mobile environments where screen space is limited.
+
+- Skip Navigation Links: Adding "skip to content" links to allow keyboard users to bypass repetitive navigation menus and jump directly to the main content, which is especially helpful on mobile where screen size is smaller.
 
 # Technologies Used
 
