@@ -6,11 +6,16 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6 text-center">
+            <!-- Display a confirmation message asking the user if they are sure about deleting the photo -->
             <h1 class="mb-4">Are you sure you want to delete "{{ photo.title }}"?</h1>
+            <!-- Form to handle the deletion of the photo -->
             <form method="post" class="d-inline">
+                <!-- CSRF token for security -->
                 {% csrf_token %}
+                <!-- Submit button to confirm the deletion -->
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
+            <!-- Link to cancel the deletion and return to the photo list -->
             <a href="{% url 'photo_list' %}" class="btn btn-secondary ml-2">Cancel</a>
         </div>
     </div>

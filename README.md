@@ -137,6 +137,8 @@ and more. [Link to the Kanban board here](https://github.com/users/trxdave/proje
 
 This project was organized and executed using Agile methodology. A Kanban board within GitHub Projects was utilized to track progress and manage tasks, ensuring a structured and iterative development process. [Link to the Kanban board here](https://github.com/users/trxdave/projects/6)
 
+![alt text](documentation/images/list.png)
+
 # Features
 
 ## User Authentication
@@ -475,6 +477,8 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 
 # Technologies Used
 
+## Language Used:
+
 - HTML: Used for structuring the content on the web pages. It forms the backbone of the project, ensuring that all elements are correctly placed and accessible.
 
 - CSS: Used for styling the HTML elements, providing the visual appearance and layout of the web pages. CSS ensures the platform is visually appealing and user-friendly.
@@ -483,11 +487,7 @@ ll pages were validated, and the code was pasted in. A filter was applied to rem
 
 - Python: a primary programming language for the backend of the project. It is used in conjunction with the Django framework to handle server-side logic, data processing, and integration with the database.
 
-## Tools
-
-
-
-## Frameworks - Libraries - Programs Used
+## Frameworks - Libraries - Programs Used:
 
 1. Django
 Purpose: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
@@ -566,6 +566,10 @@ Use Case: Heroku is a cloud platform that lets companies build, deliver, monitor
 5. Photography Challenges
 - Description: Organize photography challenges to engage the community and showcase talent.
 - Objective: To increase user participation and foster a vibrant community atmosphere.
+
+6. FAQ Page
+- Description: Develop a comprehensive FAQ page to address common user queries and provide guidance on using the site.
+- Objective: To enhance user support and reduce the need for direct inquiries by offering readily accessible information.
 
 # Bugs
 

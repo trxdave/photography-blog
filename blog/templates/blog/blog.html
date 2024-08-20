@@ -9,23 +9,30 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
+      <!-- Navigation bar for filtering photos by category -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
         <ul class="navbar-nav mr-auto">
+          <!-- 'All' category, shows all photos -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">All</a>
           </li>
+          <!-- 'Landscape' category, filters photos to only landscape type -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'landscape_photos' %}">Landscape</a>
           </li>
+          <!-- 'Portrait' category, filters photos to only portrait type -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'portrait_photos' %}">Portrait</a>
           </li>
+          <!-- 'Wildlife' category, filters photos to only wildlife type -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'wildlife_photos' %}">Wildlife</a>
           </li>
+          <!-- 'Street' category, filters photos to only street type -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'street_photos' %}">Street</a>
           </li>
+          <!-- 'Macro' category, filters photos to only macro type -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'macro_photos' %}">Macro</a>
           </li>
@@ -36,6 +43,7 @@
 
   <div class="row">
     <div class="col-md-12">
+      <!-- Main blog title and introduction text -->
       <h1 class="blog">Blog</h1>
       <p class="post-below">Ready to share your Photography journey? <br>
         Start writing your post below!</p>
@@ -43,50 +51,60 @@
   </div>
   <ul class="navbar-nav ml-auto">
     {% if user.is_authenticated %}
+    <!-- Button for adding a new photo, only visible to authenticated users -->
     <div class="add-post">
       <a href="{% url 'add_photo' %}" class="btn btn-danger add-photo" aria-label="Add Photo">Add Photo</a>
     </div>
     {% endif %}
   </ul>
 
-  <!-- Photo gallery -->
+  <!-- Photo gallery all filtered photos -->
   <div class="photo-gallery row">
     {% for photo in photos %}
+    <!-- Individual photo card -->
     <div class="card col-md-4 mb-4">
+      <!-- Photo image -->
       <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="card-img-top img-fluid">
       <div class="card-body">
+        <!-- Photo owner information -->
         <p class="photo-owner">By: {{ photo.user.username }}</p>
+        <!-- Photo title -->
         <h5 class="card-title">{{ photo.title }}</h5>
+        <!-- Short description of the photo -->
         <p class="card-text short-text">{{ photo.description|slice:":100" }}{% if photo.description|length > 100 %}...<a href="#" class="read-more">Read more</a>{% endif %}</p>
+        <!-- Full description of the photo, initially hidden -->
         <p class="card-text full-text d-none">{{ photo.description }}</p>
 
-        <!-- Display only one "View" button -->
+        <!-- View button for detailed view of the photo -->
         <a href="{% url 'photo_detail' photo.pk %}" class="btn btn-primary">View</a>
 
         {% if user.is_authenticated and user == photo.user %}
-        <!-- Show Edit and Delete buttons only if the photo belongs to the logged-in user -->
+        <!-- Edit and Delete buttons, visible only to the owner of the photo -->
         <a href="{% url 'edit_photo' photo.pk %}" class="btn btn-secondary">Edit</a>
         <a href="{% url 'delete_photo' photo.pk %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this photo?');">Delete</a>
         {% endif %}
       </div>
     </div>
     {% empty %}
+    <!-- Message displayed if no photos are available -->
     <p>No photos available.</p>
     {% endfor %}
 </div>
 
-<!-- Pagination Controls -->
+<!-- Pagination Controls for navigating between pages of photos -->
 <div class="row">
   <div class="col-md-12">
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
         {% if photos.has_previous %}
+        <!-- Link to previous page -->
         <li class="page-item">
           <a class="page-link" href="?page={{ photos.previous_page_number }}" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
         {% else %}
+        <!-- Disabled link if there is no previous page -->
         <li class="page-item disabled">
           <a class="page-link" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
@@ -95,18 +113,22 @@
         {% endif %}
         {% for num in photos.paginator.page_range %}
         {% if photos.number == num %}
+        <!-- Current page number, highlighted -->
         <li class="page-item active"><span class="page-link">{{ num }}</span></li>
         {% elif num > photos.number|add:'-5' and num < photos.number|add:'5' %}
+        <!-- Link to other pages within a certain range -->
         <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
         {% endif %}
         {% endfor %}
         {% if photos.has_next %}
+        <!-- Link to next page -->
         <li class="page-item">
           <a class="page-link" href="?page={{ photos.next_page_number }}" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
         {% else %}
+        <!-- Disabled link if there is no next page -->
         <li class="page-item disabled">
           <a class="page-link" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>

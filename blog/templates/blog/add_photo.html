@@ -9,7 +9,8 @@
     <div class="form-container">
       <h1 class="add-post">Add Photo</h1>
       <div class="content">
-        <!-- Display success message -->
+        <!-- This section will show a success alert if the user has successfully 
+        added a photo. -->
         {% if messages %}
         <div class="alert alert-success">
           {% for message in messages %}
@@ -17,7 +18,8 @@
           {% endfor %}
         </div>
         {% endif %}
-        
+        <!-- Form to upload a new photo. This form includes fields for the title, 
+         content, description, category, and image of the photo. -->
         <form method="post" enctype="multipart/form-data" action="{% url 'add_photo' %}">
           {% csrf_token %}
           <div class="form-group">
@@ -40,13 +42,17 @@
             <label for="id_image">Image</label>
             {{ form.image }}
           </div>
+          <!-- This section will show a danger alert if there are any 
+           errors in the submitted form. -->
           {% if form.errors %}
           <div class="alert alert-danger">
             {{ form.errors }}
           </div>
           {% endif %}
+          <!-- Submit button to upload the photo. -->
           <button type="submit" class="btn btn-success">UPLOAD</button>
         </form>
+        <!-- Link to go back to the blog page. -->
         <a href="{% url 'blog' %}" class="btn btn-primary mt-3">Back to Blog</a>
       </div>
     </div>

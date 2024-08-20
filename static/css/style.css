@@ -961,7 +961,12 @@ label {
 /* Photo Detail */
 
 .photo-detail-container {
-  margin-top: 40px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .photo-detail-card {
@@ -974,9 +979,22 @@ label {
 
 .photo-detail-image {
   width: 100%;
-  height: auto;
+  height: 80vh;
   border-radius: 10px;
-  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.comments-section {
+  width: 100%;
+}
+
+.comment {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment-form {
+  width: 100%;
 }
 
 .photo-title {

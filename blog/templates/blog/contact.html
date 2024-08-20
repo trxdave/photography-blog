@@ -5,25 +5,36 @@
 {% block content %}
 <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
     <div class="mx-auto">
+        <!-- Contact Us heading -->
         <h1 class="contact-us text-center">Contact Us</h1>
         <div class="contact-us text-center mb-4">
+            <!-- Introduction text encouraging users to get in touch -->
             <p class="questions">Have questions or want to get in touch?<br>Feel free to contact us.<br>We’d love to hear from you!</p>
         </div>
-        
+
+        <!-- Contact form for users to submit their inquiries -->
         <form method="post">
+            <!-- CSRF token for security -->
             {% csrf_token %}
+            <!-- Form group for the user's name -->
             <div class="form-group">
                 <label for="{{ form.name.id_for_label }}">Name:</label>
+                <!-- Input field for the user's name -->
                 <input type="text" class="form-control" id="{{ form.name.id_for_label }}" name="{{ form.name.name }}" placeholder="Enter Name" value="{{ form.name.value|default_if_none:'' }}">
             </div>
+            <!-- Form group for the user's email address -->
             <div class="form-group">
                 <label for="{{ form.email.id_for_label }}">Email address</label>
+                <!-- Input field for the user's email -->
                 <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" placeholder="Enter Your Email" value="{{ form.email.value|default_if_none:'' }}">
             </div>
+            <!-- Form group for the user's message -->
             <div class="form-group">
                 <label for="{{ form.message.id_for_label }}">Message</label>
+                <!-- Textarea for the user to write their message -->
                 <textarea id="{{ form.message.id_for_label }}" name="{{ form.message.name }}" class="form-control" rows="5" placeholder="Write a Message">{{ form.message.value|default_if_none:'' }}</textarea>
             </div>
+            <!-- Submit button to send the message -->
             <button type="submit" class="btn btn-primary mt-3">Send Message</button>
         </form>
     </div>

@@ -4,14 +4,19 @@
 
 {% block content %}
 <div class="container mt-5">
+    <!-- Page title for editing a photo -->
     <h1 class="text-center">Edit Photo</h1>
     <div class="row justify-content-center">
+        <!-- Form for editing the photo details -->
         <div class="col-md-6">
             <form method="post" enctype="multipart/form-data">
+                <!-- CSRF token for security -->
                 {% csrf_token %}
+                <!-- Render the form fields as paragraph elements -->
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-success btn-block">Save Changes</button>
             </form>
+            <!-- Link to navigate back to the list of photos -->
             <div class="text-center mt-3">
                 <a href="{% url 'blog' %}" class="btn btn-secondary">Back to list</a>
             </div>

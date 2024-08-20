@@ -8,7 +8,9 @@
 {% block content %}
 
 <div class="home-content">
+    <!-- Main welcome message for the homepage -->
     <h1 class="welcome">Welcome to My Photography Blog</h1>
+    <!-- Introduction paragraph describing the blog's content and theme -->
     <p class="welcome-p">
         Explore the beauty of the world through my lens. This blog is a collection of my favorite photography pieces,
         showcasing the wonders of nature, cityscapes, and everything in between.
@@ -17,7 +19,9 @@
         Take a journey with me as I share my passion for photography, and get ready to be inspired by the beauty of the
         world around us.
     </p>
+    <!-- Image of a camera lens used as a visual element on the homepage -->
     <img src="{% static 'image/lens.jpg' %}" alt="camera-lens" class="lens">
+    <!-- Button link that directs users to the blog page -->
     <a href="{% url 'blog' %}" class="btn-explore">Explore My Blog</a>
 </div>
 

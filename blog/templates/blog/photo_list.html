@@ -4,11 +4,15 @@
 
 {% block content %}
 <div class="container">
+    <!-- Page title -->
     <h1 class="my-4">Photo List</h1>
 
+    <!-- Navigation and add photo button, only visible to authenticated users -->
     <div class="d-flex justify-content-between mb-4">
+        <!-- Button to navigate back to the blog -->
         <a href="{% url 'blog' %}" class="btn btn-primary">Back to Blog</a>
         {% if user.is_authenticated %}
+        <!-- Button to add a new photo, visible only to authenticated users -->
         <a href="{% url 'add_photo' %}" class="btn btn-success-blog">Add Photo</a>
         {% endif %}
     </div>
@@ -16,14 +20,21 @@
     <!-- Photo gallery -->
     <div class="photo-gallery row">
         {% for photo in page_obj %}
+        <!-- Individual photo card -->
         <div class="card col-md-4 mb-4">
+            <!-- Display photo image -->
             <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="card-img-top img-fluid">
             <div class="card-body">
+                <!-- Photo owner information -->
                 <p class="photo-owner">By: {{ photo.user.username }}</p>
+                <!-- Photo title -->
                 <h5 class="card-title">{{ photo.title }}</h5>
+                <!-- Short description of the photo -->
                 <p class="card-text short-text">{{ photo.description|slice:":100" }}{% if photo.description|length > 100 %}...<a href="#" class="read-more">Read more</a>{% endif %}</p>
+                <!-- Full description of the photo -->
                 <p class="card-text full-text d-none">{{ photo.description }}</p>
                 {% if user.is_authenticated and user == photo.user %}
+                <!-- Buttons for viewing, editing, and deleting the photo, visible only to the photo's owner -->
                 <div class="d-flex flex-column">
                     <a href="{% url 'photo_detail' photo.pk %}" class="btn btn-primary btn-sm mb-2">View</a>
                     <a href="{% url 'edit_photo' photo.pk %}" class="btn btn-secondary btn-sm mb-2">Edit</a>
@@ -38,6 +49,7 @@
     <!-- Pagination Controls -->
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
+            <!-- Link to the previous page of photos, disabled if on the first page -->
             {% if page_obj.has_previous %}
             <li class="page-item">
                 <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
@@ -52,6 +64,7 @@
             </li>
             {% endif %}
 
+            <!-- Links to individual pages within a certain range -->
             {% for num in page_obj.paginator.page_range %}
             {% if page_obj.number == num %}
             <li class="page-item active">
@@ -64,6 +77,7 @@
             {% endif %}
             {% endfor %}
 
+            <!-- Link to the next page of photos, disabled if on the last page -->
             {% if page_obj.has_next %}
             <li class="page-item">
                 <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">

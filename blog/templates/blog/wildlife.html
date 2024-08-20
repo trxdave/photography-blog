@@ -7,25 +7,33 @@
 
 {% block content %}
 <div class="container-fluid mt-4">
+  <!-- Navigation Bar for Photo Categories -->
   <div class="row">
     <div class="col-md-12">
+      <!-- Navbar with links to different photo categories -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="navbar-nav mr-auto">
+          <!-- Link to view all photos -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'blog' %}">All</a>
           </li>
+          <!-- Link to view landscape photos -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'landscape_photos' %}">Landscape</a>
           </li>
+          <!-- Link to view portrait photos -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'portrait_photos' %}">Portrait</a>
           </li>
+          <!-- Link to view wildlife photos -->
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'wildlife_photos' %}">Wildlife</a>
           </li>
+          <!-- Link to view street photos -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'street_photos' %}">Street</a>
           </li>
+          <!-- Link to view macro photos -->
           <li class="nav-item">
             <a class="nav-link" href="{% url 'macro_photos' %}">Macro</a>
           </li>
@@ -34,16 +42,21 @@
     </div>
   </div>
 
+  <!-- Page Header -->
   <div class="row">
     <div class="col-md-12 text-center">
+      <!-- Title and introductory text for the wildlife photos page -->
       <h1 class="blog">Wildlife Photos</h1>
       <p class="post-below">Explore the beauty of wildlife captured by our photographers.</p>
     </div>
   </div>
 
+  <!-- Control Buttons (Back to Blog and Add Photo) -->
   <div class="row mb-4">
     <div class="col-md-12 d-flex justify-content-between">
+      <!-- Button to navigate back to the blog (all photos) -->
       <a href="{% url 'blog' %}" class="btn btn-primary">Back to Blog</a>
+      <!-- Button to add a new photo, visible only to authenticated users -->
       {% if user.is_authenticated %}
       <a href="{% url 'add_photo' %}" class="btn btn-success-blog">Add Photo</a>
       {% endif %}
@@ -53,17 +66,24 @@
   <!-- Wildlife photo gallery -->
   <div class="photo-gallery row">
     {% for photo in photos %}
+    <!-- Card for each wildlife photo -->
     <div class="card col-md-4 mb-4">
+      <!-- Link to the photo detail page, with the photo image displayed -->
       <a href="{% url 'photo_detail' photo.pk %}">
         <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="card-img-top img-fluid">
       </a>
       <div class="card-body">
+        <!-- Photo title -->
         <h5 class="card-title">{{ photo.title }}</h5>
+        <!-- Short description of the photo -->
         <p class="card-text short-text">{{ photo.description|slice:":100" }}{% if photo.description|length > 100 %}...<a href="{% url 'photo_detail' photo.pk %}" class="read-more">Read more</a>{% endif %}</p>
+        <!-- Full description of the photo, initially hidden -->
         <p class="card-text full-text d-none">{{ photo.description }}</p>
 
+        <!-- Button to view the photo in detail -->
         <a href="{% url 'photo_detail' photo.pk %}" class="btn btn-primary">View</a>
 
+        <!-- Edit and Delete buttons, visible only to the owner of the photo -->
         {% if user.is_authenticated and user == photo.user %}
         <a href="{% url 'edit_photo' photo.pk %}" class="btn btn-primary">Edit</a>
         <a href="{% url 'delete_photo' photo.pk %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this photo?');">Delete</a>
@@ -71,6 +91,7 @@
       </div>
     </div>
     {% empty %}
+    <!-- Message displayed if no wildlife photos are available -->
     <div class="col-md-12 text-center">
       <p>No wildlife photos available.</p>
     </div>

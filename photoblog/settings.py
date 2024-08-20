@@ -29,9 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-trxdave-photographyblog-mhlsv5a8by9.ws.codeinstitute-ide.net',
+ALLOWED_HOSTS = ['8000-trxdave-photographyblog-58jdodadf5c.ws.codeinstitute-ide.net',
 'photography-blog-5d35eeace3db.herokuapp.com', 'photography-blog.herokuapp.com',
 ]
 
