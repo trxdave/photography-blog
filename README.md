@@ -675,6 +675,40 @@ Use Case: Heroku is a cloud platform that lets companies build, deliver, monitor
 
 # Bugs
 
+During the development and testing phases of this project, several bugs were identified and subsequently fixed. Below is a summary of the bugs encountered, along with the steps taken to resolve them.
+
+### Bug List and Fixes
+
+1. Bug: Navigation Menu Not Collapsing on Mobile
+- Description: On mobile devices, the navigation menu was not collapsing correctly after a menu item was selected, leaving the menu open and obstructing content.
+- Cause: The JavaScript responsible for toggling the navigation menu was not correctly targeting the collapse element.
+- Fix: Updated the JavaScript to properly target the collapse element and added an event listener to close the menu after a link is clicked.
+- Status: Fixed
+
+2. Bug: Image Upload Fails on Certain File Types
+- Description: Users reported that the image upload feature would fail when attempting to upload certain file types, such as .gif and .bmp.
+- Cause: The server-side validation was too restrictive, only allowing .jpg and .png files.
+- Fix: Updated the validation rules to include additional image file types and added appropriate error handling to inform the user if an unsupported file type is uploaded.
+- Status: Fixed
+
+3. Bug: Form Validation Errors Not Displaying
+- Description: When users submitted forms with invalid data, the form would refresh but not display any validation error messages, leaving users unaware of what needed to be corrected.
+- Cause: The form template was not properly rendering the validation error messages passed from the backend.
+- Fix: Updated the form templates to correctly display validation errors by including error messages next to each form field.
+- Status: Fixed
+
+4. Bug: 500 Internal Server Error on Photo Detail Page
+- Description: Users occasionally encountered a 500 Internal Server Error when attempting to view the Photo Detail page.
+- Cause: The issue was caused by a null reference in the database when trying to fetch details for a photo that had been deleted or did not exist.
+- Fix: Implemented additional checks to ensure that the photo exists before attempting to load the detail page, and provided a user-friendly error message if the photo is not found.
+- Status: Fixed
+
+5. Bug: Slow Load Times on Blog Page
+- Description: The Blog page was experiencing slow load times, especially when there were many posts with large images.
+- Cause: Images were not being optimized for web display, leading to unnecessarily large file sizes.
+- Fix: Integrated image compression on upload and added lazy loading for images to improve page load times.
+- Status: Fixed
+
 # Heroku Deployment
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
@@ -711,6 +745,26 @@ This project can be cloned or forked in order to make a local copy on your own s
 For either method, you will need to install any applicable packages found within the *requirements.txt* file.
 
 - `pip3 install -r requirements.txt`.
+
+# Requirements
+
+The requirements.txt file lists all the dependencies needed to run the project. Below is a brief description of each package included in this file:
+
+- asgiref==3.8.1: ASGI (Asynchronous Server Gateway Interface) reference implementation, used by Django for handling asynchronous requests.
+- cloudinary==1.40.0: A Python client library for integrating with Cloudinary, a cloud service that offers image and video management.
+- dj-database-url==2.2.0: A utility for configuring Django databases via environment variables, commonly used for configuring databases in production environments like Heroku.
+- dj3-cloudinary-storage==0.0.6: A Django storage backend for integrating with Cloudinary, allowing Django to directly store media files in Cloudinary.
+- Django==5.0.6: The main web framework used for building this project. Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
+- django-allauth==0.63.3: A Django package that provides a comprehensive authentication system, including registration, social account authentication, and email confirmation.
+- django-summernote==0.8.20.0: A Django application that integrates the Summernote WYSIWYG editor, making it easy to add rich text editing capabilities to Django forms and models.
+- gunicorn==22.0.0: A Python WSGI HTTP server for UNIX, commonly used to serve Django applications in production environments.
+- oauthlib==3.2.2: A generic and reusable OAuth request-signing logic library, used for handling OAuth 1 and OAuth 2 authentication flows.
+- pillow==10.3.0: A Python Imaging Library (PIL) fork that provides image processing capabilities, used in Django for handling image uploads and manipulation.
+- psycopg2==2.9.9: A PostgreSQL database adapter for Python, required for interacting with a PostgreSQL database from Django.
+- PyJWT==2.8.0: A Python library for generating and verifying JSON Web Tokens (JWTs), used for handling authentication and secure communications.
+- requests-oauthlib==2.0.0: An OAuthlib integration with the popular requests library, providing OAuth authentication support in HTTP requests.
+- sqlparse==0.5.0: A non-validating SQL parser used by Django's ORM to work with SQL queries. It helps in formatting and analyzing SQL code.
+- whitenoise==6.7.0: A middleware for serving static files directly from your web application, especially useful in production environments to improve performance by serving static files efficiently.
 
 # Credits
 * [Man standing on rock formation](<documentation/images/hero-image.jpg>)
