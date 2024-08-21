@@ -239,16 +239,16 @@ def search_view(request):
     """
     Search on photos by title or description.
     """
-    query = request.GET.get('q')
+    query = request.GET.get('q', '')
     results = []
     
     if query:
         results = Photo.objects.filter(
             Q(title__icontains=query) | 
             Q(description__icontains=query)
-        )
+        ).values('pk', 'title', 'description')
     
-    return render(request, 'blog/search_results.html', {'results': results, 'query': query})
+    return JsonResponse(list(results), safe=False)
 
 def category_view(request, category_name):
     """

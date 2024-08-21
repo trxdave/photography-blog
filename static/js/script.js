@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const searchTerm = searchInput.value.trim();
             if (searchTerm) {
-                fetch(`/search?q=${searchTerm}`)
+                fetch(`/search?q=${encodeURIComponent(searchTerm)}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Error fetching search results');
@@ -24,16 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         } else {
                             posts.forEach(post => {
                                 const postHTML = `
-                                    <h2>${post.title}</h2>
-                                    <p>${post.content}</p>
+                                    <li class="list-group-item">
+                                        <a href="/photo/${post.pk}/">${post.title}</a>
+                                        <p>${post.description.slice(0, 100)}${post.description.length > 100 ? '...' : ''}</p>
+                                    </li>
                                 `;
                                 searchResultsContainer.innerHTML += postHTML;
                             });
                         }
                     })
                     .catch(error => {
-                        console.error(error);
-                        window.location.href = '/404.html';
+                        console.error('Error:', error);
+                        searchResultsContainer.innerHTML = '<p>An error occurred. Please try again later.</p>';
                     });
             }
         });
@@ -45,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target && e.target.classList.contains('dropdown-item')) {
                 console.log('Dropdown item clicked!');
                 // Handle the selected item here
-                // The selectedItem variable was removed since it's not used
             }
         });
     }
