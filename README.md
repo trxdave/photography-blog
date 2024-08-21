@@ -775,6 +775,19 @@ The requirements.txt file lists all the dependencies needed to run the project. 
 - **sqlparse==0.5.0:** A non-validating SQL parser used by Django's ORM to work with SQL queries. It helps in formatting and analyzing SQL code.
 - **whitenoise==6.7.0:** A middleware for serving static files directly from your web application, especially useful in production environments to improve performance by serving static files efficiently.
 
+# Cloudinary
+
+Specifically, when you set DEFAULT_FILE_STORAGE to use Cloudinary, all media files, including static files, might be uploaded to Cloudinary during the collectstatic process. This can cause unexpected behavior, especially if you intended to keep static files locally.
+
+1. **To avoid issues:**
+Temporarily Remove Cloudinary Storage: Before running python3 manage.py collectstatic, temporarily remove or comment out the DEFAULT_FILE_STORAGE setting.
+
+2. **Run Collectstatic:** Execute the collectstatic command to gather all static files locally.
+
+3. **Re-enable Cloudinary:** After collecting static files, re-enable the DEFAULT_FILE_STORAGE to Cloudinary if needed.
+
+
+
 # Credits
 * [Man standing on rock formation](<documentation/images/hero-image.jpg>)
 * [Black and silver DSLR lens](<documentation/images/lens.jpg>)
@@ -804,4 +817,4 @@ The requirements.txt file lists all the dependencies needed to run the project. 
 * [Stack Overflow](https://stackoverflow.com/): For the countless solutions and insights from the developer community.
 * [W3Schools](https://www.w3schools.com/): For their comprehensive tutorials that served as a quick reference throughout development.
 * [Hackathon](https://hackathon.codeinstitute.net/teams/445/): For the invaluable experience gained through participation, where I achieved 3rd place (Bronze). The challenges and teamwork during the event greatly contributed to my learning and growth as a developer.
-* Thanks to Paul Thomas O'Riordan and Kristyna my Cohort Facilitator also Rory Patrick Sheridan my Code Institue Mentor, Tim Nelson second Mentor. 
+* Thanks to Paul Thomas O'Riordan and Kristyna my Cohort Facilitator also Rory Patrick Sheridan my Code Institue Mentor, Tim Nelson second Mentor.
