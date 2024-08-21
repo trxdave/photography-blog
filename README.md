@@ -1,17 +1,18 @@
 # Photography Blog
 
-View the live project here [Photography Blog](https://photography-blog-5d35eeace3db.herokuapp.com)
-
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/trxdave/photography-blog)](https://github.com/trxdave/photography-blog/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/trxdave/photography-blog)](https://github.com/trxdave/photography-blog/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/trxdave/photography-blog)](https://github.com/trxdave/photography-blog)
 
-Am I Responsive
-Here's deployed site: [Am I Responsive](https://ui.dev/amiresponsive?url=https://photography-blog-5d35eeace3db.herokuapp.com/)
+# Am I Responsive
+
+**Here's deployed site:** [Am I Responsive](https://ui.dev/amiresponsive?url=https://photography-blog-5d35eeace3db.herokuapp.com/)
 
 ![alt text](documentation/images/amiresponsive1.png)
 
 ## Introduction
+
+**View the live project here:** [Photography Blog](https://photography-blog-5d35eeace3db.herokuapp.com)
 
 Photography Blog is a dynamic web application created for photography enthusiasts who wish to showcase their work and connect with a community of like-minded individuals. This platform allows users to upload their photos, categorize them, and engage with others through comments and likes. Whether you’re an amateur photographer or a seasoned professional, the Photography Blog offers a space to share your visual stories with the world.
 
@@ -42,44 +43,45 @@ For users, the Photography Blog aims to fulfill the following goals:
 7. Secure and Private Experience: Users should feel confident that their personal information is secure, and that they have privacy controls over their content.
 
 ## Problem Statement
+
 ### Background
 Photography is a powerful medium for storytelling, yet existing platforms often fail to provide photographers with the tailored experience they need. General social media sites overwhelm quality content with sheer volume, making it difficult for photographers to stand out and connect meaningfully with their audience.
 
 ### Problem
 Photographers face several challenges on current platforms:
 
-- Lack of Niche Communities: General platforms don’t offer specialized spaces for photographers.
-- Content Overload: Quality work often gets lost in a sea of posts.
-- Limited Content Control: Users need better tools to manage and showcase their work.
-- Poor Engagement: Existing interaction tools are often inadequate for meaningful feedback.
-- Mobile Responsiveness Issues: Many platforms fail to provide a consistent visual experience across devices.
+- **Lack of Niche Communities:** General platforms don’t offer specialized spaces for photographers.
+- **Content Overload:** Quality work often gets lost in a sea of posts.
+- **Limited Content Control:** Users need better tools to manage and showcase their work.
+- **Poor Engagement:** Existing interaction tools are often inadequate for meaningful feedback.
+- **Mobile Responsiveness Issues:** Many platforms fail to provide a consistent visual experience across devices.
 
 ### Requirements
 To address these challenges, the Photography Blog must:
 
-- Offer User-Friendly Design: Easy navigation and content management.
-- Encourage Engagement: Features like comments, likes, and search to enhance interaction.
-- Ensure Responsiveness: Consistent design across all devices.
-- Provide Secure Authentication: Protect user data and content.
-- Foster Community Building: Tools that promote connections among photographers.
+- **Offer User-Friendly Design:** Easy navigation and content management.
+- **Encourage Engagement:** Features like comments, likes, and search to enhance interaction.
+- **Ensure Responsiveness:** Consistent design across all devices.
+- **Provide Secure Authentication:** Protect user data and content.
+- **Foster Community Building:** Tools that promote connections among photographers.
 
 ### Target Audience
 This platform is designed for:
 
-- Amateur Photographers: Looking to share and improve their skills.
-- Professional Photographers: Seeking to showcase their portfolios and connect with peers.
-- Photography Enthusiasts: Interested in exploring and engaging with visual content.
-- Content Creators: Searching for a dedicated space to share high-quality photography.
-- Art Directors & Agencies: Looking for new talent and inspiration.
+- **Amateur Photographers:** Looking to share and improve their skills.
+- **Professional Photographers:** Seeking to showcase their portfolios and connect with peers.
+- **Photography Enthusiasts:** Interested in exploring and engaging with visual content.
+- **Content Creators:** Searching for a dedicated space to share high-quality photography.
+- **Art Directors & Agencies:** Looking for new talent and inspiration.
 
 ## Entity-Relationship Diagram (ERD)
 The Entity-Relationship Diagram (ERD) representing the relationships between the User, Category, Photo and Comment models.
 
-- User to Photo: A one to many relationship where a user can upload many photos.
-- Category to Photo: A one to many relationship where each photo belongs to one category.
-- Photo to Comment: A one to many relationship where a photo can have many comments.
-- User to Comment: A one to many relationship where a user can make many comments.
-- User to Photo (Likes): A many to many relationship where users can like many photos, and each photo can be liked by many users.
+- **User to Photo:** A one to many relationship where a user can upload many photos.
+- **Category to Photo:** A one to many relationship where each photo belongs to one category.
+- **Photo to Comment:** A one to many relationship where a photo can have many comments.
+- **User to Comment:** A one to many relationship where a user can make many comments.
+- **User to Photo (Likes):** A many-to-many relationship where users can like many photos, and many users can like each photo.
 
 ![alt text](<documentation/erd/database-erd-photography-blog.png>)
 
@@ -144,32 +146,32 @@ This project was organized and executed using Agile methodology. A Kanban board 
 # Features
 
 ## User Authentication
-- Sign Up: New users can create an account.
-- Login/Logout: Users can log in and out securely.
-- Profile Management: Users can manage their profile and view their uploaded photos.
+- **Sign Up:** New users can create an account.
+- **Login/Logout:** Users can log in and out securely.
+- **Profile Management:** Users can manage their profile and view their uploaded photos.
 
 ## Photo Management
-- Upload Photos: Users can upload photos with titles, descriptions, and categorise them.
-- Edit/Delete Photos: Users can edit or delete their photos.
-- Photo Gallery: Users can browse through all photos uploaded by others.
-- Like Photos: Users can like or unlike Photos.
-- View Photo Details: Clicking on a photo displays a detailed view with the photo, title, description, likes, and comments.
+- **Upload Photos:** Users can upload photos with titles, descriptions, and categorise them.
+- **Edit/Delete Photos:** Users can edit or delete their photos.
+- **Photo Gallery:** Users can browse through all photos uploaded by others.
+- **Like Photos:** Users can like or unlike Photos.
+- **View Photo Details:** Clicking on a photo displays a detailed view with the photo, title, description, likes, and comments.
 
 ## Comments
-- Comment on Photos: Users can leave comments on photos.
-- Delete Comments: Users can delete their comments.
+- **Comment on Photos:** Users can leave comments on photos.
+- **Delete Comments:** Users can delete their comments.
 
 ## Search Functionality
-- Search Bar: Users can search for photos by title or content directly from the navbar.
+- **Search Bar:** Users can search for photos by title or content directly from the navbar.
 
 ## Pagination
-- Paginated Views: The photo gallery and comments are paginated for easy navigation.
+- **Paginated Views:** The photo gallery and comments are paginated for easy navigation.
 
 ## Responsive Design
-- Mobile Friendly: The site is fully responsive, ensuring a seamless experience on mobile devices.
+- **Mobile Friendly:** The site is fully responsive, ensuring a seamless experience on mobile devices.
 
 ## Error Handling
-- Custom Error Pages: The site includes custom error pages for 404, 500, 403 and 400 errors.
+- **Custom Error Pages:** The site includes custom error pages for 404, 500, 403 and 400 errors.
 
 # Model Design
 
@@ -177,36 +179,36 @@ This project was organized and executed using Agile methodology. A Kanban board 
 The design of the Photography Blog is modern and minimalist, with a focus on showcasing high-quality images. The layout is clean and simple, with ample whitespace to create a visually appealing experience for users. The color scheme is a combination of neutral tones, with accents of blue to evoke a sense of creativity and inspiration.
 
 ### base.html
-- Navigation Bar: The navigation bar is placed at the top of the page, providing easy access to the main sections of the blog, including Home, Blog, About, Contact and user-specific options like My Photo List and Logout.
+- **Navigation Bar:** The navigation bar is placed at the top of the page, providing easy access to the main sections of the blog, including Home, Blog, About, Contact and user-specific options like My Photo List and Logout.
 
-- Responsive Bahavior:
+- **Responsive Bahavior:**
     - The navigation bar collapses into a hamburger menu on smaller screens.
     - It uses Bootstrap's responsive classes to ensure proper alignment and spacing.
 
 ![alt text](documentation/images/header.png)
 
-- Header Image
+- **Header Image:**
 - The header image spans the full width of the screen and adjusts its height based on the viewport. It serves as a visually engaging introduction to the site.
 
-- Implementation:
+- **Implementation:**
     - The image is set as a background image in the CSS, using the background-size: cover property to maintain aspect ratio and cover the container.
     - The header image is responsive and adapts to different screen sizes without losing its aspect ratio.
 
 ![alt text](documentation/images/header-image.jpg)
 
-- Welcome Section:
+- **Welcome Section:**
     - The homepage of the Photography Blog features a prominent welcome section designed to engage visitors immediately. This section includes a welcoming message, a visually appealing lens image, and a call-to-action button inviting users to explore the blog.
 
-- Lens Image:
+- **Lens Image:**
     - The welcome section includes a high-quality image of a camera lens, symbolizing the focus of the blog—photography.
     - Placement and Sizing: The image is placed below the welcome message and is responsive to screen size. It is designed to scale appropriately on mobile devices, tablets, and desktops, maintaining its visual impact without overwhelming the text.
 
-- Action Button:
+- **Action Button:**
     - The button text reads "Explore My Blog," encouragaing users to dive deeper into the content.
 
 ![alt text](documentation/images/welcome.png)
 
-- Footer: 
+- **Footer:**
     - The footer is kept minimal and clean, with a dark background and white text. It includes social media icons and is centered for symmetry.
     - The footer's layout adjusts to ensure all elements remain accessible and visually appealing on all screen sizes.
 
@@ -215,17 +217,17 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 ### blog.html
 - The blog page showcases a collection of photography posts, organized into categories like Landscape, Portrait, Wildlife, Street, and Macro.
 
-- Layout:
-    - Category Navigation: A horizontal navigation bar at the top allows users to filter photos by category. The active category is highlighted for easy identification.
-    - Photo Grid: Posts are displayed in a responsive grid layout, ensuring that images adjust smoothly across different screen sizes. Each photo is accompanied by a title and a short description.
+- **Layout:**
+    - **Category Navigation:** A horizontal navigation bar at the top allows users to filter photos by category. The active category is highlighted for easy identification.
+    - **Photo Grid:** Posts are displayed in a responsive grid layout, ensuring that images adjust smoothly across different screen sizes. Each photo is accompanied by a title and a short description.
 
-- Responsive Design:
-    - Mobile: The grid adjusts to a single column, ensuring photos and text are easily viewable.
-    - Tablet and Desktop: The grid expands to multiple columns, providing a balanced and visually appealing display of content.
+- **Responsive Design:**
+    - **Mobile:** The grid adjusts to a single column, ensuring photos and text are easily viewable.
+    - **Tablet and Desktop:** The grid expands to multiple columns, providing a balanced and visually appealing display of content.
 
-- Interactive Elements:
-    - Photo Links: Each photo links to a detailed view where users can see the full post, read comments, and interact with the content.
-    - Pagination: Users can navigate through multiple pages of posts with easy-to-use pagination controls at the bottom.
+- **Interactive Elements:**
+    - **Photo Links:** Each photo links to a detailed view where users can see the full post, read comments, and interact with the content.
+    - **Pagination:** Users can navigate through multiple pages of posts with easy-to-use pagination controls at the bottom.
     
 ![alt text](documentation/images/blog1.png)
 ![alt text](documentation/images/blog2.png)
@@ -234,29 +236,29 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 
 - Each category page presents a curated selection of photography posts focused on a specific theme, allowing users to explore content based on their interests.
 
-- Layout:
-    - Category-Specific Navigation: Users can switch between different categories using the navigation bar at the top. The current category is prominently highlighted.
-    - Photo Display: Similar to the blog page, photos are displayed in a responsive grid layout with titles and short descriptions. Each image represents a unique perspective within the chosen category.
+- **Layout:**
+    - **Category-Specific Navigation:** Users can switch between different categories using the navigation bar at the top. The current category is prominently highlighted.
+    - **Photo Display:** Similar to the blog page, photos are displayed in a responsive grid layout with titles and short descriptions. Each image represents a unique perspective within the chosen category.
 
-- Responsive Design:
-    - Mobile: The grid adapts to a single column for optimal viewing on smaller screens.
-    - Tablet and Desktop: Multiple columns are used to display photos, ensuring a balanced and organized presentation across devices.
+- **Responsive Design:**
+    - **Mobile:** The grid adapts to a single column for optimal viewing on smaller screens.
+    - **Tablet and Desktop:** Multiple columns are used to display photos, ensuring a balanced and organized presentation across devices.
 
-- Interactive Elements:
-    - Photo Links: Clicking on a photo takes the user to a detailed view, where they can explore the full post, read and leave comments, and interact with the content.
-    - Pagination: For categories with a large number of posts, pagination controls are provided to navigate through multiple pages.
+- **Interactive Elements:**
+    - **Photo Links:** Clicking on a photo takes the user to a detailed view, where they can explore the full post, read and leave comments, and interact with the content.
+    - **Pagination:** For categories with a large number of posts, pagination controls are provided to navigate through multiple pages.
 
-- Category-Specific Content:
-    - Landscape: Focuses on natural scenery, capturing the beauty of the outdoors.
-    - Portrait: Highlights individual and group portraits, showcasing emotions and expressions.
-    - Wildlife: Features photography of animals and nature, emphasizing the diversity of wildlife.
-    - Street: Captures the essence of urban life, with photos taken in streets and public places.
-    - Macro: Delves into the details of small subjects, offering close-up views that reveal intricate details.
+- **Category-Specific Content:**
+    - **Landscape:** Focuses on natural scenery, capturing the beauty of the outdoors.
+    - **Portrait:** Highlights individual and group portraits, showcasing emotions and expressions.
+    - **Wildlife:** Features photography of animals and nature, emphasizing the diversity of wildlife.
+    - **Street:** Captures the essence of urban life, with photos taken in streets and public places.
+    - **Macro:** Delves into the details of small subjects, offering close-up views that reveal intricate details.
 
-- Photo Management Features:
-    - View Photos: Every user, whether logged in or not, can view all photos uploaded by any user. Each photo can be viewed in detail by clicking the "View" button, which redirects to a detailed view of the photo along with its description and any associated comments.
-    - Edit Photos: Users who have uploaded photos have the option to edit them. When logged in, if a user views their own photos, they will see an "Edit" button alongside the photo. This button allows them to modify the photo's details, such as the title, description, or the photo itself.
-    - Delete Photos: Similarly, users have the ability to delete their own photos. The "Delete" button appears next to photos owned by the logged-in user. Upon clicking, the user is prompted to confirm the deletion, ensuring that photos are not accidentally removed.
+- **Photo Management Features:**
+    - **View Photos:** Every user, whether logged in or not, can view all photos uploaded by any user. Each photo can be viewed in detail by clicking the "View" button, which redirects to a detailed view of the photo along with its description and any associated comments.
+    - **Edit Photos:** Users who have uploaded photos have the option to edit them. When logged in, if a user views their own photos, they will see an "Edit" button alongside the photo. This button allows them to modify the photo's details, such as the title, description, or the photo itself.
+    - **Delete Photos:** Similarly, users have the ability to delete their own photos. The "Delete" button appears next to photos owned by the logged-in user. Upon clicking, the user is prompted to confirm the deletion, ensuring that photos are not accidentally removed.
 
 ### landscape.html -
 ![alt text](documentation/images/landscape1.png)
@@ -271,36 +273,36 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 
 ### Add Photo Page -
 
-- The "Add Photo" page is an essential feature of the Photography Blog, allowing users to contribute their own photography to the site. This page is only accessible to logged-in users. The key features of the "Add Photo" page include:
+- **The "Add Photo" page** is an essential feature of the Photography Blog, allowing users to contribute their own photography to the site. This page is only accessible to logged-in users. The key features of the "Add Photo" page include:
 
-- Photo Upload: Users can easily upload their photos by selecting a file from their device. The photo will be stored and displayed on the blog, categorized according to the user's choice.
+- **Photo Upload:** Users can easily upload their photos by selecting a file from their device. The photo will be stored and displayed on the blog, categorized according to the user's choice.
 
-- Title and Description: Along with the photo, users are required to provide a title and a description. The title helps in identifying the photo, while the description allows the user to share the story or context behind the image.
+- **Title and Description:** Along with the photo, users are required to provide a title and a description. The title helps in identifying the photo, while the description allows the user to share the story or context behind the image.
 
-- Category Selection: Users can categorize their photos by choosing from predefined categories such as Landscape, Portrait, Wildlife, Street, and Macro. This helps in organizing the photos within the blog and aids in easy navigation for viewers.
+- **Category Selection:** Users can categorize their photos by choosing from predefined categories such as Landscape, Portrait, Wildlife, Street, and Macro. This helps in organizing the photos within the blog and aids in easy navigation for viewers.
 
-- Form Validation: The form on the "Add Photo" page includes validation to ensure all required fields are filled out correctly. If any issues are detected, the user is prompted to correct them before submission.
+- **Form Validation:** The form on the "Add Photo" page includes validation to ensure all required fields are filled out correctly. If any issues are detected, the user is prompted to correct them before submission.
 
 ![alt text](documentation/images/addphoto1.png)
 
-- Success Message: After successfully uploading a photo, users are redirected to a success page, and a success message is displayed. This confirms that their photo has been added to the blog and is visible to other users.
+- **Success Message:** After successfully uploading a photo, users are redirected to a success page, and a success message is displayed. This confirms that their photo has been added to the blog and is visible to other users.
 
 ![alt text](documentation/images/photo-success-deleted.png)
 
 ### My Photo List Page
 
-- The "My Photo List" page is a personalized feature for logged-in users, providing them with a dedicated space to manage their uploaded photos. This page displays all the photos a user has uploaded to the Photography Blog. The key features of the "My Photo List" page include:
+- **The "My Photo List" page** is a personalized feature for logged-in users, providing them with a dedicated space to manage their uploaded photos. This page displays all the photos a user has uploaded to the Photography Blog. The key features of the "My Photo List" page include:
 
-- Personal Photo Gallery: Users can view a gallery of all the photos they have uploaded. Each photo is displayed with its title and a brief description, offering a quick overview of the user's contributions to the blog.
+- **Personal Photo Gallery:** Users can view a gallery of all the photos they have uploaded. Each photo is displayed with its title and a brief description, offering a quick overview of the user's contributions to the blog.
 
-- View, Edit, Delete Options: For each photo in the gallery, users have the following options:
+- **View, Edit, Delete Options:** For each photo in the gallery, users have the following options:
 
-- View: Opens the detailed view of the photo, allowing the user to see it in full size along with all associated comments and likes.
-- Edit: Allows the user to modify the title, description, or even replace the photo. This is useful for updating content or correcting any mistakes.
-- Delete: Provides the option to remove the photo from the blog. A confirmation prompt ensures that users do not accidentally delete their content.
-- Pagination: The photo list is paginated to ensure that the page remains easy to navigate, even for users with a large number of uploads. Users can easily navigate between pages to view all their photos.
+- **View:** Opens the detailed view of the photo, allowing the user to see it in full size along with all associated comments and likes.
+- **Edit:** Allows the user to modify the title, description, or even replace the photo. This is useful for updating content or correcting any mistakes.
+- **Delete:** Provides the option to remove the photo from the blog. A confirmation prompt ensures that users do not accidentally delete their content.
+- **Pagination:** The photo list is paginated to ensure that the page remains easy to navigate, even for users with a large number of uploads. Users can easily navigate between pages to view all their photos.
 
-- Responsive Design: The "My Photo List" page is designed to be fully responsive, ensuring a seamless experience across different devices, including desktops, tablets, and mobile phones.
+- **Responsive Design:** The "My Photo List" page is designed to be fully responsive, ensuring a seamless experience across different devices, including desktops, tablets, and mobile phones.
 
 This page serves as a personal management tool, giving users full control over their uploaded content on the Photography Blog. It encourages users to maintain and curate their gallery, contributing to the overall quality and organization of the site.
 
@@ -311,10 +313,10 @@ This page serves as a personal management tool, giving users full control over t
 ### View Page
 The View Page displays detailed information about a specific photo, including its title, description, and the photographer's username. Key features include:
 
-- Photo Display: Large view of the image with detailed information below.
-- User Interactions: Authenticated users can comment, like, and view the photo’s popularity.
-- Owner Controls: If the user owns the photo, "Edit" and "Delete" buttons are available.
-- Responsive Design: The page is fully responsive, ensuring optimal display across all device sizes.
+- **Photo Display:** Large view of the image with detailed information below.
+- **User Interactions:** Authenticated users can comment, like, and view the photo’s popularity.
+- **Owner Controls:** If the user owns the photo, "Edit" and "Delete" buttons are available.
+- **Responsive Design:** The page is fully responsive, ensuring optimal display across all device sizes.
 
 ![alt text](documentation/images/view1.png)
 ![alt text](documentation/images/view2.png)
@@ -322,21 +324,21 @@ The View Page displays detailed information about a specific photo, including it
 ### Edit Page
 The Edit Page allows users to modify the details of their uploaded photos. Key features include:
 
-- Form for Editing: Users can update the title, description, and category of the photo using a pre-filled form.
-- Image Update: Option to change the photo if necessary.
-- User Authentication: Only the photo's owner can access and edit the photo.
-- Success Messages: After successfully updating the photo, the user is redirected with a confirmation message.
-- Responsive Design: The form layout adjusts seamlessly across all device sizes, ensuring a smooth editing experience.
+- **Form for Editing:** Users can update the title, description, and category of the photo using a pre-filled form.
+- **Image Update:** Option to change the photo if necessary.
+- **User Authentication:** Only the photo's owner can access and edit the photo.
+- **Success Messages:** After successfully updating the photo, the user is redirected with a confirmation message.
+- **Responsive Design:** The form layout adjusts seamlessly across all device sizes, ensuring a smooth editing experience.
 
 ![alt text](documentation/images/edit.png)
 
 ### Delete Photo
 The Delete Page allows users to permanently remove their uploaded photos. Key features include:
 
-- Confirmation Prompt: Users are asked to confirm their decision to delete a photo to prevent accidental deletions.
-- User Authentication: Only the owner of the photo has access to delete it, ensuring security and control.
-- Success Messages: Upon successful deletion, users are redirected to the blog page with a confirmation message.
-- Responsive Design: The confirmation layout is optimized for all device sizes, providing a consistent user experience.
+- **Confirmation Prompt:** Users are asked to confirm their decision to delete a photo to prevent accidental deletions.
+- **User Authentication:** Only the owner of the photo has access to delete it, ensuring security and control.
+- **Success Messages:** Upon successful deletion, users are redirected to the blog page with a confirmation message.
+- **Responsive Design:** The confirmation layout is optimized for all device sizes, providing a consistent user experience.
 
 ![alt text](documentation/images/deletephoto.png)
 ![alt text](documentation/images/deletephoto1.png)
@@ -344,10 +346,10 @@ The Delete Page allows users to permanently remove their uploaded photos. Key fe
 ### About Us
 The About Us page provides visitors with insights into the mission and vision of the Photography Blog. Key elements include:
 
-- Introduction: A brief overview of the blog's purpose, highlighting its role in inspiring and educating photography enthusiasts.
-- Mission Statement: Details on how the blog aims to connect photographers of all levels, offering tutorials, gear reviews, and inspiring photo galleries.
-- Community Focus: Emphasis on building a community where photographers can share their experiences, engage in discussions, and showcase their work.
-- Responsive Design: The page is fully responsive, ensuring readability and visual appeal across all devices.
+- **Introduction:** A brief overview of the blog's purpose, highlighting its role in inspiring and educating photography enthusiasts.
+- **Mission Statement:** Details on how the blog aims to connect photographers of all levels, offering tutorials, gear reviews, and inspiring photo galleries.
+- **Community Focus:** Emphasis on building a community where photographers can share their experiences, engage in discussions, and showcase their work.
+- **Responsive Design:** The page is fully responsive, ensuring readability and visual appeal across all devices.
 
 ![alt text](documentation/images/aboutus1.png)
 ![alt text](documentation/images/aboutus2.png)
@@ -355,42 +357,42 @@ The About Us page provides visitors with insights into the mission and vision of
 ### Contact Us
 The Contact Us page is designed to facilitate communication between visitors and the Photography Blog team. Key features include:
 
-- Contact Form: A straightforward form that allows users to submit inquiries, feedback, or requests. The form includes fields for name, email, and message, ensuring that the team can respond effectively.
-- Success Message: Upon successful submission, users receive a confirmation message, assuring them that their message has been received.
-- Responsive Design: The page is fully responsive, ensuring that the form is easy to use on all devices, from desktops to mobile phones.
-- Security: The form includes validation and protection against spam, ensuring that all submissions are genuine and relevant.
+- **Contact Form:** A straightforward form that allows users to submit inquiries, feedback, or requests. The form includes fields for name, email, and message, ensuring that the team can respond effectively.
+- **Success Message:** Upon successful submission, users receive a confirmation message, assuring them that their message has been received.
+- **Responsive Design:** The page is fully responsive, ensuring that the form is easy to use on all devices, from desktops to mobile phones.
+- **Security:** The form includes validation and protection against spam, ensuring that all submissions are genuine and relevant.
 
 ![alt text](documentation/images/contactus.png)
 
 ### Sign Up
 The Sign Up page allows new users to create an account on the Photography Blog. It includes a simple and user-friendly form where users can enter their desired username, email, and password. Upon successful registration, users are automatically logged in and redirected to the homepage. A success message is displayed to welcome the new user.
 
-- User Registration: Users can sign up by providing a username, email, and password.
-- Automatic Login: After registration, users are automatically logged in.
-- Success Feedback: A confirmation message is shown to the user upon successful registration.
-- Form Validation: The form includes validation to ensure all required fields are filled out correctly.
+- **User Registration:** Users can sign up by providing a username, email, and password.
+- **Automatic Login:** After registration, users are automatically logged in.
+- **Success Feedback:** A confirmation message is shown to the user upon successful registration.
+- **Form Validation:** The form includes validation to ensure all required fields are filled out correctly.
 
 ![alt text](documentation/images/signup.png)
 
 ### Login
 The Login page provides a secure way for returning users to access their accounts on the Photography Blog. The page features a straightforward form where users can enter their username and password. After a successful login, users are redirected to the homepage.
 
-- User Authentication: Users can log in with their registered username and password.
-- Redirect on Success: After logging in, users are redirected to the homepage.
-- Error Handling: If login credentials are incorrect, an error message is shown, prompting the user to try again.
+- **User Authentication:** Users can log in with their registered username and password.
+- **Redirect on Success:** After logging in, users are redirected to the homepage.
+- **Error Handling:** If login credentials are incorrect, an error message is shown, prompting the user to try again.
 
 ![alt text](documentation/images/login.png)
 
 ### Error Page
 The Photography Blog includes custom error pages to enhance user experience when something goes wrong. These pages ensure that even in the case of errors, users receive clear and helpful feedback. The custom error pages include:
 
-- 400 Bad Request: This page appears when the server cannot process the request due to a client error, such as a malformed request syntax. It provides a simple, clear explanation and a link to navigate back to the homepage.
+- **400 Bad Request:** This page appears when the server cannot process the request due to a client error, such as a malformed request syntax. It provides a simple, clear explanation and a link to navigate back to the homepage.
 
-- 403 Forbidden: This page is shown when a user tries to access a resource they do not have permission to view. It clearly explains the issue and encourages the user to contact the site administrator if they believe this is an error.
+- **403 Forbidden:** This page is shown when a user tries to access a resource they do not have permission to view. It clearly explains the issue and encourages the user to contact the site administrator if they believe this is an error.
 
-- 404 Not Found: This page is displayed when a user attempts to access a page that doesn't exist. It provides a friendly message, suggesting that the user may have mistyped the URL or clicked on a broken link. The page includes a button to redirect users back to the homepage.
+- **404 Not Found:** This page is displayed when a user attempts to access a page that doesn't exist. It provides a friendly message, suggesting that the user may have mistyped the URL or clicked on a broken link. The page includes a button to redirect users back to the homepage.
 
-- 500 Internal Server Error: In the event of a server issue, this page informs the user that something went wrong on the server side. It suggests trying again later and includes a link to return to the homepage.
+- **500 Internal Server Error:** In the event of a server issue, this page informs the user that something went wrong on the server side. It suggests trying again later and includes a link to return to the homepage.
 
 ![400 Bad Request](documentation/images/400-bad-request.png)
 ![403 Forbidden](documentation/images/403-forbidden.png)
@@ -403,24 +405,24 @@ The design choices were influenced by the need to create a platform that is easy
 ## Colours
 The colors used in the design are:
 
-- Primary Text Color: #333 - Used for the main text across the website.
-- Background Color: #f9f9f9 - Used for the overall background of the site and form backgrounds.
-- Header Background Color: #333 - Used for the header and other key areas, providing a dark contrast.
-- Button Primary Color: #4CAF50 - Used for primary action buttons, such as submit and upload.
-- Button Hover Color: #3e8e41 - The hover state for primary buttons, creating an interactive feel.
-- Alert Success Background: #dff0d8 - Used for success messages, like after form submissions.
-- Alert Success Text: #3c763d - Text color for success alerts.
-- Alert Danger Background: #f2dede - Used for error or danger messages.
-- Alert Danger Text: #a94442 - Text color for error alerts.
-- Footer Background Color: #333 - Provides a dark footer with contrasting white text.
-- Footer Text and Icon Color: #fff - Ensures good readability against the dark background.
+- **Primary Text Color:** #333 - Used for the main text across the website.
+- **Background Color:** #f9f9f9 - Used for the overall background of the site and form backgrounds.
+- **Header Background Color:** #333 - Used for the header and other key areas, providing a dark contrast.
+- **Button Primary Color:** #4CAF50 - Used for primary action buttons, such as submit and upload.
+- **Button Hover Color:** #3e8e41 - The hover state for primary buttons, creating an interactive feel.
+- **Alert Success Background:** #dff0d8 - Used for success messages, like after form submissions.
+- **Alert Success Text:** #3c763d - Text color for success alerts.
+- **Alert Danger Background:** #f2dede - Used for error or danger messages.
+- **Alert Danger Text:** #a94442 - Text color for error alerts.
+- **Footer Background Color:** #333 - Provides a dark footer with contrasting white text.
+- **Footer Text and Icon Color:** #fff - Ensures good readability against the dark background.
 
 ![alt text](documentation/images/color.png)
 
 ## Fonts
 The fonts used in your project are:
 
-Arial, sans-serif: This is the main font used throughout your CSS for body text and headings. It's a widely used, clean, and highly readable font that is supported across all browsers and devices.
+**Arial, sans-serif:** This is the main font used throughout your CSS for body text and headings. It's a widely used, clean, and highly readable font that is supported across all browsers and devices.
 
 # Wireframes
 
@@ -551,163 +553,168 @@ I used Google PageSpeed Insights to evaluate the accessibility of our website on
 
 ### Key Accessibility Highlights
 
-- Consistent High Scores: The accessibility scores are consistently high across both mobile and desktop platforms, indicating that the site is well-optimized for accessibility on different devices.
+- **Consistent High Scores:** The accessibility scores are consistently high across both mobile and desktop platforms, indicating that the site is well-optimized for accessibility on different devices.
 
-- Responsive Design: The website's design adapts well to both mobile and desktop screens, ensuring that content remains accessible and usable regardless of the device being used.
+- **Responsive Design:** The website's design adapts well to both mobile and desktop screens, ensuring that content remains accessible and usable regardless of the device being used.
 
-- Color Contrast: All text elements meet the recommended contrast ratio, ensuring that text is easily readable against background colors on both mobile and desktop devices. This is crucial for users with visual impairments.
+- **Color Contrast:** All text elements meet the recommended contrast ratio, ensuring that text is easily readable against background colors on both mobile and desktop devices. This is crucial for users with visual impairments.
 
-- Alt Text for Images: All images include descriptive alt attributes, allowing screen readers to convey the purpose of images to users who are visually impaired, on both mobile and desktop.
+- **Alt Text for Images:** All images include descriptive alt attributes, allowing screen readers to convey the purpose of images to users who are visually impaired, on both mobile and desktop.
 
-- Keyboard Navigation: The site is fully navigable using a keyboard, which is essential for users with motor disabilities who cannot use a mouse. Interactive elements like links, buttons, and forms are easily accessible via keyboard on both platforms.
+- **Keyboard Navigation:** The site is fully navigable using a keyboard, which is essential for users with motor disabilities who cannot use a mouse. Interactive elements like links, buttons, and forms are easily accessible via keyboard on both platforms.
 
-- Form Labels: All forms, such as those on the Contact Us page, have associated labels, making it clear to screen reader users what information is required on both mobile and desktop.
+- **Form Labels:** All forms, such as those on the Contact Us page, have associated labels, making it clear to screen reader users what information is required on both mobile and desktop.
 
-- ARIA Landmarks: Appropriate ARIA (Accessible Rich Internet Applications) landmarks are used to help assistive technologies understand the structure of the page and navigate through sections effectively on both devices.
+- **ARIA Landmarks:** Appropriate ARIA (Accessible Rich Internet Applications) landmarks are used to help assistive technologies understand the structure of the page and navigate through sections effectively on both devices.
 
 ### Areas for Improvement
 
 While the overall accessibility scores are high, there are a few areas where improvements could be made:
 
-- Interactive Element States: Ensuring that all interactive elements, such as buttons and links, have visible focus states that are easy to identify when using a keyboard, especially on mobile where touch interactions are more common.
+- **Interactive Element States:** Ensuring that all interactive elements, such as buttons and links, have visible focus states that are easy to identify when using a keyboard, especially on mobile where touch interactions are more common.
 
-- Language Attributes: Ensuring that the lang attribute is correctly set on all pages to help screen readers determine the correct language of the content on both mobile and desktop.
+- **Language Attributes:** Ensuring that the lang attribute is correctly set on all pages to help screen readers determine the correct language of the content on both mobile and desktop.
 
-- Form Validation: Enhancing client-side form validation with more descriptive error messages that are accessible to screen readers, particularly in mobile environments where screen space is limited.
+- **Form Validation:** Enhancing client-side form validation with more descriptive error messages that are accessible to screen readers, particularly in mobile environments where screen space is limited.
 
-- Skip Navigation Links: Adding "skip to content" links to allow keyboard users to bypass repetitive navigation menus and jump directly to the main content, which is especially helpful on mobile where screen size is smaller.
+- **Skip Navigation Links:** Adding "skip to content" links to allow keyboard users to bypass repetitive navigation menus and jump directly to the main content, which is especially helpful on mobile where screen size is smaller.
 
 # Technologies Used
 
 ## Language Used:
 
-- HTML: Used for structuring the content on the web pages. It forms the backbone of the project, ensuring that all elements are correctly placed and accessible.
+- **HTML:** Used for structuring the content on the web pages. It forms the backbone of the project, ensuring that all elements are correctly placed and accessible.
 
-- CSS: Used for styling the HTML elements, providing the visual appearance and layout of the web pages. CSS ensures the platform is visually appealing and user-friendly.
+- **CSS:** Used for styling the HTML elements, providing the visual appearance and layout of the web pages. CSS ensures the platform is visually appealing and user-friendly.
 
-- JavaScript: Adds interactivity and dynamic behavior to the web pages. It enhances the user experience by allowing for real-time updates, form validations, and interactive elements.
+- **JavaScript:** Adds interactivity and dynamic behavior to the web pages. It enhances the user experience by allowing for real-time updates, form validations, and interactive elements.
 
-- Python: a primary programming language for the backend of the project. It is used in conjunction with the Django framework to handle server-side logic, data processing, and integration with the database.
+- **Python:** a primary programming language for the backend of the project. It is used in conjunction with the Django framework to handle server-side logic, data processing, and integration with the database.
 
 ## Frameworks - Libraries - Programs Used:
 
-1. Django
-Purpose: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
-Use Case: Used for building the backend, managing databases, handling user authentication, and rendering templates.
+1. **Django**
+**Purpose:** A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+**Use Case:** Used for building the backend, managing databases, handling user authentication, and rendering templates.
 
-2. Bootstrap
-Purpose: A popular front-end framework for developing responsive, mobile-first websites.
-Use Case: Used for styling the website, creating responsive layouts, and ensuring a consistent design across devices.
+2. **Bootstrap**
+**Purpose:** A popular front-end framework for developing responsive, mobile-first websites.
+**Use Case:** Used for styling the website, creating responsive layouts, and ensuring a consistent design across devices.
 
-3. Cloudinary API
-Purpose: A cloud-based image and video management service.
-Use Case: Used for handling image uploads, storage, and optimization, ensuring fast and reliable content delivery.
+3. **Cloudinary API**
+**Purpose:** A cloud-based image and video management service.
+**Use Case:** Used for handling image uploads, storage, and optimization, ensuring fast and reliable content delivery.
 
-4. Pillow
-Purpose: A Python Imaging Library that adds image processing capabilities to your Python interpreter.
-Use Case: Used to manage and process image uploads, including resizing and format conversions.
+4. **Pillow**
+**Purpose:** A Python Imaging Library that adds image processing capabilities to your Python interpreter.
+**Use Case:** Used to manage and process image uploads, including resizing and format conversions.
 
-5. JavaScript
-Purpose: A programming language that enables dynamic content on web pages.
-Use Case: Used for front-end interactions such as the search bar functionality, dropdowns, and form validations.
+5. **JavaScript**
+**Purpose:** A programming language that enables dynamic content on web pages.
+**Use Case:** Used for front-end interactions such as the search bar functionality, dropdowns, and form validations.
 
-6. GitHub
-Purpose: A platform for version control and collaborative development.
-Use Case: Used to host the project repository, manage version control with Git, and collaborate through issues and pull requests.
+6. **GitHub**
+**Purpose:** A platform for version control and collaborative development.
+**Use Case:** Used to host the project repository, manage version control with Git, and collaborate through issues and pull requests.
 
-7. JQuery
-Purpose: A fast, small, and feature-rich JavaScript library.
-Use Case: Used to simplify HTML document traversal and manipulation, event handling, and animation.
+7. **JQuery**
+**Purpose:** A fast, small, and feature-rich JavaScript library.
+**Use Case:** Used to simplify HTML document traversal and manipulation, event handling, and animation.
 
-8. SQLite
-Purpose: A lightweight, disk-based database that doesn’t require a separate server process.
-Use Case: Used as the database for storing all application data during development.
+8. **SQLite**
+**Purpose:** A lightweight, disk-based database that doesn’t require a separate server process.
+**Use Case:** Used as the database for storing all application data during development.
 
-9. Chrome DevTools
-Purpose: A set of web developer tools built directly into the Google Chrome browser.
-Use Case: Used for debugging JavaScript, analyzing runtime performance, and optimizing website responsiveness.
+9. **Chrome DevTools**
+**Purpose:** A set of web developer tools built directly into the Google Chrome browser.
+**Use Case:** Used for debugging JavaScript, analyzing runtime performance, and optimizing website responsiveness.
 
-10. Balsamiq
-Purpose: A wireframing tool that allows designers to create sketches of their web pages or applications.
-Use Case: Used for creating wireframes and mockups to plan the layout and design of the website before development.
+10. **Balsamiq**
+**Purpose:** A wireframing tool that allows designers to create sketches of their web pages or applications.
+**Use Case:** Used for creating wireframes and mockups to plan the layout and design of the website before development.
 
-11. Responsive Design Mode
-Purpose: A browser tool that allows developers to view their website on different screen sizes and resolutions.
-Use Case: Used to test and ensure the website is responsive across a range of devices, including mobile phones and tablets.
+11. **Responsive Design Mode**
+**Purpose:** A browser tool that allows developers to view their website on different screen sizes and resolutions.
+**Use Case:** Used to test and ensure the website is responsive across a range of devices, including mobile phones and tablets.
 
-12. Coolors.co
-Purpose: An online tool for generating color palettes.
-Use Case: Used to select and create the color scheme for the website, ensuring a visually appealing design.
+12. **Coolors.co**
+**Purpose:** An online tool for generating color palettes.
+**Use Case:** Used to select and create the color scheme for the website, ensuring a visually appealing design.
 
-13. StartBootstrap.com
-Purpose: A website offering free and premium Bootstrap themes and templates.
-Use Case: Used as a resource for finding Bootstrap templates and inspiration for the website’s design.
+13. **StartBootstrap.com**
+**Purpose:** A website offering free and premium Bootstrap themes and templates.
+**Use Case:** Used as a resource for finding Bootstrap templates and inspiration for the website’s design.
 
-14. Heroku
-Purpose: Used to deploy the Django application.
-Use Case: Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps.
+14. **Heroku**
+**Purpose:** Used to deploy the Django application.
+**Use Case:** Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps.
 
 # Future Plans
 
-1. Enhanced User Profiles
-- Description: Develop detailed user profiles where photographers can showcase their portfolios and follow others.
-- Objective: To create a more personalized and interactive community experience.
+1. **Enhanced User Profiles**
+- **Description:** Develop detailed user profiles where photographers can showcase their portfolios and follow others.
+- **Objective:** To create a more personalized and interactive community experience.
 
-2. Advanced Search and Filtering
-- Description: Implement advanced search options based on categories and tags to help users find specific content easily.
-- Objective: To improve content discoverability and user experience.
+2. **Advanced Search and Filtering**
+- **Description:** Implement advanced search options based on categories and tags to help users find specific content easily.
+- **Objective:** To improve content discoverability and user experience.
 
-3. Mobile App Development
-- Description: Create a mobile app for Android and iOS to allow users to access and upload content on the go.
-- Objective: To increase accessibility and engagement with a mobile-friendly solution.
+3. **Mobile App Development**
+- **Description:** Create a mobile app for Android and iOS to allow users to access and upload content on the go.
+- **Objective:** To increase accessibility and engagement with a mobile-friendly solution.
 
-4. Social Media Integration
-- Description: Add features that allow users to share their photos directly to social media platforms like Instagram and Facebook.
-- Objective: To broaden the reach of shared content and attract more users.
+4. **Social Media Integration**
+- **Description:** Add features that allow users to share their photos directly to social media platforms like Instagram and Facebook.
+- **Objective:** To broaden the reach of shared content and attract more users.
 
-5. Photography Challenges
-- Description: Organize photography challenges to engage the community and showcase talent.
-- Objective: To increase user participation and foster a vibrant community atmosphere.
+5. **Photography Challenges**
+- **Description:** Organize photography challenges to engage the community and showcase talent.
+- **Objective:** To increase user participation and foster a vibrant community atmosphere.
 
-6. FAQ Page
-- Description: Develop a comprehensive FAQ page to address common user queries and provide guidance on using the site.
-- Objective: To enhance user support and reduce the need for direct inquiries by offering readily accessible information.
+6. **FAQ Page**
+- **Description:** Develop a comprehensive FAQ page to address common user queries and provide guidance on using the site.
+- **Objective:** To enhance user support and reduce the need for direct inquiries by offering readily accessible information.
 
 # Bugs
 
 During the development and testing phases of this project, several bugs were identified and subsequently fixed. Below is a summary of the bugs encountered, along with the steps taken to resolve them.
 
+### Known Issues
+
+## Search Functionality
+- Currently, the search feature on the website is not functioning as expected. Users may encounter issues when attempting to search for photos by title or description. This is a known bug that will be addressed in a future update.
+
 ### Bug List and Fixes
 
-1. Bug: Navigation Menu Not Collapsing on Mobile
-- Description: On mobile devices, the navigation menu was not collapsing correctly after a menu item was selected, leaving the menu open and obstructing content.
-- Cause: The JavaScript responsible for toggling the navigation menu was not correctly targeting the collapse element.
-- Fix: Updated the JavaScript to properly target the collapse element and added an event listener to close the menu after a link is clicked.
-- Status: Fixed
+1. **Bug:** Navigation Menu Not Collapsing on Mobile
+- **Description:** On mobile devices, the navigation menu was not collapsing correctly after a menu item was selected, leaving the menu open and obstructing content.
+- **Cause:** The JavaScript responsible for toggling the navigation menu was not correctly targeting the collapse element.
+- **Fix:** Updated the JavaScript to properly target the collapse element and added an event listener to close the menu after a link is clicked.
+- **Status:** Fixed
 
-2. Bug: Image Upload Fails on Certain File Types
-- Description: Users reported that the image upload feature would fail when attempting to upload certain file types, such as .gif and .bmp.
-- Cause: The server-side validation was too restrictive, only allowing .jpg and .png files.
-- Fix: Updated the validation rules to include additional image file types and added appropriate error handling to inform the user if an unsupported file type is uploaded.
-- Status: Fixed
+2. **Bug:** Image Upload Fails on Certain File Types
+- **Description:** Users reported that the image upload feature would fail when attempting to upload certain file types, such as .gif and .bmp.
+- **Cause:** The server-side validation was too restrictive, only allowing .jpg and .png files.
+- **Fix:** Updated the validation rules to include additional image file types and added appropriate error handling to inform the user if an unsupported file type is uploaded.
+- **Status:** Fixed
 
-3. Bug: Form Validation Errors Not Displaying
-- Description: When users submitted forms with invalid data, the form would refresh but not display any validation error messages, leaving users unaware of what needed to be corrected.
-- Cause: The form template was not properly rendering the validation error messages passed from the backend.
-- Fix: Updated the form templates to correctly display validation errors by including error messages next to each form field.
-- Status: Fixed
+3. **Bug:** Form Validation Errors Not Displaying
+- **Description:** When users submitted forms with invalid data, the form would refresh but not display any validation error messages, leaving users unaware of what needed to be corrected.
+- **Cause:** The form template was not properly rendering the validation error messages passed from the backend.
+- **Fix:** Updated the form templates to correctly display validation errors by including error messages next to each form field.
+- **Status:** Fixed
 
-4. Bug: 500 Internal Server Error on Photo Detail Page
-- Description: Users occasionally encountered a 500 Internal Server Error when attempting to view the Photo Detail page.
-- Cause: The issue was caused by a null reference in the database when trying to fetch details for a photo that had been deleted or did not exist.
-- Fix: Implemented additional checks to ensure that the photo exists before attempting to load the detail page, and provided a user-friendly error message if the photo is not found.
-- Status: Fixed
+4. **Bug:** 500 Internal Server Error on Photo Detail Page
+- **Description:** Users occasionally encountered a 500 Internal Server Error when attempting to view the Photo Detail page.
+- **Cause:** The issue was caused by a null reference in the database when trying to fetch details for a photo that had been deleted or did not exist.
+- **Fix:** Implemented additional checks to ensure that the photo exists before attempting to load the detail page, and provided a user-friendly error message if the photo is not found.
+- **Status:** Fixed
 
-5. Bug: Slow Load Times on Blog Page
-- Description: The Blog page was experiencing slow load times, especially when there were many posts with large images.
-- Cause: Images were not being optimized for web display, leading to unnecessarily large file sizes.
-- Fix: Integrated image compression on upload and added lazy loading for images to improve page load times.
-- Status: Fixed
+5. **Bug:** Slow Load Times on Blog Page
+- **Description:** The Blog page was experiencing slow load times, especially when there were many posts with large images.
+- **Cause:** Images were not being optimized for web display, leading to unnecessarily large file sizes.
+- **Fix:** Integrated image compression on upload and added lazy loading for images to improve page load times.
+- **Status:** Fixed
 
 # Heroku Deployment
 
@@ -752,21 +759,21 @@ The database provided by Django ![db.sqlite3](https://docs.python.org/3/library/
 
 The requirements.txt file lists all the dependencies needed to run the project. Below is a brief description of each package included in this file:
 
-- asgiref==3.8.1: ASGI (Asynchronous Server Gateway Interface) reference implementation, used by Django for handling asynchronous requests.
-- cloudinary==1.40.0: A Python client library for integrating with Cloudinary, a cloud service that offers image and video management.
-- dj-database-url==2.2.0: A utility for configuring Django databases via environment variables, commonly used for configuring databases in production environments like Heroku.
-- dj3-cloudinary-storage==0.0.6: A Django storage backend for integrating with Cloudinary, allowing Django to directly store media files in Cloudinary.
+- **asgiref==3.8.1:** ASGI (Asynchronous Server Gateway Interface) reference implementation, used by Django for handling asynchronous requests.
+- **cloudinary==1.40.0:** A Python client library for integrating with Cloudinary, a cloud service that offers image and video management.
+- **dj-database-url==2.2.0:** A utility for configuring Django databases via environment variables, commonly used for configuring databases in production environments like Heroku.
+- **dj3-cloudinary-storage==0.0.6:** A Django storage backend for integrating with Cloudinary, allowing Django to directly store media files in Cloudinary.
 - Django==5.0.6: The main web framework used for building this project. Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
-- django-allauth==0.63.3: A Django package that provides a comprehensive authentication system, including registration, social account authentication, and email confirmation.
-- django-summernote==0.8.20.0: A Django application that integrates the Summernote WYSIWYG editor, making it easy to add rich text editing capabilities to Django forms and models.
-- gunicorn==22.0.0: A Python WSGI HTTP server for UNIX, commonly used to serve Django applications in production environments.
-- oauthlib==3.2.2: A generic and reusable OAuth request-signing logic library, used for handling OAuth 1 and OAuth 2 authentication flows.
-- pillow==10.3.0: A Python Imaging Library (PIL) fork that provides image processing capabilities, used in Django for handling image uploads and manipulation.
-- psycopg2==2.9.9: A PostgreSQL database adapter for Python, required for interacting with a PostgreSQL database from Django.
-- PyJWT==2.8.0: A Python library for generating and verifying JSON Web Tokens (JWTs), used for handling authentication and secure communications.
-- requests-oauthlib==2.0.0: An OAuthlib integration with the popular requests library, providing OAuth authentication support in HTTP requests.
-- sqlparse==0.5.0: A non-validating SQL parser used by Django's ORM to work with SQL queries. It helps in formatting and analyzing SQL code.
-- whitenoise==6.7.0: A middleware for serving static files directly from your web application, especially useful in production environments to improve performance by serving static files efficiently.
+- **django-allauth==0.63.3:** A Django package that provides a comprehensive authentication system, including registration, social account authentication, and email confirmation.
+- **django-summernote==0.8.20.0:** A Django application that integrates the Summernote WYSIWYG editor, making it easy to add rich text editing capabilities to Django forms and models.
+- **gunicorn==22.0.0:** A Python WSGI HTTP server for UNIX, commonly used to serve Django applications in production environments.
+- **oauthlib==3.2.2:** A generic and reusable OAuth request-signing logic library, used for handling OAuth 1 and OAuth 2 authentication flows.
+- **pillow==10.3.0:** A Python Imaging Library (PIL) fork that provides image processing capabilities, used in Django for handling image uploads and manipulation.
+- **psycopg2==2.9.9:** A PostgreSQL database adapter for Python, required for interacting with a PostgreSQL database from Django.
+- **PyJWT==2.8.0:** A Python library for generating and verifying JSON Web Tokens (JWTs), used for handling authentication and secure communications.
+- **requests-oauthlib==2.0.0:** An OAuthlib integration with the popular requests library, providing OAuth authentication support in HTTP requests.
+- **sqlparse==0.5.0:** A non-validating SQL parser used by Django's ORM to work with SQL queries. It helps in formatting and analyzing SQL code.
+- **whitenoise==6.7.0:** A middleware for serving static files directly from your web application, especially useful in production environments to improve performance by serving static files efficiently.
 
 # Credits
 * [Man standing on rock formation](<documentation/images/hero-image.jpg>)
