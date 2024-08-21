@@ -9,6 +9,8 @@ View the live project here [Photography Blog](https://photography-blog-5d35eeace
 Am I Responsive
 Here's deployed site: [Am I Responsive](https://ui.dev/amiresponsive?url=https://photography-blog-5d35eeace3db.herokuapp.com/)
 
+![alt text](documentation/images/amiresponsive1.png)
+
 ## Introduction
 
 Photography Blog is a dynamic web application created for photography enthusiasts who wish to showcase their work and connect with a community of like-minded individuals. This platform allows users to upload their photos, categorize them, and engage with others through comments and likes. Whether you’re an amateur photographer or a seasoned professional, the Photography Blog offers a space to share your visual stories with the world.
