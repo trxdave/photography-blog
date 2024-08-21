@@ -746,6 +746,8 @@ For either method, you will need to install any applicable packages found within
 
 - `pip3 install -r requirements.txt`.
 
+The database provided by Django ![db.sqlite3](https://docs.python.org/3/library/sqlite3.html) is only accessible within the workspace environment. In order for Heroku to be able to access the database, a new database suitable for production needs to be created. I am using a postgreSQL database instance hosted on ![CI Database](https://dbs.ci-dbs.net/) as this service is free.
+
 # Requirements
 
 The requirements.txt file lists all the dependencies needed to run the project. Below is a brief description of each package included in this file:
