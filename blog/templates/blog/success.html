@@ -3,25 +3,25 @@
 {% block title %}Photo Upload Success{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="success-container mt-5">
     <!-- Row to center the success message card -->
     <div class="row justify-content-center">
         <div class="col-md-8">
             <!-- Card component to display the success message -->
-            <div class="card text-center">
-                <div class="card-header bg-success text-white">
+            <div class="card text-center-s">
+                <div class="card-header-s bg-success text-white">
                     Photo Uploaded Successfully!
                 </div>
                 <!-- Card body containing the success message and action buttons -->
-                <div class="card-body">
+                <div class="card-body-s">
                     <!-- Title confirming the successful upload -->
-                    <h5 class="card-title">Your photo has been uploaded.</h5>
+                    <h5 class="card-title-s">Your photo has been uploaded.</h5>
                     <!-- Additional information and appreciation text -->
-                    <p class="card-text">Thank you for sharing your work with our community. Your photo is now available in your portfolio and visible to others.</p>
+                    <p class="card-text-s">Thank you for sharing your work with our community. Your photo is now available in your portfolio and visible to others.</p>
                     <!-- Button to view the user's photos -->
-                    <a href="{% url 'photo_list' %}" class="btn btn-primary">View My Photos</a>
+                    <a href="{% url 'photo_list' %}" class="btn btn-primary-s">View My Photos</a>
                     <!-- Button to upload another photo -->
-                    <a href="{% url 'add_photo' %}" class="btn btn-secondary">Upload Another Photo</a>
+                    <a href="{% url 'add_photo' %}" class="btn btn-secondary-s">Upload Another Photo</a>
                 </div>
             </div>
         </div>

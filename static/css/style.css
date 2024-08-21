@@ -291,6 +291,87 @@ h2 {
   color: #ffffff;
 }
 
+/* success.html */
+
+.success-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styles */
+.card.text-center-s {
+  border: none;
+  border-radius: 10px;
+  min-height: 500px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card-header-s {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+
+.card-body-s {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 550px;
+}
+
+.card-title-s {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #000 !important;
+  text-align: center;
+}
+
+.card-text-s {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #000 !important;
+}
+
+/* Button Styles */
+.btn.btn-primary-s,
+.btn.btn-secondary-s {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 80%;
+}
+
+.btn.btn-primary-s {
+  background-color: #337ab7;
+}
+
+.btn.btn-primary-s:hover {
+  background-color: #23527c;
+}
+
+.btn.btn-secondary-s {
+  background-color: #6c757d;
+}
+
+.btn.btn-secondary-s:hover {
+  background-color: #5a6268;
+}
+
 /* Photo gallery styling */
 .photo-gallery {
   display: flex;
@@ -1247,5 +1328,60 @@ label {
 
   footer .list-inline-item {
     margin: 0 5px;
+  }
+}
+
+/* success.html */
+
+@media (max-width: 575px) {
+  .success-container {
+      margin: 50px 20px;
+      padding: 15px;
+  }
+
+  .card-header-s {
+      font-size: 20px;
+      padding: 15px;
+  }
+
+  .card-body-s {
+      padding: 20px;
+  }
+
+  .card-title-s {
+      font-size: 20px;
+  }
+
+  .btn.btn-primary-s, .btn.btn-secondary-s {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .success-container {
+      margin: 20px;
+      padding: 15px;
+  }
+
+  .card-header-s {
+      font-size: 18px;
+      padding: 10px;
+  }
+
+  .card-body-s {
+      padding: 15px;
+  }
+
+  .card-title-s {
+      font-size: 18px;
+  }
+
+  .btn.btn-primary-s, 
+  .btn.btn-secondary-s {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      font-size: 14px;
   }
 }

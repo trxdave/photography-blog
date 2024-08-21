@@ -285,6 +285,17 @@ The design of the Photography Blog is modern and minimalist, with a focus on sho
 
 ![alt text](documentation/images/addphoto1.png)
 
+**Success Page**
+The success.html page is a dedicated confirmation page displayed after a user successfully uploads a photo to their portfolio. The page is designed with user experience in mind, featuring a clean and centered card that conveys the success message. The card header, styled in green, signals the successful upload with the message "Photo Uploaded Successfully!" Users are informed that their photo is now visible in their portfolio. Additionally, the page provides easy navigation with buttons allowing users to either view their photos or upload another one.
+
+Key Features:
+
+- **Responsive Design:** The layout adjusts for different screen sizes, ensuring a consistent user experience on both desktop and mobile devices (including 320px mobile screens).
+- **Clear Navigation:** Buttons within the card allow users to quickly access their photo list or initiate another photo upload.
+_ **Aesthetic and Functional Layout:** The card's centered position, clear typography, and green success header contribute to a positive user experience.
+
+![alt text](documentation/images/success.png)
+
 - **Success Message:** After successfully uploading a photo, users are redirected to a success page, and a success message is displayed. This confirms that their photo has been added to the blog and is visible to other users.
 
 ![alt text](documentation/images/photo-success-deleted.png)
