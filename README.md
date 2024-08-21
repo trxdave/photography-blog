@@ -424,9 +424,41 @@ Arial, sans-serif: This is the main font used throughout your CSS for body text 
 
 - Wireframes were created to visualize the layout and design of the photography blog.
 
-| **Page** | **URL** | **Wireframes** | **Pass** |
---- | --- | --- | :---: |
+## Desktop Wireframes
 
+| **Page** | **Wireframes** | **Pass** |
+--- | --- | :---: |
+| About Us | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/aboutus.png)</details>| :white_check_mark:|
+| Add Photo | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/addphoto.png)</details>| :white_check_mark:|
+| Blog | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/blog.png)</details>| :white_check_mark:|
+| Contact Us | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/contactus.png)</details>| :white_check_mark:|
+| Homepage | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/homepage.png)</details>| :white_check_mark:|
+| Landscape | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/landscape.png)</details>| :white_check_mark:|
+| Login | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/login.png)</details>| :white_check_mark:|
+| Macro | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/macro.png)</details>| :white_check_mark:|
+| Photo List | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/photolist.png)</details>| :white_check_mark:|
+| Portrait | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/portrait.png)</details>| :white_check_mark:|
+| Sign Up | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/signup.png)</details>| :white_check_mark:|
+| Street | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/street.png)</details>| :white_check_mark:|
+| Wildlife | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/wildlife.png)</details>| :white_check_mark:|
+
+## Mobile Wireframes
+
+| **Page** | **Wireframes** | **Pass** |
+--- | --- | :---: |
+| About Us | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/aboutmobile.png)</details>| :white_check_mark:|
+| Add Photo | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/addphotomobile.png)</details>| :white_check_mark:|
+| Blog | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/blogmobile.png)</details>| :white_check_mark:|
+| Contact Us | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/contactusmobile.png)</details>| :white_check_mark:|
+| Homepage | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/homepagemobile.png)</details>| :white_check_mark:|
+| Landscape | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/landscapemobile.png)</details>| :white_check_mark:|
+| Login | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/loginmobile.png)</details>| :white_check_mark:|
+| Macro | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/macromobile.png)</details>| :white_check_mark:|
+| Photo List | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/photolistmobile.png)</details>| :white_check_mark:|
+| Portrait | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/portraitmobile.png)</details>| :white_check_mark:|
+| Sign Up | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/signupmobile.png)</details>| :white_check_mark:|
+| Street | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/streetmobile.png)</details>| :white_check_mark:|
+| Wildlife | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/wildlifemobile.png)</details>| :white_check_mark:|
 
 # Testing
 
