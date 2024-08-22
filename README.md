@@ -456,6 +456,7 @@ The fonts used in your project are:
 | Sign Up | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/signup.png)</details>| :white_check_mark:|
 | Street | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/street.png)</details>| :white_check_mark:|
 | Wildlife | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/wildlife.png)</details>| :white_check_mark:|
+| Success | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/desktop/success.png)</details>| :white_check_mark:|
 
 ## Mobile Wireframes
 
@@ -474,6 +475,7 @@ The fonts used in your project are:
 | Sign Up | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/signupmobile.png)</details>| :white_check_mark:|
 | Street | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/streetmobile.png)</details>| :white_check_mark:|
 | Wildlife | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/wildlifemobile.png)</details>| :white_check_mark:|
+| Success | <details><summary>Screenshot of result</summary>![Result](documentation/wireframes/mobile/successmobile.png)</details>| :white_check_mark:|
 
 # Testing
 
@@ -537,7 +539,7 @@ I used Google PageSpeed Insights to evaluate the accessibility of our website on
 |Blog page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/blog-desktop.png)</details>| :white_check_mark:|
 |Landscape page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/landscape-desktop.png)</details>| :white_check_mark:|
 |Portrait page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/portrait-desktop.png)</details>| :white_check_mark:|
-|Wildlife page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/wildlife-mobile.png)</details>| :white_check_mark:|
+|Wildlife page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/wildlife-desktop.png)</details>| :white_check_mark:|
 |Street page| 88 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/street-desktop.png)</details>| :white_check_mark:|
 |Macro page| 84 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/macro-desktop.png)</details>| :white_check_mark:|
 |About Us page| 89 | <details><summary>Screenshot of result</summary>![Result](documentation/accessibility/aboutus-desktop.png)</details>| :white_check_mark:|
