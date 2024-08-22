@@ -1,5 +1,11 @@
 # Photography Blog
 
+## Introduction
+
+Photography Blog is a dynamic web application created for photography enthusiasts who wish to showcase their work and connect with a community of like-minded individuals. This platform allows users to upload their photos, categorize them, and engage with others through comments and likes. Whether you’re an amateur photographer or a seasoned professional, the Photography Blog offers a space to share your visual stories with the world.
+
+**View the live project here:** [Photography Blog](https://photography-blog-5d35eeace3db.herokuapp.com)
+
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/trxdave/photography-blog)](https://github.com/trxdave/photography-blog/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/trxdave/photography-blog)](https://github.com/trxdave/photography-blog/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/trxdave/photography-blog)](https://github.com/trxdave/photography-blog)
@@ -9,12 +15,6 @@
 **Here's deployed site:** [Am I Responsive](https://ui.dev/amiresponsive?url=https://photography-blog-5d35eeace3db.herokuapp.com/)
 
 ![alt text](documentation/images/amiresponsive1.png)
-
-## Introduction
-
-**View the live project here:** [Photography Blog](https://photography-blog-5d35eeace3db.herokuapp.com)
-
-Photography Blog is a dynamic web application created for photography enthusiasts who wish to showcase their work and connect with a community of like-minded individuals. This platform allows users to upload their photos, categorize them, and engage with others through comments and likes. Whether you’re an amateur photographer or a seasoned professional, the Photography Blog offers a space to share your visual stories with the world.
 
 ## Project Overview
 
@@ -799,9 +799,14 @@ Temporarily Remove Cloudinary Storage: Before running python3 manage.py collects
 
 3. **Re-enable Cloudinary:** After collecting static files, re-enable the DEFAULT_FILE_STORAGE to Cloudinary if needed.
 
+In the current configuration, I've added 'SECURE': True to the CLOUDINARY_STORAGE settings to ensure all media files are loaded over HTTPS, which enhances security.
+
+![alt text](documentation/images/cloudinary.png)
 
 
 # Credits
+
+- **Images:**
 * [Man standing on rock formation](<documentation/images/hero-image.jpg>)
 * [Black and silver DSLR lens](<documentation/images/lens.jpg>)
 * [Nikon Camera](<documentation/images/nikon-camera.jpg>)
@@ -809,25 +814,32 @@ Temporarily Remove Cloudinary Storage: Before running python3 manage.py collects
 * [Inside out 'Forbidden' 403](<documentation/images/403.png>)
 * [Inside out 'Not Found' 404](<documentation/images/404.png>)
 * [Inside out 'Internal Server Error' 500](<documentation/images/500.png>)
-* [Django Allauth](https://docs.allauth.org/en/latest/)
-* [Django documentation](https://docs.djangoproject.com/en/5.0/)
-* [Django Search Box](https://docs.djangoproject.com/en/5.0/search/?q=search+box)
-* [Daisy's walkthrough](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2)
-* [Build a Photographer Personal Portfolio with Django 2020](https://www.youtube.com/watch?v=EBrm7h05vbg)
-* [Pillow](https://pillow.readthedocs.io/en/stable/installation.html)
-* [Cloudinary](https://cloudinary.com/)
-* [Pexels](https://www.pexels.com/)
-* [perplexity](https://www.perplexity.ai/)
-* [Grammerly](https://app.grammarly.com/)
+
+- **Documentation and Tutorials:**
+* [Django Allauth](https://docs.allauth.org/en/latest/) For seamless authentication integration.
+* [Django documentation](https://docs.djangoproject.com/en/5.0/) Essential for understanding Django’s robust framework.
+* [Django Search Box](https://docs.djangoproject.com/en/5.0/search/?q=search+box) For implementing search functionality.
+* [Bootstrap](https://getbootstrap.com/): Crucial for creating responsive, mobile-first designs.
+* [Daisy's walkthrough](https://www.youtube.com/watch?v=sBjbty691eI&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2) A fantastic resource that helped guide the development process.
+* [Build a Photographer Personal Portfolio with Django 2020](https://www.youtube.com/watch?v=EBrm7h05vbg) Inspired the structure and features of this project.
+
+- **Tools:**
+* [Pillow](https://pillow.readthedocs.io/en/stable/installation.html) For handling image processing.
+* [Cloudinary](https://cloudinary.com/) For managing media assets efficiently.
+* [Pexels](https://www.pexels.com/) For providing high-quality stock images.
+* [perplexity](https://www.perplexity.ai/) Assisted in generating ideas and refining content.
+* [Grammerly](https://app.grammarly.com/) Ensured the project's documentation was clear and professional.
+* [Gitpod](https://www.gitpod.io/): The online IDE that facilitated the development of this project.
+* [Code Institute](https://codeinstitute.net/ie/): Provided foundational knowledge and the environment to apply it.
+* [Stack Overflow](https://stackoverflow.com/): An invaluable resource for solving coding challenges.
+* [W3Schools](https://www.w3schools.com/): Quick and reliable reference for HTML, CSS, and JavaScript.
+
+- **Hackathon:**
+* [Hackathon](https://hackathon.codeinstitute.net/teams/445/): Participating in this event sharpened my coding skills and provided an opportunity to work in a team environment, ultimately earning 3rd place (Bronze).
 
 
 # Acknowledgements
-* [Django](https://www.djangoproject.com/): For providing a robust and flexible web framework that made the development of this blog seamless.
-* [Bootstrap](https://getbootstrap.com/): For the responsive grid system and pre-designed components that significantly enhanced the design and usability of the site.
-* [Cloudinary](https://cloudinary.com/): For the powerful media management tools that made image handling in this project straightforward and efficient.
-* [Gitpod](https://www.gitpod.io/): For offering a reliable online IDE that facilitated the development process.
-* [Code Institute](https://codeinstitute.net/ie/): For providing the foundational knowledge and support necessary to undertake this project.
-* [Stack Overflow](https://stackoverflow.com/): For the countless solutions and insights from the developer community.
-* [W3Schools](https://www.w3schools.com/): For their comprehensive tutorials that served as a quick reference throughout development.
-* [Hackathon](https://hackathon.codeinstitute.net/teams/445/): For the invaluable experience gained through participation, where I achieved 3rd place (Bronze). The challenges and teamwork during the event greatly contributed to my learning and growth as a developer.
-* Thanks to Paul Thomas O'Riordan and Kristyna my Cohort Facilitator also Rory Patrick Sheridan my Code Institue Mentor, Tim Nelson second Mentor.
+
+* I would like to express my sincere gratitude to the Hackathon team for the incredible learning experience. The challenges and teamwork during the event significantly enhanced my skills in Django, and I'm proud to have achieved 3rd place (Bronze).
+
+* Special thanks to Paul Thomas O'Riordan, Kristyna, my Cohort Facilitator, Rory Patrick Sheridan, my Code Institute Mentor, and Tim Nelson, my second Mentor, for their guidance and support throughout this journey. Your encouragement has been invaluable to my growth as a developer.
